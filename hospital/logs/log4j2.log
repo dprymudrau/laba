@@ -1,0 +1,82 @@
+2021-09-02 21:37:33,208 INFO c.s.h.o.JThread [main] Main thread started...
+2021-09-02 21:37:33,240 INFO c.s.h.o.JThread [thread 1] started... 
+
+2021-09-02 21:37:33,240 INFO c.s.h.o.JThread [thread 0] started... 
+
+2021-09-02 21:37:33,240 INFO c.s.h.o.JThread [thread 2] started... 
+
+2021-09-02 21:37:33,240 INFO c.s.h.o.JThread [thread 3] started... 
+
+2021-09-02 21:37:33,240 INFO c.s.h.o.JThread [thread 4] started... 
+
+2021-09-02 21:37:33,240 INFO c.s.h.o.JThread [thread 5] started... 
+
+2021-09-02 21:37:33,240 INFO c.s.h.o.JThread [thread 6] started... 
+
+2021-09-02 21:37:33,240 INFO c.s.h.o.JThread [thread 7] started... 
+
+2021-09-02 21:37:33,240 INFO c.s.h.o.JThread [main] Main thread finished...
+2021-09-02 21:37:33,723 INFO c.s.h.o.Connection [thread 4] thread 4 opened connection
+2021-09-02 21:37:33,725 INFO c.s.h.o.Connection [thread 4] thread 4 authorizated
+2021-09-02 21:37:33,726 INFO c.s.h.o.Connection [thread 4] thread 4 ping
+2021-09-02 21:37:33,727 INFO c.s.h.o.Connection [thread 4] Info: thread 4 connected
+2021-09-02 21:37:33,728 INFO c.s.h.o.Connection [thread 4] thread 4 executed smth dunno
+2021-09-02 21:37:33,729 INFO c.s.h.o.Connection [thread 4] thread 4 is out
+2021-09-02 21:37:33,762 INFO c.s.h.o.Connection [thread 1] thread 1 opened connection
+2021-09-02 21:37:33,763 INFO c.s.h.o.Connection [thread 1] thread 1 authorizated
+2021-09-02 21:37:33,763 INFO c.s.h.o.Connection [thread 1] thread 1 ping
+2021-09-02 21:37:33,764 INFO c.s.h.o.Connection [thread 1] Info: thread 1 connected
+2021-09-02 21:37:33,765 INFO c.s.h.o.Connection [thread 1] thread 1 executed smth dunno
+2021-09-02 21:37:33,765 INFO c.s.h.o.Connection [thread 1] thread 1 is out
+2021-09-02 21:37:33,860 INFO c.s.h.o.Connection [thread 7] thread 7 opened connection
+2021-09-02 21:37:33,860 INFO c.s.h.o.Connection [thread 7] thread 7 authorizated
+2021-09-02 21:37:33,861 INFO c.s.h.o.Connection [thread 7] thread 7 ping
+2021-09-02 21:37:33,861 INFO c.s.h.o.Connection [thread 7] Info: thread 7 connected
+2021-09-02 21:37:33,862 INFO c.s.h.o.Connection [thread 7] thread 7 executed smth dunno
+2021-09-02 21:37:33,862 INFO c.s.h.o.Connection [thread 7] thread 7 is out
+2021-09-02 21:37:33,914 INFO c.s.h.o.Connection [thread 0] thread 0 opened connection
+2021-09-02 21:37:33,914 INFO c.s.h.o.Connection [thread 0] thread 0 authorizated
+2021-09-02 21:37:33,915 INFO c.s.h.o.Connection [thread 0] thread 0 ping
+2021-09-02 21:37:33,915 INFO c.s.h.o.Connection [thread 0] Info: thread 0 connected
+2021-09-02 21:37:33,916 INFO c.s.h.o.Connection [thread 0] thread 0 executed smth dunno
+2021-09-02 21:37:33,916 INFO c.s.h.o.Connection [thread 0] thread 0 is out
+2021-09-02 21:37:33,943 INFO c.s.h.o.Connection [thread 3] thread 3 opened connection
+2021-09-02 21:37:33,943 INFO c.s.h.o.Connection [thread 3] thread 3 authorizated
+2021-09-02 21:37:33,944 INFO c.s.h.o.Connection [thread 3] thread 3 ping
+2021-09-02 21:37:33,944 INFO c.s.h.o.Connection [thread 3] Info: thread 3 connected
+2021-09-02 21:37:33,945 INFO c.s.h.o.Connection [thread 3] thread 3 executed smth dunno
+2021-09-02 21:37:33,945 INFO c.s.h.o.Connection [thread 3] thread 3 is out
+2021-09-02 21:37:34,032 INFO c.s.h.o.JThread [thread 1] finished... 
+
+2021-09-02 21:37:34,070 INFO c.s.h.o.JThread [thread 7] finished... 
+
+2021-09-02 21:37:34,107 INFO c.s.h.o.Connection [thread 6] thread 6 opened connection
+2021-09-02 21:37:34,107 INFO c.s.h.o.Connection [thread 6] thread 6 authorizated
+2021-09-02 21:37:34,108 INFO c.s.h.o.Connection [thread 6] thread 6 ping
+2021-09-02 21:37:34,108 INFO c.s.h.o.Connection [thread 6] Info: thread 6 connected
+2021-09-02 21:37:34,108 INFO c.s.h.o.Connection [thread 6] thread 6 executed smth dunno
+2021-09-02 21:37:34,108 INFO c.s.h.o.Connection [thread 6] thread 6 is out
+2021-09-02 21:37:34,177 INFO c.s.h.o.JThread [thread 4] finished... 
+
+2021-09-02 21:37:34,207 INFO c.s.h.o.Connection [thread 2] thread 2 opened connection
+2021-09-02 21:37:34,207 INFO c.s.h.o.Connection [thread 2] thread 2 authorizated
+2021-09-02 21:37:34,208 INFO c.s.h.o.Connection [thread 2] thread 2 ping
+2021-09-02 21:37:34,208 INFO c.s.h.o.Connection [thread 2] Info: thread 2 connected
+2021-09-02 21:37:34,208 INFO c.s.h.o.Connection [thread 2] thread 2 executed smth dunno
+2021-09-02 21:37:34,208 INFO c.s.h.o.Connection [thread 2] thread 2 is out
+2021-09-02 21:37:34,234 INFO c.s.h.o.Connection [thread 5] thread 5 opened connection
+2021-09-02 21:37:34,235 INFO c.s.h.o.Connection [thread 5] thread 5 authorizated
+2021-09-02 21:37:34,235 INFO c.s.h.o.Connection [thread 5] thread 5 ping
+2021-09-02 21:37:34,235 INFO c.s.h.o.Connection [thread 5] Info: thread 5 connected
+2021-09-02 21:37:34,236 INFO c.s.h.o.Connection [thread 5] thread 5 executed smth dunno
+2021-09-02 21:37:34,236 INFO c.s.h.o.Connection [thread 5] thread 5 is out
+2021-09-02 21:37:34,318 INFO c.s.h.o.JThread [thread 3] finished... 
+
+2021-09-02 21:37:34,425 INFO c.s.h.o.JThread [thread 2] finished... 
+
+2021-09-02 21:37:34,448 INFO c.s.h.o.JThread [thread 0] finished... 
+
+2021-09-02 21:37:34,714 INFO c.s.h.o.JThread [thread 6] finished... 
+
+2021-09-02 21:37:35,066 INFO c.s.h.o.JThread [thread 5] finished... 
+
