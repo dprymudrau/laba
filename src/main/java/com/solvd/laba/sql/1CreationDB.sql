@@ -1,5 +1,6 @@
 create database ITCompany;
 use ItCompany;
+-- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 
 -- CTRL+/(num pad) comment all lines
 -- DROP TABLE DepartmentName;
@@ -209,7 +210,7 @@ SELECT * FROM City;
 
 create table PhoneNumbers(
 	id INT NOT NULL AUTO_INCREMENT,
-	phoneNumberscol VARCHAR(45) NOT NULL,
+	phoneNumbersCol VARCHAR(45) NOT NULL,
     cityID INT,
     cityPhoneNumbersID INT,
     cityAdressID INT,

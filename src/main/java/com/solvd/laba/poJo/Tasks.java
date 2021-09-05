@@ -1,4 +1,4 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.poJo;
 
 public class Tasks {
     private int id;

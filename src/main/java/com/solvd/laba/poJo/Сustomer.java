@@ -1,6 +1,6 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.poJo;
 
-public class ITCompanies {
+public class Сustomer {
     private int id;
     private String companyName;
 

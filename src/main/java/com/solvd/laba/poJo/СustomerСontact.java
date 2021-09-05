@@ -1,6 +1,6 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.poJo;
 
-public class Emploee {
+public class СustomerСontact {
     private int id;
     private String cCName;
     private String cCSurname;
