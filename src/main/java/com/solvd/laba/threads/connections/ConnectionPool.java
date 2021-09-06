@@ -8,6 +8,7 @@ import java.util.Vector;
 public class ConnectionPool {
     private Vector<Connection> availableConnections = new Vector<Connection>();
     private Vector<Connection> usedConnections = new Vector<Connection>();
+
     private String url;
 
     public ConnectionPool(String url, String driver, int initConnectionsValue) {
