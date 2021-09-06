@@ -1,7 +1,7 @@
 
 ${project.build.directory}
-target
-logs
-out
-.idea
-.iml
+target/
+logs/
+out/
+.idea/
+*.iml
