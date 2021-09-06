@@ -699,3 +699,6 @@ java.io.FileNotFoundException: src\resources\app.properties (Системе не
 2021-09-06 02:04:22,629 INFO c.s.l.Main [main] url = jdbc:mysql://localhost/test?
 2021-09-06 02:04:22,634 INFO c.s.l.Main [main] username = root
 2021-09-06 02:04:22,635 INFO c.s.l.Main [main] password = root
+2021-09-06 02:04:50,693 INFO c.s.l.Main [main] url = jdbc:mysql://localhost/ITCompany?
+2021-09-06 02:04:50,696 INFO c.s.l.Main [main] username = root
+2021-09-06 02:04:50,697 INFO c.s.l.Main [main] password = root
