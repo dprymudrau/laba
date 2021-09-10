@@ -1,4 +1,4 @@
-package com.solvd.laba.threads.connections;
+package com.solvd.laba.example.connections;
 
 public final class ConnectionPoolSample {
     private static volatile ConnectionPoolSample instance = null;

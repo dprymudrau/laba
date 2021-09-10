@@ -1,4 +1,4 @@
-package com.solvd.laba.threads;
+package com.solvd.laba.dao.connectionPool;
 
 import com.solvd.laba.dao.connectionPool.MyConnectionPool;
 import org.apache.logging.log4j.LogManager;

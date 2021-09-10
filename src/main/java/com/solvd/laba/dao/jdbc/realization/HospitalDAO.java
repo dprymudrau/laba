@@ -1,9 +1,10 @@
 package com.solvd.laba.dao.jdbc.realization;
 
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
+import com.solvd.laba.dao.connectionPool.MyConnectionPool;
 import com.solvd.laba.dao.interfaces.IHospitalDAO;
 import com.solvd.laba.pojo.Hospital;
-import com.solvd.laba.threads.connections.Connection;
+import com.solvd.laba.example.connections.Connection;
 
 public class HospitalDAO extends AbstractDAO implements IHospitalDAO {
 

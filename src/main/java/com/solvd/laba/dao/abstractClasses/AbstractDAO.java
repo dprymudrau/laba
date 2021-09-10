@@ -1,6 +1,6 @@
 package com.solvd.laba.dao.abstractClasses;
 
-import com.solvd.laba.threads.connections.Connection;
+import com.solvd.laba.example.connections.Connection;
 
 public abstract class AbstractDAO {
 

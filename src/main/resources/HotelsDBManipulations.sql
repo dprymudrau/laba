@@ -1,0 +1,63 @@
+USE HospitalsDB;
+
+SELECT * FROM CarFleets;
+
+SELECT * FROM Hospitals;
+SELECT h.hospitalName, h.hospitalAddress, c.capacityByCars FROM Hospitals h
+LEFT JOIN CarFleets c ON h.idCarFleet=c.idCarFleet;
+SELECT h.idHospital, h.hospitalName, h.hospitalAddress, c.capacityByCars FROM Hospitals h 
+LEFT JOIN CarFleets c ON h.idCarFleet=c.idCarFleet
+ORDER BY h.idHospital;
+
+SELECT * FROM Visitors;
+SELECT * FROM VisitorCategories;
+SELECT * FROM VisitorAgeGroupCategories;
+SELECT * FROM Hospitals;
+
+SELECT rc.idRegistrationCard, h.hospitalName, v.visitorName, v.visitorSurname, vagc.ageGroupCategory, vc.healthConditionCategory, vc.visitCategory
+FROM RegistrationCards rc
+LEFT JOIN Hospitals h ON rc.idHospital=h.idHospital
+LEFT JOIN Visitors v ON rc.idVisitor=v.idVisitor
+LEFT JOIN VisitorAgeGroupCategories vagc ON rc.idVisitorAgeGroupCategory=vagc.idVisitorAgeGroupCategory
+LEFT JOIN VisitorCategories vc ON rc.idVisitorCategory=vc.idVisitorCategory
+ORDER BY rc.idRegistrationCard;
+
+SELECT * FROM WorkShifts;
+SELECT * FROM WorkerContracts;
+SELECT * FROM WorkPositions;
+SELECT * FROM WorkExpirience ORDER BY salaryIndex ASC;
+SELECT * FROM Specialities;
+SELECT * FROM Car;
+SELECT * FROM DriverLicenses;
+
+SELECT wc.idNumberOfContract, h.hospitalName, wc.dateOfSigning FROM WorkerContracts wc
+LEFT JOIN Hospitals h ON wc.idHospital=h.idHospital;
+SELECT * FROM Doctors;
+
+SELECT * FROM Nurses;
+SELECT d.doctorName, d.doctorSurname, n.nurseName, n.nurseSurname, dr.driverName, dr.driverSurname, c.idNumberOfContract
+FROM WorkerContracts c
+LEFT JOIN Doctors d ON c.idNumberOfContract=d.idNumberOfContract
+LEFT JOIN Nurses n ON c.idNumberOfContract=n.idNumberOfContract
+LEFT JOIN Drivers dr ON c.idNumberOfContract=dr.idNumberOfContract;
+
+SELECT doc.doctorName, doc.doctorSurname, n.nurseName, n.nurseSurname, dr.driverName, dr.driverSurname, ex.idWorkExp
+FROM WorkExpirience ex
+LEFT JOIN Doctors doc ON ex.idWorkExp=doc.idWorkExp
+LEFT JOIN Nurses n ON ex.idWorkExp=n.idWorkExp
+LEFT JOIN Drivers dr ON ex.idWorkExp=dr.idWorkExp
+WHERE ex.idWorkExp<4 AND ex.idWorkExp>1;
+
+SELECT idHospital, COUNT(idVisitor) FROM RegistrationCards
+GROUP BY idHospital;
+
+SELECT dl.idDriver, c.carModel FROM DriverLicenses dl
+INNER JOIN Cars c ON dl.idCar=c.idCar;
+
+SELECT h.hospitalName, regc.idVisitor, wc.idNumberOfContract FROM Hospitals h
+LEFT JOIN RegistrationCards regc ON h.idHospital=regc.idHospital
+LEFT JOIN WorkerContracts wc ON h.idHospital=wc.idHospital;
+
+SELECT idHospital, hospitalName FROM Hospitals;
+DELETE FROM Hospitals
+WHERE idHospital = 7;

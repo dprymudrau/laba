@@ -1,4 +1,4 @@
-package com.solvd.laba.threads.connections;
+package com.solvd.laba.example.connections;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
