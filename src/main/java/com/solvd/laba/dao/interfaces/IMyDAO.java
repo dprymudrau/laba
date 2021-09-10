@@ -1,14 +1,10 @@
 package com.solvd.laba.dao.interfaces;
 
 import com.solvd.laba.dao.interfaces.generics.IEntityDAO;
+import com.solvd.laba.poJo.Emploee;
 
-public interface IMyDAO  {// extends IEntityDAO<Car>
-    //and here receive not so often used classes
+public interface IMyDAO extends IAbstractDAO<Emploee> {// extends IEntityDAO<Car>
 
-    //public void save(Car car);
-    //public void delete(Car car);
 
-}
-//    interface IuserDao{
-//
-//    }
+
+   }

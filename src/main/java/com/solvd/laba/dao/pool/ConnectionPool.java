@@ -16,18 +16,15 @@ public class ConnectionPool {
     private static final int MAX_AMOUNT_OF_CON = 5;
     private int createdConAmount = 0;
     private List<Connection> connectionPool = new ArrayList<>(MAX_AMOUNT_OF_CON);
-    private static String url;
-    private static String username;
-    private static String password;
+
 
     private ConnectionPool() {
         try {// The newInstance() call is a work around for some broken Java implementations
-            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
+            Class.forName(ConfigUtils.getProperty("driver")).getDeclaredConstructor().newInstance();
             LOGGER.info("Driver add successfully");
         } catch (Exception ex) {
             LOGGER.error("Driver connection error");
         }
-        loadConfigs();
     }
 
     public static synchronized ConnectionPool getInstance() {
@@ -37,20 +34,12 @@ public class ConnectionPool {
         return instance;
     }
 
-    public synchronized Connection getConnection() throws SQLException {
+    public synchronized Connection getConnection() {
         if (createdConAmount < MAX_AMOUNT_OF_CON) {
-            Connection conn = null;
-            try {
-                conn = DriverManager.getConnection(url, username, password);
-                System.out.println("Connection to Store DB succesfull!");
-            } catch(Exception ex){
-            System.out.println("Connection failed...");
-            System.out.println(ex);
-        }
+            Connection conn = connectionCreate();
             createdConAmount++;
             sleep(2000);//remove
             return conn;
-            //return new Connection();// ?? 'Connection' is abstract; cannot be instantiated
         } else {
             if (!connectionPool.isEmpty()) {
                 sleep(2000);//remove
@@ -70,6 +59,18 @@ public class ConnectionPool {
         }
     }
 
+    private Connection connectionCreate(){
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(ConfigUtils.getProperty("url"), ConfigUtils.getProperty("username"), ConfigUtils.getProperty("password"));
+            LOGGER.info("Connection to Store DB succesfull!");
+        } catch(SQLException ex){
+            LOGGER.info("Connection failed...");
+            LOGGER.info(ex);
+        }
+        return conn;
+    }
+
     private void sleep(int timeout) {
         try {
             LOGGER.info("TimeOut");
@@ -78,31 +79,6 @@ public class ConnectionPool {
             e.printStackTrace();
         }
     }
-    private static void loadConfigs(){
-        ConfigUtils config = new ConfigUtils();
-        url = config.getProperty("url");
-        username = config.getProperty("username");
-        password = config.getProperty("password");
-    }
+
 
 }
-
-
-//    public synchronized Connection getConn() throws TimeoutException {
-//        if (createdConAmount < MAX_AMOUNT_OF_CON) {
-//            createdConAmount++;
-//            sleep(20);//remove
-//            return null; // ??
-//            //return new Connection();// ?? 'Connection' is abstract; cannot be instantiated
-//        } else {
-//            for (int i = 0; i < 13; i++) {
-//                if (i > 0) {
-//                    sleep(50);
-//                }
-//                if (!connectionPool.isEmpty()) {
-//                    return connectionPool.remove(0);
-//                }
-//            }
-//            throw new TimeoutException("There was no available conn throw 60 seconds");
-//        }
-//    }
