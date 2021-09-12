@@ -3,7 +3,6 @@ package com.solvd.laba.poJo;
 import java.util.Objects;
 
 public class Tasks {
-    private int id;
     private String task;
     private int projectID;
     private int emploeeID;
@@ -11,12 +10,6 @@ public class Tasks {
     private int taskStatusID;
     private int taskLevelID;
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getTask() {
         return task;
     }
@@ -55,21 +48,9 @@ public class Tasks {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Tasks tasks = (Tasks) o;
-        return id == tasks.id && projectID == tasks.projectID && emploeeID == tasks.emploeeID && emploeeProjectID == tasks.emploeeProjectID && taskStatusID == tasks.taskStatusID && taskLevelID == tasks.taskLevelID && task.equals(tasks.task);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, task, projectID, emploeeID, emploeeProjectID, taskStatusID, taskLevelID);
-    }
-    @Override
     public String toString() {
-        return "Tasks{" +
-                "id=" + id +
+        String id = super.toString();
+        return "Tasks{" + id +
                 ", task='" + task + '\'' +
                 ", projectID=" + projectID +
                 ", emploeeID=" + emploeeID +
@@ -78,4 +59,20 @@ public class Tasks {
                 ", taskLevelID=" + taskLevelID +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Tasks guest = (Tasks) obj;
+        boolean b = super.equals(obj) && (guest.task == this.task) && (guest.projectID == this.projectID) && (guest.emploeeID == this.emploeeID) && (guest.emploeeProjectID == this.emploeeProjectID) && (guest.taskStatusID == this.taskStatusID) && (guest.taskLevelID == this.taskLevelID);
+        return b;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), task, projectID, emploeeID, emploeeProjectID, taskStatusID, taskLevelID);
+    }
+
 }

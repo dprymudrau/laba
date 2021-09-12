@@ -3,17 +3,11 @@ package com.solvd.laba.poJo;
 import java.util.Objects;
 
 public class City {
-    private int id;
+
     private String city;
     private String codeNumber;
     private int adressID;
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getCity() {
         return city;
     }
@@ -35,8 +29,8 @@ public class City {
 
     @Override
     public String toString() {
-        return "City{" +
-                "id=" + id +
+        String id = super.toString();
+        return "City{" + id +
                 ", city='" + city + '\'' +
                 ", codeNumber='" + codeNumber + '\'' +
                 ", adressID=" + adressID +
@@ -44,15 +38,17 @@ public class City {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        City city1 = (City) o;
-        return id == city1.id && adressID == city1.adressID && city.equals(city1.city) && codeNumber.equals(city1.codeNumber);
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        City guest = (City) obj;
+        boolean b = super.equals(obj) && (guest.city == this.city)&& (guest.codeNumber == this.codeNumber)&& (guest.adressID == this.adressID);
+        return b;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, city, codeNumber, adressID);
+        return Objects.hash(super.hashCode(), city, codeNumber, adressID);
     }
 }

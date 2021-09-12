@@ -2,18 +2,12 @@ package com.solvd.laba.poJo;
 
 import java.util.Objects;
 
-public class Positione {
-    private int id;
+public class Positione extends BaseEntityID{
+
     private String positione;
     private int departmentNameID;
     private int departmentNameItCompaniesID;
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getPositione() {
         return positione;
     }
@@ -35,8 +29,8 @@ public class Positione {
 
     @Override
     public String toString() {
-        return "Positione{" +
-                "id=" + id +
+        String id = super.toString();
+        return "Positione{" + id +
                 ", positione='" + positione + '\'' +
                 ", departmentNameID=" + departmentNameID +
                 ", departmentNameItCompaniesID=" + departmentNameItCompaniesID +
@@ -44,15 +38,17 @@ public class Positione {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Positione positione1 = (Positione) o;
-        return id == positione1.id && departmentNameID == positione1.departmentNameID && departmentNameItCompaniesID == positione1.departmentNameItCompaniesID && positione.equals(positione1.positione);
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Positione guest = (Positione) obj;
+        boolean b = super.equals(obj) && (guest.positione == this.positione)&& (guest.departmentNameID == this.departmentNameID)&& (guest.departmentNameItCompaniesID == this.departmentNameItCompaniesID);
+        return b;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, positione, departmentNameID, departmentNameItCompaniesID);
+        return Objects.hash(super.hashCode(), positione, departmentNameID, departmentNameItCompaniesID);
     }
 }

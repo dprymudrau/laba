@@ -2,17 +2,10 @@ package com.solvd.laba.poJo;
 
 import java.util.Objects;
 
-public class TasksLevel {
+public class TasksLevel extends BaseEntityID{
 
-    private int id;
     private String tasksLevel;
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getTasksLevel() {
         return tasksLevel;
     }
@@ -23,23 +16,25 @@ public class TasksLevel {
 
     @Override
     public String toString() {
-        return "TasksLevel{" +
-                "id=" + id +
+        String id = super.toString();
+        return "TasksLevel{" + id +
                 ", tasksLevel='" + tasksLevel + '\'' +
                 '}';
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TasksLevel that = (TasksLevel) o;
-        return id == that.id && tasksLevel.equals(that.tasksLevel);
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        TasksLevel guest = (TasksLevel) obj;
+        boolean b = super.equals(obj) && (guest.tasksLevel == this.tasksLevel);
+        return b;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, tasksLevel);
+        return Objects.hash(super.hashCode(), tasksLevel);
     }
 
 

@@ -2,17 +2,10 @@ package com.solvd.laba.poJo;
 
 import java.util.Objects;
 
-public class Сustomer {
-    private int id;
+public class Сustomer extends BaseEntityID{
     private String custumer;
     private int adressID;
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getCustumer() {
         return custumer;
     }
@@ -28,24 +21,26 @@ public class Сustomer {
 
     @Override
     public String toString() {
-        return "Сustomer{" +
-                "id=" + id +
+        String id = super.toString();
+        return "Сustomer{" + id +
                 ", custumer='" + custumer + '\'' +
                 ", adressID=" + adressID +
                 '}';
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Сustomer сustomer = (Сustomer) o;
-        return id == сustomer.id && adressID == сustomer.adressID && custumer.equals(сustomer.custumer);
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Сustomer guest = (Сustomer) obj;
+        boolean b = super.equals(obj) && (guest.custumer == this.custumer)&& (guest.adressID == this.adressID);
+        return b;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, custumer, adressID);
+        return Objects.hash(super.hashCode(), custumer, adressID);
     }
 
 

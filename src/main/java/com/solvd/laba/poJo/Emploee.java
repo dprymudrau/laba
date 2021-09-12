@@ -2,20 +2,13 @@ package com.solvd.laba.poJo;
 
 import java.util.Objects;
 
-public class Emploee {
-    private int id;
+public class Emploee extends BaseEntityID{
     private String cCName;
     private String cCSurname;
     private String cCPatronymic;
     private int positioneID;
     private int projectID;
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getcCName() {
         return cCName;
     }
@@ -49,8 +42,8 @@ public class Emploee {
 
     @Override
     public String toString() {
-        return "Emploee{" +
-                "id=" + id +
+        String id = super.toString();
+        return "Emploee{" + id +
                 ", cCName='" + cCName + '\'' +
                 ", cCSurname='" + cCSurname + '\'' +
                 ", cCPatronymic='" + cCPatronymic + '\'' +
@@ -60,15 +53,17 @@ public class Emploee {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Emploee emploee = (Emploee) o;
-        return id == emploee.id && positioneID == emploee.positioneID && projectID == emploee.projectID && cCName.equals(emploee.cCName) && cCSurname.equals(emploee.cCSurname) && cCPatronymic.equals(emploee.cCPatronymic);
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Emploee guest = (Emploee) obj;
+        boolean b = super.equals(obj) && (guest.cCName == this.cCName)&& (guest.cCSurname == this.cCSurname)&& (guest.cCPatronymic == this.cCPatronymic)&& (guest.positioneID == this.positioneID)&& (guest.projectID == this.projectID);
+        return b;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cCName, cCSurname, cCPatronymic, positioneID, projectID);
+        return Objects.hash(super.hashCode(), cCName, cCSurname, cCPatronymic, positioneID, projectID);
     }
 }

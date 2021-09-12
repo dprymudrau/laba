@@ -2,8 +2,8 @@ package com.solvd.laba.poJo;
 
 import java.util.Objects;
 
-public class ITCompanyContact {
-    private int id;
+public class ITCompanyContact  extends BaseEntityID{
+
     private String iTCCName;
     private String iTCCSurname;
     private String iTCCPatronymic;
@@ -13,12 +13,6 @@ public class ITCompanyContact {
     private int custumerContactID;
     private int custumerContactphoneNumberID;
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getiTCCName() {
         return iTCCName;
     }
@@ -69,22 +63,10 @@ public class ITCompanyContact {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ITCompanyContact that = (ITCompanyContact) o;
-        return id == that.id && iTCompaniesID == that.iTCompaniesID && emailsID == that.emailsID && phoneNumbersID == that.phoneNumbersID && custumerContactID == that.custumerContactID && custumerContactphoneNumberID == that.custumerContactphoneNumberID && iTCCName.equals(that.iTCCName) && iTCCSurname.equals(that.iTCCSurname) && iTCCPatronymic.equals(that.iTCCPatronymic);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, iTCCName, iTCCSurname, iTCCPatronymic, iTCompaniesID, emailsID, phoneNumbersID, custumerContactID, custumerContactphoneNumberID);
-    }
-
-    @Override
     public String toString() {
-        return "ITCompanyContact{" +
-                "id=" + id +
+        String id = super.toString();
+
+        return "ITCompanyContact{" + id +
                 ", iTCCName='" + iTCCName + '\'' +
                 ", iTCCSurname='" + iTCCSurname + '\'' +
                 ", iTCCPatronymic='" + iTCCPatronymic + '\'' +
@@ -95,4 +77,21 @@ public class ITCompanyContact {
                 ", custumerContactphoneNumberID=" + custumerContactphoneNumberID +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        ITCompanyContact guest = (ITCompanyContact) obj;
+        boolean b = super.equals(obj) && (guest.iTCCName == this.iTCCName)&& (guest.iTCCSurname == this.iTCCSurname)&& (guest.iTCCPatronymic == this.iTCCPatronymic)&& (guest.iTCompaniesID == this.iTCompaniesID)&& (guest.emailsID == this.emailsID)&& (guest.phoneNumbersID == this.phoneNumbersID)&& (guest.custumerContactID == this.custumerContactID)&& (guest.custumerContactphoneNumberID == this.custumerContactphoneNumberID);
+        return b;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), iTCCName, iTCCSurname, iTCCPatronymic, iTCompaniesID, emailsID, phoneNumbersID, custumerContactID, custumerContactphoneNumberID);
+    }
+
+
 }

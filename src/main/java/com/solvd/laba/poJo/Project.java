@@ -2,18 +2,12 @@ package com.solvd.laba.poJo;
 
 import java.util.Objects;
 
-public class Project {
-    private int id;
+public class Project extends BaseEntityID{
+
     private String project;
     private int departmentNameId ;
     private int departmentNameIdItCompaniesID;
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getProject() {
         return project;
     }
@@ -35,23 +29,25 @@ public class Project {
 
     @Override
     public String toString() {
-        return "Project{" +
-                "id=" + id +
+        String id = super.toString();
+        return "Project{" + id +
                 ", project='" + project + '\'' +
                 ", departmentNameId=" + departmentNameId +
                 ", departmentNameIdItCompaniesID=" + departmentNameIdItCompaniesID +
                 '}';
     }
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Project project1 = (Project) o;
-        return id == project1.id && departmentNameId == project1.departmentNameId && departmentNameIdItCompaniesID == project1.departmentNameIdItCompaniesID && project.equals(project1.project);
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Project guest = (Project) obj;
+        boolean b = super.equals(obj) && (guest.project == this.project)&& (guest.departmentNameId == this.departmentNameId)&& (guest.departmentNameIdItCompaniesID == this.departmentNameIdItCompaniesID);
+        return b;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, project, departmentNameId, departmentNameIdItCompaniesID);
+        return Objects.hash(super.hashCode(), project, departmentNameId, departmentNameIdItCompaniesID);
     }
 }
