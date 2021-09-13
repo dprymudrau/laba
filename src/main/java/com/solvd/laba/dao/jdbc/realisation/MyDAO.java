@@ -1,8 +1,7 @@
 package com.solvd.laba.dao.jdbc.realisation;
 
-import com.solvd.laba.dao.abClasses.AbstractDAO;
+import com.solvd.laba.dao.AbstractDAO;
 import com.solvd.laba.dao.interfaces.IMyDAO;
-import com.solvd.laba.dao.pool.ConnectionPool;
 import com.solvd.laba.poJo.Emploee;
 
 import java.sql.Connection;

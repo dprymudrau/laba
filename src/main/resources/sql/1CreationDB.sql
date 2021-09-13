@@ -28,6 +28,8 @@ create table Сustumer (
     adressID INT,
 	PRIMARY KEY (id),
 	FOREIGN KEY (adressID) REFERENCES Adress(id)
+		ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM Сustomer;
 
@@ -41,9 +43,15 @@ create table СustumerСontact (
 	emailsID INT,    
 	phoneNumbersID INT, 
 	PRIMARY KEY (id),
-	FOREIGN KEY (custumerID) REFERENCES Сustomer(id),
-    FOREIGN KEY (emailsID) REFERENCES Emails(id),
+	FOREIGN KEY (custumerID) REFERENCES Сustomer(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+    FOREIGN KEY (emailsID) REFERENCES Emails(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
     FOREIGN KEY (phoneNumbersID) REFERENCES PhoneNumbers(id) 
+		ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM СustomerСontact ;
 
@@ -55,6 +63,8 @@ create table City(
 	adressID INT,
 	PRIMARY KEY (id),
 	FOREIGN KEY (adressID) REFERENCES Adress(id)
+	    ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM City;
 
@@ -88,7 +98,9 @@ create table ITCompanies(
 	companiName VARCHAR(45) NOT NULL,
     adressID INT,    
 	PRIMARY KEY (id),
-	FOREIGN KEY (adressID) REFERENCES Adress(id)    
+	FOREIGN KEY (adressID) REFERENCES Adress(id) 
+    	ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM ITCompanies;
 
@@ -104,11 +116,21 @@ create table ITCompanyContact(
 	custumerContactID INT,
     custumerContactphoneNumberID INT,    
 	PRIMARY KEY (id),
-	FOREIGN KEY (iTCompaniesID) REFERENCES ITCompanies(id),
-	FOREIGN KEY (emailsID) REFERENCES Emails(id),
-    FOREIGN KEY (phoneNumbersID) REFERENCES PhoneNumbers(id),
-    FOREIGN KEY (custumerContactID) REFERENCES СustumerСontact(id),
-    FOREIGN KEY (custumerContactphoneNumberID) REFERENCES PhoneNumbers(id)  
+	FOREIGN KEY (iTCompaniesID) REFERENCES ITCompanies(id)
+		ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+	FOREIGN KEY (emailsID) REFERENCES Emails(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+    FOREIGN KEY (phoneNumbersID) REFERENCES PhoneNumbers(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+    FOREIGN KEY (custumerContactID) REFERENCES СustumerСontact(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+    FOREIGN KEY (custumerContactphoneNumberID) REFERENCES PhoneNumbers(id) 
+    	ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM ITCompanyContact;
 
@@ -118,6 +140,8 @@ CREATE TABLE DepartmentName (
     itCompaniesId INT,
 	PRIMARY KEY (id),
     FOREIGN KEY (iTCompaniesID) REFERENCES ITCompanies(id)
+    	ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM DepartmentName ;
 
@@ -128,8 +152,12 @@ CREATE TABLE Project (
 	departmentNameId INT,
     departmentNameIdItCompaniesID INT,
 	PRIMARY KEY (id),
-	FOREIGN KEY (departmentNameId) REFERENCES DepartmentName(id),
-	FOREIGN KEY (departmentNameIdItCompaniesID) REFERENCES ITCompanies(id)  
+	FOREIGN KEY (departmentNameId) REFERENCES DepartmentName(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+	FOREIGN KEY (departmentNameIdItCompaniesID) REFERENCES ITCompanies(id) 
+    	ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM Orders;
 
@@ -143,11 +171,21 @@ create table Tasks(
     taskStatusID INT,
     taskLevelID INT,
 	PRIMARY KEY (id),
-	FOREIGN KEY (projectID) REFERENCES Project(id),
-	FOREIGN KEY (emploeeID) REFERENCES Emploee(id),
-	FOREIGN KEY (emploeeProjectID) REFERENCES Project(id),
-	FOREIGN KEY (taskStatusID) REFERENCES TasksStatus(id),
+	FOREIGN KEY (projectID) REFERENCES Project(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+	FOREIGN KEY (emploeeID) REFERENCES Emploee(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+	FOREIGN KEY (emploeeProjectID) REFERENCES Project(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
+	FOREIGN KEY (taskStatusID) REFERENCES TasksStatus(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
 	FOREIGN KEY (taskLevelID) REFERENCES TasksLevel(id)
+    	ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM Tasks;
 
@@ -174,8 +212,12 @@ create table Positione(
     departmentNameID INT,
     departmentNameItCompaniesID INT, 
 	PRIMARY KEY (id),
-	FOREIGN KEY (departmentNameID) REFERENCES DepartmentName(id),
+	FOREIGN KEY (departmentNameID) REFERENCES DepartmentName(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
 	FOREIGN KEY (departmentNameItCompaniesID) REFERENCES ITCompanys(id)
+    	ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM Positione;
 
@@ -188,8 +230,12 @@ create table Emploee (
     positioneID INT,
     projectID INT,
 	PRIMARY KEY (id),
-    FOREIGN KEY (positioneID) REFERENCES Positione(id),
+    FOREIGN KEY (positioneID) REFERENCES Positione(id)
+    	ON DELETE CASCADE
+		ON UPDATE NO ACTION,
 	FOREIGN KEY (projectID) REFERENCES Project(id)
+    	ON DELETE CASCADE
+        ON UPDATE NO ACTION
 );
 SELECT * FROM Emploee ;
 

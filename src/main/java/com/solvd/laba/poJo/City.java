@@ -2,7 +2,7 @@ package com.solvd.laba.poJo;
 
 import java.util.Objects;
 
-public class City {
+public class City extends BaseEntityID{
 
     private String city;
     private String codeNumber;

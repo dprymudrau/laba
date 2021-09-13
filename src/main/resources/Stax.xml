@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Citys>
+    <City id="6">
+        <city>City6</city>
+        <codeNumber>221</codeNumber>
+        <adressID>110</adressID>
+    </City>
+    <City id="7">
+        <city>City7</city>
+        <codeNumber>222</codeNumber>
+        <adressID>111</adressID>
+    </City>
+</Citys>
