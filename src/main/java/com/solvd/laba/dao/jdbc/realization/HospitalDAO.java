@@ -1,12 +1,18 @@
 package com.solvd.laba.dao.jdbc.realization;
 
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
-import com.solvd.laba.dao.connectionPool.MyConnectionPool;
-import com.solvd.laba.dao.interfaces.IHospitalDAO;
+import com.solvd.laba.dao.interfaces.IEntityDAO;
 import com.solvd.laba.pojo.Hospital;
 import com.solvd.laba.example.connections.Connection;
 
-public class HospitalDAO extends AbstractDAO implements IHospitalDAO {
+import java.sql.SQLException;
+
+public class HospitalDAO extends AbstractDAO implements IEntityDAO<Hospital> {
+
+    @Override
+    public void select(Hospital entity) {
+
+    }
 
     @Override
     public void save(Hospital entity) {
@@ -19,8 +25,13 @@ public class HospitalDAO extends AbstractDAO implements IHospitalDAO {
     }
 
     @Override
-    public Connection getConnection() {
-        return null;
+    public void update(Hospital entity) {
+
+    }
+
+    @Override
+    public Connection getConnection() throws SQLException {
+        return (Connection) connections.retrieve();
     }
 
     @Override

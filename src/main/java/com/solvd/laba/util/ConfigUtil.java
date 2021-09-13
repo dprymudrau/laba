@@ -13,7 +13,7 @@ public class ConfigUtil {
 
     static {
         try {
-            properties.load(new FileInputStream("app.properties"));
+            properties.load(new FileInputStream("src/main/resources/app.properties"));
         } catch (IOException e) {
             LOGGER.warn("Failed to load properties!", e);
         }

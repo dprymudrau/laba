@@ -1,9 +1,5 @@
 package com.solvd.laba.dao.connectionPool;
 
-import com.solvd.laba.dao.connectionPool.MyConnectionPool;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -11,9 +7,7 @@ public class MyThread implements Runnable {
     Thread thread;
     private MyConnectionPool pool;
 
-    private static final Logger LOGGER = LogManager.getLogger();
-
-    public MyThread(String threadName, MyConnectionPool connectionPool) throws SQLException {
+    public MyThread(String threadName, MyConnectionPool connectionPool) {
         thread = new Thread(this, threadName);
         pool = connectionPool;
         thread.start();
