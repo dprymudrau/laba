@@ -1,6 +1,7 @@
-package com.solvd.laba.threads;
+package com.solvd.laba.dao.pool;
 
-import com.solvd.laba.exeptions.ConnectionExeption;
+
+import com.solvd.laba.dao.pool.exeptions.ConnectionExeption;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,7 +11,7 @@ import java.util.Random;
 public class Threads {
 
     private static final Logger LOGGER = LogManager.getLogger(Threads.class);
-    private static final com.solvd.buildingCompany.threads.ConnectionPool connectionPool = com.solvd.buildingCompany.threads.ConnectionPool.getInstance();
+    private static final com.solvd.laba.dao.pool.ConnectionPool connectionPool = com.solvd.laba.dao.pool.ConnectionPool.getInstance();
 
     public static void main(String[] args) {
 

@@ -1,6 +1,7 @@
-package com.solvd.laba.threads;
+package com.solvd.laba.dao.pool;
 
-import com.solvd.buildingCompany.exeptions.ConnectionExeption;
+
+import com.solvd.laba.dao.pool.exeptions.ConnectionExeption;
 
 import java.util.ArrayList;
 
