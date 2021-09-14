@@ -36,6 +36,7 @@ private static final Logger LOGGER = LogManager.getLogger(Main.class);
             LOGGER.info(unmarshalDepartmentName.toString());
         }
 
+
         //->>>>> JACKSON Parser <<<<<-
 
         Emails emails = new Emails();
