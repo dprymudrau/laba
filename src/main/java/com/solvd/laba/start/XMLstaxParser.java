@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class XMLstaxParser {
     public static void main(String[] args) {
-        String fileName = "src/resouces/my.xml";
+        String fileName = "src/resources/my.xml";
         List<Student> studentsList = parseXMLfile(fileName);
         // печатаем в консоль информацию по каждому студенту
         for (Student student : studentsList) {
