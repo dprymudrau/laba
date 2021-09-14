@@ -12,11 +12,12 @@ import java.util.Vector;
 public class MyConnectionPool {
     private static volatile MyConnectionPool instance;
     private static final int MAX_POOL_SIZE = 5;
-    private final Vector<Connection> connectionPool = new Vector<>(MAX_POOL_SIZE);
+    private static volatile int connectionsCounter = 0;
+    private final Vector<Connection> connectionPool = new Vector<>();
 
     private static final Logger LOGGER = LogManager.getLogger(MyConnectionPool.class);
 
-    public MyConnectionPool() {
+    private MyConnectionPool() {
         try {
             Class.forName(ConfigUtil.getProperty("driver"));
             LOGGER.info("Create successfully connection to MySQL!");
@@ -47,19 +48,27 @@ public class MyConnectionPool {
         return connect;
     }
 
-    public synchronized Connection retrieve() throws SQLException {
-        Connection newConnect;
-        if (connectionPool.size() < MAX_POOL_SIZE) {
-            newConnect = getConnection();
-            connectionPool.add(newConnect);
-        } else {
-            newConnect = connectionPool.lastElement();
+    public synchronized Connection retrieve() throws SQLException, InterruptedException {
+        Connection newConnect = null;
+
+            if (connectionsCounter < MAX_POOL_SIZE) {
+                newConnect = getConnection();
+                connectionPool.add(newConnect);
+                ++connectionsCounter;
+            } else if(!connectionPool.isEmpty()) {
+                newConnect = connectionPool.lastElement();
+            } else {
+                do {
+                    Thread.sleep(200);
+                } while (connectionPool.isEmpty());
+            }
             connectionPool.removeElement(newConnect);
-        }
-        return newConnect;
+
+            return newConnect;
     }
 
     public synchronized void putBack(Connection connection) {
         connectionPool.add(connection);
+        LOGGER.info("Thread_№" + Thread.currentThread().getName() + " finished to use connection");
     }
 }

@@ -19,7 +19,7 @@ public class MyThread implements Runnable {
             Connection connection = pool.retrieve();
             //To DO сделать запрос к базе данных
             pool.putBack(connection);
-        } catch (SQLException throwables) {
+        } catch (SQLException | InterruptedException throwables) {
             throwables.printStackTrace();
         }
     }

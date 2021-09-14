@@ -12,7 +12,7 @@ public class MyThreadPool implements Executor {
     public MyThreadPool(int size) throws SQLException {
         String name = "Thread_№";
         for (int i = 0; i < size; i++) {
-            new MyThread(name + (i + 1), new MyConnectionPool());
+            new MyThread(name + (i + 1), MyConnectionPool.getInstance());
         }
     }
 
