@@ -1,6 +1,6 @@
 package com.solvd.laba.dao;
 
-import com.solvd.laba.dao.pool.ConnectionPool;
+import com.solvd.laba.utils.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +13,16 @@ public abstract class AbstractDAO {
     public Connection getConnection(){
         return ConnectionPool.getInstance().getConnection();
     }
+    public void returnConnection(Connection connection){
+        ConnectionPool.getInstance().releaseCon(connection);
+    }
 
+    public void closeResourse(AutoCloseable autoCloseable){
+        try {
+            autoCloseable.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
+    }
 }

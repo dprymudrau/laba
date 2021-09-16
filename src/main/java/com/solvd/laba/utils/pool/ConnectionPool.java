@@ -1,4 +1,4 @@
-package com.solvd.laba.dao.pool;
+package com.solvd.laba.utils.pool;
 
 import com.solvd.laba.utils.ConfigUtils;
 import org.apache.logging.log4j.LogManager;
@@ -38,11 +38,9 @@ public class ConnectionPool {
         if (createdConAmount < MAX_AMOUNT_OF_CON) {
             Connection conn = connectionCreate();
             createdConAmount++;
-            sleep(2000);//remove
             return conn;
         } else {
             if (!connectionPool.isEmpty()) {
-                sleep(2000);//remove
                 return connectionPool.remove(0);
             } else {
                 sleep(3000);

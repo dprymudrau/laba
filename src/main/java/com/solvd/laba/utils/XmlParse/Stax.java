@@ -1,6 +1,6 @@
 package com.solvd.laba.utils.XmlParse;
 
-import com.solvd.laba.poJo.City;
+import com.solvd.laba.binary.City;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;

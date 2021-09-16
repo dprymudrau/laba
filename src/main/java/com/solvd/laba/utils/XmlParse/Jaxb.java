@@ -1,6 +1,6 @@
 package com.solvd.laba.utils.XmlParse;
 
-import com.solvd.laba.poJo.DepartmentName;
+import com.solvd.laba.binary.DepartmentName;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;

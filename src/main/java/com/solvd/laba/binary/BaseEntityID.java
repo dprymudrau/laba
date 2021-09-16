@@ -1,4 +1,4 @@
-package com.solvd.laba.poJo;
+package com.solvd.laba.binary;
 
 public class BaseEntityID {
     private int id;

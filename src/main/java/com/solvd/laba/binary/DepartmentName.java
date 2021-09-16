@@ -1,7 +1,9 @@
-package com.solvd.laba.poJo;
+package com.solvd.laba.binary;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
+@XmlRootElement(name = "DepartmentName") //for Jaxb
 public class DepartmentName extends BaseEntityID{
 
     private String departmentName;
