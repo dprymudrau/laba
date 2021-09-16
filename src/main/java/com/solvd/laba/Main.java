@@ -1,7 +1,5 @@
 package com.solvd.laba;
 
-import com.solvd.laba.binary.Adress;
-import com.solvd.laba.binary.City;
 import com.solvd.laba.service.MyService;
 import com.solvd.laba.service.impl.jdbc.MyServiceImpl;//can mowe to impl.myBatis.MyServiceImpl
 import com.solvd.laba.utils.XmlParse.XmlParsers;
@@ -18,22 +16,14 @@ public class Main{
         //->>>>> BusinessLogic <<<<<-
         businessLogic();
 
-        Adress a = new Adress();
-        a.setId(1);
-        City b = new City();
-
-
-
-        MyService myService = new MyServiceImpl();
-        myService.doSmth();
-
-
         //->>>>> Xml Parser work <<<<<-
         XmlParsers.staxParser();
         XmlParsers.jaxbParser();
         XmlParsers.jacksonParser();
 
         //->>>>> MyBATIS  <<<<<-
+//        MyService myService = new MyServiceImpl();
+//        myService.doSmth();
 
     }
 }

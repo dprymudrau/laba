@@ -1,7 +1,7 @@
 package com.solvd.laba.dao.jdbc.impl;
 
 import com.solvd.laba.dao.AbstractDAO;
-import com.solvd.laba.dao.MyDAO;
+import com.solvd.laba.dao.interfases.EmploeeDAO;
 import com.solvd.laba.binary.Emploee;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,9 +11,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MyDAOImpl extends AbstractDAO implements MyDAO {
+public class EmploeeDAOImpl extends AbstractDAO implements EmploeeDAO {
 
-    private static final Logger LOGGER = LogManager.getLogger(MyDAOImpl.class);
+    private static final Logger LOGGER = LogManager.getLogger(EmploeeDAOImpl.class);
     private final static String MY_QUERY = "SELECT * FROM Emploee WHERE id = ?";
 
 
