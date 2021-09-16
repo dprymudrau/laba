@@ -1,11 +1,14 @@
 package com.solvd.laba.binary;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 
 @XmlRootElement(name = "DepartmentName") //for Jaxb
 public class DepartmentName extends BaseEntityID{
-
+    private static final Logger LOGGER = LogManager.getLogger(DepartmentName.class);
     private String departmentName;
     private int itCompaniesId;
 

@@ -8,21 +8,21 @@ import com.solvd.laba.utils.XmlParse.XmlParsers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static com.solvd.laba.utils.BusinessLogic.businessLogic;
+
 
 public class Main{
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
         //->>>>> BusinessLogic <<<<<-
-        BusinessLogic();
+        businessLogic();
+
         Adress a = new Adress();
         a.setId(1);
         City b = new City();
 
-//        for(int i=1; i < 10; i++){
-//            new Threads("Thread"+i).start();
-//
-//        }
+
 
         MyService myService = new MyServiceImpl();
         myService.doSmth();

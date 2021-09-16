@@ -1,9 +1,12 @@
 package com.solvd.laba.binary;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
 
 public class ITCompanies extends BaseEntityID{
-
+    private static final Logger LOGGER = LogManager.getLogger(ITCompanies.class);
     private String companiName;
     private int adressID;
 

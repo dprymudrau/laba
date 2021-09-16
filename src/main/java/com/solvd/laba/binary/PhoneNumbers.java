@@ -1,8 +1,12 @@
 package com.solvd.laba.binary;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
 
 public class PhoneNumbers extends BaseEntityID{
+    private static final Logger LOGGER = LogManager.getLogger(PhoneNumbers.class);
     private String phoneNumbers;
 
     public String getPhoneNumbers() {

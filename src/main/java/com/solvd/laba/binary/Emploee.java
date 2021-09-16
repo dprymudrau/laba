@@ -1,8 +1,12 @@
 package com.solvd.laba.binary;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
 
 public class Emploee extends BaseEntityID{
+    private static final Logger LOGGER = LogManager.getLogger(Emploee.class);
     private String cCName;
     private String cCSurname;
     private String cCPatronymic;

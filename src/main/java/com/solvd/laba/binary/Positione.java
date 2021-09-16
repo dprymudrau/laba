@@ -1,9 +1,12 @@
 package com.solvd.laba.binary;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Objects;
 
 public class Positione extends BaseEntityID{
-
+    private static final Logger LOGGER = LogManager.getLogger(Positione.class);
     private String positione;
     private int departmentNameID;
     private int departmentNameItCompaniesID;
