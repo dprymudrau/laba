@@ -24,6 +24,5 @@ public class Main{
         //->>>>> MyBATIS  <<<<<-
 //        MyService myService = new MyServiceImpl();
 //        myService.doSmth();
-
     }
 }
