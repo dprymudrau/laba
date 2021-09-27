@@ -1,5 +1,0 @@
-package com.solvd.laba.dao.interfaces;
-
-public interface IDeliveryDAO extends IEntityDAO <Delivery> {
-
-}
