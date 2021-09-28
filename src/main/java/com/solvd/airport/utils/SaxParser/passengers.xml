@@ -1,0 +1,12 @@
+<passengers>
+    <passenger id="10">
+        <name>Tom</name>
+        <phoneNumber>0938558305</phoneNumber>
+        <accountId>10</accountId>
+    </passenger>
+    <passenger id="11">
+        <name>Kris</name>
+        <phoneNumber>0938668305</phoneNumber>
+        <accountId>11</accountId>
+    </passenger>
+</passengers>
