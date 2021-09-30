@@ -60,6 +60,6 @@ public class Airport {
                 ", townId=" + townId +
                 ", airportName='" + airportName + '\'' +
                 ", passengersPerDay=" + passengersPerDay +
-                '}';
+                "}\n";
     }
 }

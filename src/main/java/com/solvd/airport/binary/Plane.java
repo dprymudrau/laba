@@ -3,9 +3,18 @@ package com.solvd.airport.binary;
 import java.util.Objects;
 
 public class Plane {
+    private long idPlane;
     private long companyId;
     private long modelId;
     private String serialNumber;
+
+    public long getIdPlane() {
+        return idPlane;
+    }
+
+    public void setIdPlane(long idPlane) {
+        this.idPlane = idPlane;
+    }
 
     public long getCompanyId() {
         return companyId;

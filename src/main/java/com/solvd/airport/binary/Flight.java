@@ -6,10 +6,10 @@ import java.util.Objects;
 public class Flight {
 
     private long idFlight;
-    private long pilotId;
     private long planeId;
-    private long flightWayId;
     private long categoryId;
+    private long fromAirportId;
+    private long whereAirportId;
     private int price;
     private Date flightDate;
 
@@ -21,14 +21,6 @@ public class Flight {
         this.idFlight = idFlight;
     }
 
-    public long getPilotId() {
-        return pilotId;
-    }
-
-    public void setPilotId(long pilotId) {
-        this.pilotId = pilotId;
-    }
-
     public long getPlaneId() {
         return planeId;
     }
@@ -37,20 +29,28 @@ public class Flight {
         this.planeId = planeId;
     }
 
-    public long getFlightWayId() {
-        return flightWayId;
-    }
-
-    public void setFlightWayId(long flightWayId) {
-        this.flightWayId = flightWayId;
-    }
-
     public long getCategoryId() {
         return categoryId;
     }
 
     public void setCategoryId(long categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public long getFromAirportId() {
+        return fromAirportId;
+    }
+
+    public void setFromAirportId(long fromAirportId) {
+        this.fromAirportId = fromAirportId;
+    }
+
+    public long getWhereAirportId() {
+        return whereAirportId;
+    }
+
+    public void setWhereAirportId(long whereAirportId) {
+        this.whereAirportId = whereAirportId;
     }
 
     public int getPrice() {
@@ -74,22 +74,22 @@ public class Flight {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Flight flight = (Flight) o;
-        return idFlight == flight.idFlight && pilotId == flight.pilotId && planeId == flight.planeId && flightWayId == flight.flightWayId && categoryId == flight.categoryId && price == flight.price && flightDate.equals(flight.flightDate);
+        return idFlight == flight.idFlight && planeId == flight.planeId && categoryId == flight.categoryId && fromAirportId == flight.fromAirportId && whereAirportId == flight.whereAirportId && price == flight.price && flightDate.equals(flight.flightDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idFlight, pilotId, planeId, flightWayId, categoryId, price, flightDate);
+        return Objects.hash(idFlight, planeId, categoryId, fromAirportId, whereAirportId, price, flightDate);
     }
 
     @Override
     public String toString() {
         return "Flight{" +
                 "idFlight=" + idFlight +
-                ", pilotId=" + pilotId +
                 ", planeId=" + planeId +
-                ", flightWayId=" + flightWayId +
                 ", categoryId=" + categoryId +
+                ", fromAirportId=" + fromAirportId +
+                ", whereAirportId=" + whereAirportId +
                 ", price=" + price +
                 ", flightDate=" + flightDate +
                 '}';
