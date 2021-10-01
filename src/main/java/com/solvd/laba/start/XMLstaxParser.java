@@ -1,5 +1,5 @@
-package com.solvd.laba.start;
-
+package  com.solvd.laba.start;
+import com.solvd.laba.pojo.Drivers;
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -11,62 +11,48 @@ import javax.xml.stream.events.XMLEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class XMLstaxParser {
-    public static void main(String[] args) {
-        String fileName = "src/resources/my.xml";
-        List<Student> studentsList = parseXMLfile(fileName);
-        // печатаем в консоль информацию по каждому студенту
-        for (Student student : studentsList) {
-            System.out.println(
-                    student.toString());
-        }
-    }
 
-    private static List<Student> parseXMLfile(String fileName) {
-        List<Student> studentsList = new ArrayList<>();
-        Student student = null;
+    public static List<Drivers> parseXmlByStax(String fileName) {
+        List<Drivers> driversList = new ArrayList<>();
+        Drivers drivers = null;
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
         try {
-            // инициализируем reader и скармливаем ему xml файл
             XMLEventReader reader = xmlInputFactory.createXMLEventReader(new FileInputStream(fileName));
-            // проходим по всем элементам xml файла
             while (reader.hasNext()) {
-                // получаем событие (элемент) и разбираем его по атрибутам
                 XMLEvent xmlEvent = reader.nextEvent();
                 if (xmlEvent.isStartElement()) {
                     StartElement startElement = xmlEvent.asStartElement();
-                    if (startElement.getName().getLocalPart().equals("Student")) {
-                        student = new Student();
-                        // Получаем атрибут id для каждого элемента Student
+                    if (startElement.getName().getLocalPart().equals("Drivers")) {
+                        drivers = new Drivers();
                         Attribute idAttr = startElement.getAttributeByName(new QName("id"));
                         if (idAttr != null) {
-                            student.setId(Integer.parseInt(idAttr.getValue()));
+                            drivers.setId(Integer.parseInt(idAttr.getValue()));
                         }
-                    } else if (startElement.getName().getLocalPart().equals("age")) {
-                        xmlEvent = reader.nextEvent();
-                        student.setAge(Integer.parseInt(xmlEvent.asCharacters().getData()));
                     } else if (startElement.getName().getLocalPart().equals("name")) {
                         xmlEvent = reader.nextEvent();
-                        student.setName(xmlEvent.asCharacters().getData());
-                    } else if (startElement.getName().getLocalPart().equals("language")) {
+                        drivers.setName(xmlEvent.asCharacters().getData());
+                    } else if (startElement.getName().getLocalPart().equals("Age")) {
                         xmlEvent = reader.nextEvent();
-                        student.setLanguage(xmlEvent.asCharacters().getData());
+                        drivers.setAge(Integer.parseInt(xmlEvent.asCharacters().getData()));
+                    } else if (startElement.getName().getLocalPart().equals("phoneNumber")) {
+                        xmlEvent = reader.nextEvent();
+                        drivers.setPhoneNumber(Integer.parseInt(xmlEvent.asCharacters().getData()));
                     }
                 }
-                // если цикл дошел до закрывающего элемента Student,
-                // то добавляем считанного из файла студента в список
+
                 if (xmlEvent.isEndElement()) {
                     EndElement endElement = xmlEvent.asEndElement();
-                    if (endElement.getName().getLocalPart().equals("Student")) {
-                        studentsList.add(student);
+                    if (endElement.getName().getLocalPart().equals("Drivers")) {
+                        driversList.add(drivers);
                     }
                 }
             }
-
         } catch (FileNotFoundException | XMLStreamException exc) {
             exc.printStackTrace();
         }
-        return studentsList;
+        return driversList;
     }
 }
