@@ -60,9 +60,9 @@ public class ConnectionPool {
         try {
             connection = DriverManager.getConnection(Config.getProperty("url"),
                     Config.getProperty("username"), Config.getProperty("password"));
-            LOGGER.info("Connection to Store DB succesfull!");
+            LOGGER.info("Connection is succesfull");
         } catch (SQLException ex) {
-            LOGGER.info("Connection failed...");
+            LOGGER.info("Connection failed");
             LOGGER.info(ex);
         }
         return connection;

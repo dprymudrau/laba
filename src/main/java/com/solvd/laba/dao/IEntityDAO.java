@@ -1,9 +1,11 @@
-package com.solvd.laba.dao.interfaces;
+package com.solvd.laba.dao;
+
+import com.solvd.laba.pojo.Passenger;
 
 public interface IEntityDAO<T>{
     public void save(T t);
     public void delete(T t);
     public void update(T t);
-    T getById(long id);
+    Passenger getById(long id);
 }
 

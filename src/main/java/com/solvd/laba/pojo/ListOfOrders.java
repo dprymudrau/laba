@@ -1,10 +1,10 @@
 package com.solvd.laba.pojo;
 
-public class City {
+public class ListOfOrders {
     private String Name;
     private int Id;
 
-    public City(String name, int id) {
+    public ListOfOrders(String name, int id) {
         Name = name;
         Id = id;
     }

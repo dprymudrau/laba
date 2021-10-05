@@ -1,4 +1,4 @@
-package com.solvd.laba.dao.abstractClasses;
+package com.solvd.laba.dao;
 
 import com.solvd.laba.utils.ConnectionPool;
 import org.apache.logging.log4j.LogManager;

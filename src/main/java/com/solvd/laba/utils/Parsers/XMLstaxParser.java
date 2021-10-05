@@ -1,5 +1,8 @@
-package  com.solvd.laba.start;
+package com.solvd.laba.utils.Parsers;
 import com.solvd.laba.pojo.Drivers;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -14,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class XMLstaxParser {
-
+    private static final Logger LOGGER = LogManager.getLogger(XMLstaxParser.class);
     public static List<Drivers> parseXmlByStax(String fileName) {
         List<Drivers> driversList = new ArrayList<>();
         Drivers drivers = null;
@@ -54,5 +57,12 @@ public class XMLstaxParser {
             exc.printStackTrace();
         }
         return driversList;
+    }
+    public static void staxParser() {
+        String STAXFileName = "src/main/resources/myStax.xml";
+        List<Drivers> cityList = XMLstaxParser.parseXmlByStax(STAXFileName);
+        for (Drivers city : cityList) {
+            LOGGER.info(city.toString());
+        }
     }
 }

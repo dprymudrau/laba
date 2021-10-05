@@ -1,10 +1,10 @@
 package com.solvd.laba.pojo;
 
-public class City {
+public class OrderType {
     private String Name;
     private int Id;
 
-    public City(String name, int id) {
+    public OrderType(String name, int id) {
         Name = name;
         Id = id;
     }
