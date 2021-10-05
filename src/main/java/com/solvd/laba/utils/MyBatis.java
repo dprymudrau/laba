@@ -1,24 +1,26 @@
 package com.solvd.laba.utils;
 
-import com.solvd.laba.binary.Emploee;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.Reader;
 
 public class MyBatis {
-//    SqlSessionFactory sqlSessionFactory;
-//    EmploeeMapper emploeeMapperMapper;
-//    Reader reader = null;
-//        try
-//    {
-//        reader = Resources.getResourceAsReader("mybatis-config.xml");
-//        sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-//        emploeeMapper = sqlSessionFactory.openSession().getMapper(EmploeeMapper.class);
-//        Emploee emploeePos = emploeeMapper.getpositioneID();
-//        Emploee emploee = emploeeMapper.getById(101);
-//    } catch(
-//    IOException e)
-//    {
-//        e.printStackTrace();
-//    }
+    private static SqlSessionFactory factory;
+    private final static MyBatis myBatisFactory = new MyBatis();
+
+    private MyBatis(){
+        try{
+            Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
+            factory = new SqlSessionFactoryBuilder().build(reader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static SqlSessionFactory getSessionFactory(){
+        return factory;
+    }
 }

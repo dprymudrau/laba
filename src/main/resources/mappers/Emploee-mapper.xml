@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.scheduleWithGA.dao.interfaces.EmploeeDAO">
+    <select id="getById" resultMap="EmploeeResultMap" parameterType="int">
+        SELECT  a.EmploeeId as Emploee_Id,
+        a.cCName as cC_Name,
+        a.cCSurname as cC_Surname,
+        a.cCPatronymic as cC_Patronymic,
+        a.positioneID as positione_ID,
+        a.projectID as project_ID,
+        FROM Project a
+        WHERE a.projectId=#{id};
+    </select>
+    <resultMap id="EmploeeResultMap" type="com.solvd.deliveryProject.binary.Emploee">
+        <id column="Emploee_Id" property="EmploeeId"/>
+        <result column="cC_Name" property="cCName"/>
+        <result column="cC_Surname" property="cCSurname"/>
+        <result column="cC_Patronymic" property="cCPatronymic"/>
+        <result column="positione_ID" property="positioneID"/>
+        <result column="project_ID" property="projectID"/>
+    </resultMap>
+</mapper>

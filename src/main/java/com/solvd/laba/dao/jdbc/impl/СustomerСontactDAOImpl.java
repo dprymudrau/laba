@@ -15,6 +15,7 @@ import java.sql.SQLException;
 public class СustomerСontactDAOImpl extends AbstractDAO implements СustomerСontactDAO {
     private static final Logger LOGGER = LogManager.getLogger(СustomerСontactDAOImpl.class);
     private final static String MY_QUERY = "SELECT * FROM СustomerСontact WHERE id = ?";
+    private int emailsID;
 
     @Override
     public void save(СustomerСontact сustomerСontact) {
@@ -48,5 +49,9 @@ public class СustomerСontactDAOImpl extends AbstractDAO implements СustomerС
             closeResourse(resultSet);
             returnConnection(connection);
         }
+    }
+
+    public void setEmailsID(int emailsID) {
+        this.emailsID = emailsID;
     }
 }

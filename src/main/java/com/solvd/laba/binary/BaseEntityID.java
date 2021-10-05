@@ -1,6 +1,6 @@
 package com.solvd.laba.binary;
 
-public class BaseEntityID {
+public abstract class BaseEntityID {
     private int id;
     public void setId(int id) {
         this.id = id;

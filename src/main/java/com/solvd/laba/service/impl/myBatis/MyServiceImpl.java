@@ -6,7 +6,8 @@ public class MyServiceImpl implements MyService {
 
     @Override
     public void doSmth() {
-        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
+        //some code;
+        //throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
     }
 
     @Override

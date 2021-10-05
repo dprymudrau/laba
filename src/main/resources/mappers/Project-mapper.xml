@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.laba.dao.interfaces.ProjectDAO">
+    <select id="getById" resultMap="projectResultMap" parameterType="int">
+        SELECT  a.projectId as project_Id,
+        a.departmentNameId as department_NameId,
+        a.departmentNameIdItCompaniesID as departmentName_IdItCompanies_ID,
+        FROM Project a
+        WHERE a.projectId=#{id};
+    </select>
+    <resultMap id="projectResultMap" type="com.solvd.deliveryProject.binary.Project">
+        <id column="project_Id" property="projectId"/>
+        <result column="department_NameId" property="departmentNameId"/>
+        <result column="departmentName_IdItCompanies_ID" property="departmentNameIdItCompaniesID"/>
+    </resultMap>
+</mapper>

@@ -16,6 +16,8 @@ public class ITCompanyContactDAOImpl extends AbstractDAO implements ITCompanyCon
     private static final Logger LOGGER = LogManager.getLogger(ITCompanyContactDAOImpl.class);
 
     private final static String MY_QUERY = "SELECT * FROM ITCompanyContact WHERE id = ?";
+    private int custumerContactID;
+    private int emailsID;
 
     @Override
     public void save(ITCompanyContact itCompanyContact) {
@@ -49,5 +51,13 @@ public class ITCompanyContactDAOImpl extends AbstractDAO implements ITCompanyCon
             closeResourse(resultSet);
             returnConnection(connection);
         }
+    }
+
+    public void setCustumerContactID(int custumerContactID) {
+        this.custumerContactID = custumerContactID;
+    }
+
+    public void setEmailsID(int emailsID) {
+        this.emailsID = emailsID;
     }
 }

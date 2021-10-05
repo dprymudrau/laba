@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.scheduleWithGA.dao.interfaces.CustumerContactDAO">
+    <select id="getById" resultMap="CustumerContactResultMap" parameterType="int">
+        SELECT  a.CustumerContactId as CustumerContact_Id,
+        a.cCName as cC_Name,
+        a.cCSurname as cC_Surname,
+        a.cCPatronymic as cC_Patronymic,
+        a.custumerID as custumer_ID,
+        a.emailsID as emails_ID,
+        a.phoneNumbersID as phone_Numbers_ID,
+        FROM Project a
+        WHERE a.projectId=#{id};
+    </select>
+    <resultMap id="EmploeeResultMap" type="com.solvd.deliveryProject.binary.Emploee">
+        <id column="CustumerContact_Id" property="CustumerContactId"/>
+        <result column="cC_Name" property="cCName"/>
+        <result column="cC_Surname" property="cCSurname"/>
+        <result column="cC_Patronymic" property="cCPatronymic"/>
+        <result column="custumer_ID" property="custumerID"/>
+        <result column="emails_ID" property="emailsID"/>
+        <result column="emails_ID" property="emailsID"/>
+    </resultMap>
+</mapper>

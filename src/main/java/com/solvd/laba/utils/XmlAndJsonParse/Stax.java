@@ -1,4 +1,4 @@
-package com.solvd.laba.utils.XmlParse;
+package com.solvd.laba.utils.XmlAndJsonParse;
 
 import com.solvd.laba.binary.City;
 

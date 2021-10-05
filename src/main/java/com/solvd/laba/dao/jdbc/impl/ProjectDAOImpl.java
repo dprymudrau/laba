@@ -15,6 +15,8 @@ import java.sql.SQLException;
 public class ProjectDAOImpl extends AbstractDAO implements ProjectDAO {
     private static final Logger LOGGER = LogManager.getLogger(ProjectDAOImpl.class);
     private final static String MY_QUERY = "SELECT * FROM Project WHERE id = ?";
+    private String project;
+    private String departmentNameId;
 
     @Override
     public void save(Project project) {
@@ -48,5 +50,13 @@ public class ProjectDAOImpl extends AbstractDAO implements ProjectDAO {
             closeResourse(resultSet);
             returnConnection(connection);
         }
+    }
+
+    public void setProject(String project) {
+        this.project = project;
+    }
+
+    public void setDepartmentNameId(String departmentNameId) {
+        this.departmentNameId = departmentNameId;
     }
 }

@@ -1,4 +1,4 @@
-package com.solvd.laba.utils.XmlParse;
+package com.solvd.laba.utils.XmlAndJsonParse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.solvd.laba.Main;
@@ -12,10 +12,10 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.List;
 
-public class XmlParsers {
+public class XmlAndJsonParsers {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public XmlParsers() {
+    public XmlAndJsonParsers() {
     }
 
     public static void staxParser() {     //->>>>> STAX Parser <<<<<-

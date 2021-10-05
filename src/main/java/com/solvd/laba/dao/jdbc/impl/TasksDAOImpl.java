@@ -15,6 +15,7 @@ import java.sql.SQLException;
 public class TasksDAOImpl extends AbstractDAO implements TasksDAO {
     private static final Logger LOGGER = LogManager.getLogger(TasksDAOImpl.class);
     private final static String MY_QUERY = "SELECT * FROM Tasks WHERE id = ?";
+    private String task;
 
     @Override
     public void save(Tasks tasks) {
@@ -48,5 +49,9 @@ public class TasksDAOImpl extends AbstractDAO implements TasksDAO {
             closeResourse(resultSet);
             returnConnection(connection);
         }
+    }
+
+    public void setTask(String task) {
+        this.task = task;
     }
 }
