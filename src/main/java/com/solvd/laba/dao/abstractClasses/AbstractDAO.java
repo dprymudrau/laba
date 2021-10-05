@@ -1,14 +1,31 @@
 package com.solvd.laba.dao.abstractClasses;
 
-import com.solvd.laba.dao.connectionPool.MyConnectionPool;
+import com.solvd.laba.util.connectionPool.MyConnectionPool;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.concurrent.TimeoutException;
 
-public abstract class AbstractDAO {
-    protected MyConnectionPool connections = MyConnectionPool.getInstance();
+public abstract class AbstractDAO <T> {
+    private MyConnectionPool pool = MyConnectionPool.getInstance();
 
-    public abstract Connection getConnection() throws SQLException, InterruptedException;
+    private static final Logger LOGGER = LogManager.getLogger(AbstractDAO.class);
 
-    public abstract void releaseConnection(Connection connection);
+    protected Connection getConnection() {
+        try {
+            return pool.retrieve();
+        } catch (InterruptedException | SQLException | TimeoutException e) {
+            LOGGER.error(e);
+            LOGGER.error("Null is returned!");
+        }
+        return null;
+    }
+
+    protected void releaseConnection(Connection connection) {
+        pool.putBack(connection);
+    }
+
+    protected abstract void executeQuery(String query);
 }

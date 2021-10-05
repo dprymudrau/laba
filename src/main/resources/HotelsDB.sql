@@ -11,7 +11,7 @@ CREATE TABLE Hospitals(
 idHospital int(2) not null auto_increment,
 hospitalName varchar(80) not null,
 hospitalAddress varchar(50) not null,
-idCarFleet int(2),
+idCarFleet int(2) not null,
 PRIMARY KEY(idHospital),
 FOREIGN KEY(idCarFleet) REFERENCES CarFleets(idCarFleet)
 );
@@ -79,7 +79,7 @@ nameOfCategory varchar(30) not null,
 PRIMARY KEY(idWorkPosition)
 );
 
-CREATE TABLE WorkExpirience(
+CREATE TABLE WorkExperience(
 idWorkExp int not null auto_increment,
 totalWorkExp varchar(20) not null,
 salaryIndex double not null,
@@ -113,7 +113,7 @@ idWorkExp int not null,
 PRIMARY KEY(idDriver),
 FOREIGN KEY(idWorkPosition) REFERENCES WorkPositions(idWorkPosition),
 FOREIGN KEY(idNumberOfContract) REFERENCES WorkerContracts(idNumberOfContract),
-FOREIGN KEY(idWorkExp) REFERENCES WorkExpirience(idWorkExp)
+FOREIGN KEY(idWorkExp) REFERENCES WorkExperience(idWorkExp)
 );
 
 CREATE TABLE DriverLicenses(
@@ -141,7 +141,7 @@ PRIMARY KEY(idDoctor),
 FOREIGN KEY(idWorkPosition) REFERENCES WorkPositions(idWorkPosition),
 FOREIGN KEY(idSpecialty) REFERENCES Specialities(idSpeciality),
 FOREIGN KEY(idNumberOfContract) REFERENCES WorkerContracts(idNumberOfContract),
-FOREIGN KEY(idWorkExp) REFERENCES WorkExpirience(idWorkExp)
+FOREIGN KEY(idWorkExp) REFERENCES WorkExperience(idWorkExp)
 );
 
 CREATE TABLE Nurses(
@@ -155,5 +155,5 @@ idWorkExp int not null,
 PRIMARY KEY(idNurse),
 FOREIGN KEY(idWorkPosition) REFERENCES WorkPositions(idWorkPosition),
 FOREIGN KEY(idNumberOfContract) REFERENCES WorkerContracts(idNumberOfContract),
-FOREIGN KEY(idWorkExp) REFERENCES WorkExpirience(idWorkExp)
+FOREIGN KEY(idWorkExp) REFERENCES WorkExperience(idWorkExp)
 );

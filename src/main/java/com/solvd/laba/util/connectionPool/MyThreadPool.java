@@ -1,4 +1,4 @@
-package com.solvd.laba.dao.connectionPool;
+package com.solvd.laba.util.connectionPool;
 
 import java.sql.SQLException;
 import java.util.Queue;

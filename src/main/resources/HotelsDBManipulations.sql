@@ -25,7 +25,7 @@ ORDER BY rc.idRegistrationCard;
 SELECT * FROM WorkShifts;
 SELECT * FROM WorkerContracts;
 SELECT * FROM WorkPositions;
-SELECT * FROM WorkExpirience ORDER BY salaryIndex ASC;
+SELECT * FROM WorkExperience ORDER BY salaryIndex ASC;
 SELECT * FROM Specialities;
 SELECT * FROM Car;
 SELECT * FROM DriverLicenses;
@@ -42,7 +42,7 @@ LEFT JOIN Nurses n ON c.idNumberOfContract=n.idNumberOfContract
 LEFT JOIN Drivers dr ON c.idNumberOfContract=dr.idNumberOfContract;
 
 SELECT doc.doctorName, doc.doctorSurname, n.nurseName, n.nurseSurname, dr.driverName, dr.driverSurname, ex.idWorkExp
-FROM WorkExpirience ex
+FROM WorkExperience ex
 LEFT JOIN Doctors doc ON ex.idWorkExp=doc.idWorkExp
 LEFT JOIN Nurses n ON ex.idWorkExp=n.idWorkExp
 LEFT JOIN Drivers dr ON ex.idWorkExp=dr.idWorkExp
@@ -61,3 +61,11 @@ LEFT JOIN WorkerContracts wc ON h.idHospital=wc.idHospital;
 SELECT idHospital, hospitalName FROM Hospitals;
 DELETE FROM Hospitals
 WHERE idHospital = 7;
+
+SELECT * FROM Visitors WHERE idVisitor = 1;
+SELECT * FROM Cars WHERE idCarFleet = 3;
+SELECT idCar, carBrandName, carModel, carRegNumber, idCarFleet FROM Cars WHERE idCar = 2;
+SELECT * FROM Cars;
+SELECT idCar FROM Cars WHERE carBrandName = 'BMW';
+DELETE FROM Cars WHERE idCar IN (SELECT idCar FROM Cars WHERE carBrandName = 'BMW');
+SELECT * FROM Cars;

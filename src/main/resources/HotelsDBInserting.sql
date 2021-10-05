@@ -4,14 +4,29 @@ INSERT INTO CarFleets(capacityByCars)
 VALUES
 (8),
 (42),
-(3);
+(3),
+(0);
 
 INSERT INTO Hospitals(hospitalName, hospitalAddress, idCarFleet)
 VALUES
 ('Municipal Gynecological Hospital', 'Minsk, Sennitskaya 53', 1),
 ('Ambulance Hospital', 'Minsk, Kizhevatova 58', 2),
 ('Center of Surgery and Transplantology', 'Semashko 8', 3),
-('Municipal Clinical Hospital named Savchenko', 'Minsk, Roza Luksenburg 110', 1);
+('Municipal Clinical Hospital named Savchenko', 'Minsk, Roza Luksenburg 110', 1),
+('Municipal Clinical Psychiatric Dispensary', 'Minsk, Behtereva 5', 3),
+('Municipal Clinical Narcological Dispensary', 'Minsk, Gastely 16', 3),
+('LODE', 'Nezavisimosti 58', 4);
+
+INSERT INTO WorkShifts(nameOfShift, clockIn, clockOut, idHospital)
+VALUES
+('Morning shift', '06:00:00', '14:00:00', 2),
+('Day shift', '14:00:00', '22:00:00', 2),
+('Night shift', '22:00:00', '06:00:00', 2),
+('Early Day shift', '08:30:00', '13:00:00', 4),
+('Normal Day shift', '13:00:00', '19:00:00', 4),
+('12 Hours Day shift', '08:00:00', '20:00:00', 5),
+('Morning shift', '09:00:00', '14:00:00', 6),
+('Day shift', '12:30:00', '18:30:00', 6);
 
 INSERT INTO Visitors(visitorName, visitorSurname, visitorDayOfBirth, visitorAddress, diagnosis, visitDate, dischargeDate)
 VALUES
@@ -36,32 +51,12 @@ VALUES
 ('Adult'),
 ('Aged');
 
-INSERT INTO CarFleets(capacityByCars)
-VALUES (0);
-
-INSERT INTO Hospitals(hospitalName, hospitalAddress, idCarFleet)
-VALUES
-('Municipal Clinical Psychiatric Dispensary', 'Minsk, Behtereva 5', 3),
-('Municipal Clinical Narcological Dispensary', 'Minsk, Gastely 16', 3),
-('LODE', 'Nezavisimosti 58', 4);
-
 INSERT INTO RegistrationCards(idHospital, idVisitor, idVisitorAgeGroupCategory, idVisitorCategory)
 VALUES
 (5, 3, 4, 5),
 (4, 2, 3, 2),
 (2, 4, 2, 2),
 (6, 1, 3, 3);
-
-INSERT INTO WorkShifts(nameOfShift, clockIn, clockOut, idHospital)
-VALUES
-('Morning shift', '06:00:00', '14:00:00', 2),
-('Day shift', '14:00:00', '22:00:00', 2),
-('Night shift', '22:00:00', '06:00:00', 2),
-('Early Day shift', '08:30:00', '13:00:00', 4),
-('Normal Day shift', '13:00:00', '19:00:00', 4),
-('12 Hours Day shift', '08:00:00', '20:00:00', 5),
-('Morning shift', '09:00:00', '14:00:00', 6),
-('Day shift', '12:30:00', '18:30:00', 6);
 
 INSERT INTO WorkerContracts(idNumberOfContract, idHospital, dateOfSigning)
 VALUES
@@ -82,7 +77,7 @@ VALUES
 ('Head Nurse', 'Middle medical personnel'),
 ('Doctor', 'High medical personnel');
 
-INSERT INTO WorkExpirience(totalWorkExp, salaryIndex)
+INSERT INTO WorkExperience(totalWorkExp, salaryIndex)
 VALUES
 ('Less then 1 year', '1.0'),
 ('1 year till 3 years', 1.2),

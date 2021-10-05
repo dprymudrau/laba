@@ -1,4 +1,4 @@
-package com.solvd.laba.dao.connectionPool;
+package com.solvd.laba.util.connectionPool;
 
 import com.solvd.laba.util.ConfigUtil;
 import org.apache.logging.log4j.LogManager;
@@ -7,13 +7,15 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 public class MyConnectionPool {
     private static volatile MyConnectionPool instance;
     private static final int MAX_POOL_SIZE = 5;
     private static volatile int connectionsCounter = 0;
-    private final Vector<Connection> connectionPool = new Vector<>();
+    private final List<Connection> connectionPool = new ArrayList<>();
 
     private static final Logger LOGGER = LogManager.getLogger(MyConnectionPool.class);
 
@@ -48,27 +50,24 @@ public class MyConnectionPool {
         return connect;
     }
 
-    public synchronized Connection retrieve() throws SQLException, InterruptedException {
-        Connection newConnect = null;
+    public synchronized Connection retrieve() throws SQLException, InterruptedException, TimeoutException {
 
             if (connectionsCounter < MAX_POOL_SIZE) {
-                newConnect = getConnection();
-                connectionPool.add(newConnect);
                 ++connectionsCounter;
-            } else if(!connectionPool.isEmpty()) {
-                newConnect = connectionPool.lastElement();
+                return getConnection();
             } else {
-                do {
-                    Thread.sleep(200);
-                } while (connectionPool.isEmpty());
+                for (int i = 0; i < 5; i++){
+                    if (!connectionPool.isEmpty()) {
+                        return connectionPool.remove(0);
+                    }
+                    Thread.sleep(2000);
+                }
+                throw new TimeoutException();
             }
-            connectionPool.removeElement(newConnect);
-
-            return newConnect;
     }
 
     public synchronized void putBack(Connection connection) {
         connectionPool.add(connection);
-        LOGGER.info("Thread_№" + Thread.currentThread().getName() + " finished to use connection");
+        LOGGER.debug("Thread_№" + Thread.currentThread().getName() + " finished to use connection");
     }
 }

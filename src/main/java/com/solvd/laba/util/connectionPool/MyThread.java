@@ -1,7 +1,8 @@
-package com.solvd.laba.dao.connectionPool;
+package com.solvd.laba.util.connectionPool;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.concurrent.TimeoutException;
 
 public class MyThread implements Runnable {
     Thread thread;
@@ -17,9 +18,8 @@ public class MyThread implements Runnable {
     public void run() {
         try {
             Connection connection = pool.retrieve();
-            //To DO сделать запрос к базе данных
             pool.putBack(connection);
-        } catch (SQLException | InterruptedException throwables) {
+        } catch (SQLException | InterruptedException | TimeoutException throwables) {
             throwables.printStackTrace();
         }
     }
