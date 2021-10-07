@@ -1,11 +1,29 @@
 package com.solvd.airport.binary;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
+@JsonIgnoreProperties(value = { "townId" })
 
 public class Airport {
+    @JsonProperty("id")
     private long idAirport;
     private long townId;
+    @JsonProperty("name")
     private String airportName;
+
+    @Override
+    public String toString() {
+        return "Airport{" +
+                "idAirport=" + idAirport +
+                ", townId=" + townId +
+                ", airportName='" + airportName + '\'' +
+                ", passengersPerDay=" + passengersPerDay +
+                '}';
+    }
+
+    @JsonProperty("ppd")
     private int passengersPerDay;
 
     public long getIdAirport() {
@@ -53,13 +71,4 @@ public class Airport {
         return Objects.hash(idAirport, townId, airportName, passengersPerDay);
     }
 
-    @Override
-    public String toString() {
-        return "Airport{" +
-                "idAirport=" + idAirport +
-                ", townId=" + townId +
-                ", airportName='" + airportName + '\'' +
-                ", passengersPerDay=" + passengersPerDay +
-                "}\n";
-    }
 }

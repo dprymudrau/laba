@@ -1,12 +1,28 @@
 package com.solvd.airport.binary;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
 import java.util.Objects;
+@JsonIgnoreProperties(value = { "countryId" })
 
 public class Town {
-
+    @JsonProperty("id")
     private long idTown;
     private long countryId;
+    @JsonProperty("name")
     private String townName;
+    @JsonProperty("airports")
+    private ArrayList<Airport> airports;
+
+    public ArrayList<Airport> getAirports() {
+        return airports;
+    }
+
+    public void setAirports(ArrayList<Airport> airports) {
+        this.airports = airports;
+    }
 
     public long getIdTown() {
         return idTown;
@@ -51,6 +67,7 @@ public class Town {
                 "idTown=" + idTown +
                 ", countryId=" + countryId +
                 ", townName='" + townName + '\'' +
+                ", airports=" + airports +
                 '}';
     }
 }

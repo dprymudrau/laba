@@ -1,13 +1,17 @@
 package com.solvd.airport.binary;
 
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
+@XmlRootElement(name = "passenger")
+@XmlType(propOrder = {"idPassenger", "passengerName"})
 public class Passenger {
 
     private long idPassenger;
     private String passengerName;
     private String phoneNumber;
 
+    @XmlAttribute(name="id")
     public long getIdPassenger() {
         return idPassenger;
     }
@@ -16,6 +20,7 @@ public class Passenger {
         idPassenger = id;
     }
 
+    @XmlElement(name="name")
     public String getPassengerName() {
         return passengerName;
     }
@@ -24,6 +29,7 @@ public class Passenger {
         passengerName = name;
     }
 
+    @XmlTransient
     public String getPhoneNumber() {
         return phoneNumber;
     }

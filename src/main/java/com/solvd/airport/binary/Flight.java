@@ -77,7 +77,7 @@ public class Flight {
         return idFlight == flight.idFlight && planeId == flight.planeId && categoryId == flight.categoryId && fromAirportId == flight.fromAirportId && whereAirportId == flight.whereAirportId && price == flight.price && flightDate.equals(flight.flightDate);
     }
 
-    @Override
+    @Override       
     public int hashCode() {
         return Objects.hash(idFlight, planeId, categoryId, fromAirportId, whereAirportId, price, flightDate);
     }

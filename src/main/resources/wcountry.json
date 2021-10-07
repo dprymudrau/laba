@@ -1,0 +1,25 @@
+[ {
+  "id" : 1,
+  "name" : "Ukraine",
+  "towns" : [ {
+    "id" : 1,
+    "name" : "Kyiv",
+    "airports" : [ {
+      "id" : 1,
+      "name" : "Boryspil",
+      "ppd" : 100
+    }, {
+      "id" : 2,
+      "name" : "Zhulyany",
+      "ppd" : 50
+    } ]
+  }, {
+    "id" : 2,
+    "name" : "Vinnytsya",
+    "airports" : [ {
+      "id" : 3,
+      "name" : "Airport of Vinytsya",
+      "ppd" : 25
+    } ]
+  } ]
+} ]
