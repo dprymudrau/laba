@@ -8,7 +8,7 @@
         FROM Drivers d
         WHERE o.driverId = #{id};
     </select>
-    <resultMap id="DriversResultMap" type="com.solvd.laba.pojo.Drivers">
+    <resultMap id="DriversResultMap" type="com.solvd.laba.binary.Drivers">
         <id column="drivers_driverId" property="driverId"/>
         <result column="drivers_driverName" property="driverName"/>
 

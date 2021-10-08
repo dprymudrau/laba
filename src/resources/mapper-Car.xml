@@ -9,7 +9,7 @@
         FROM Car c
         WHERE c.carId = #{id};
     </select>
-    <resultMap id="CarsResultMap" type="com.solvd.laba.pojo.Car">
+    <resultMap id="CarsResultMap" type="com.solvd.laba.binary.Car">
         <id column="car_carId" property="carId"/>
         <result column="car_carName" property="carName"/>
         <result column="car_numberOfTheCar" property="numberOfTheCar"/>

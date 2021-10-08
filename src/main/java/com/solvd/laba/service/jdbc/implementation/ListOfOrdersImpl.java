@@ -1,12 +1,10 @@
 package com.solvd.laba.service;
 
 import com.solvd.laba.dao.interfaces.IListOfOrders;
-import com.solvd.laba.dao.interfaces.IPassenger;
-import com.solvd.laba.pojo.ListOfOrders;
-import com.solvd.laba.pojo.Passenger;
+import com.solvd.laba.binary.ListOfOrders;
 import com.solvd.laba.utils.myBatis.MyBatis;
 
-public class ListOfOrdersImplDAO {
+public class ListOfOrdersImpl {
     private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
     public ListOfOrders getListOfOrdersImplDAOId (int id){

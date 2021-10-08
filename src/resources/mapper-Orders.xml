@@ -8,7 +8,7 @@
         FROM Orders r
         WHERE o.orderId = #{id};
     </select>
-    <resultMap id="OrdersResultMap" type="com.solvd.laba.pojo.Orders">
+    <resultMap id="OrdersResultMap" type="com.solvd.laba.binary.Orders">
         <id column="orders_orderId" property="orderId"/>
         <result column="orders_orderName" property="orderName"/>
     </resultMap>

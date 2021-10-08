@@ -1,5 +1,5 @@
 package com.solvd.laba.utils.Parsers;
-import com.solvd.laba.pojo.Drivers;
+import com.solvd.laba.binary.Drivers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

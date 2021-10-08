@@ -8,7 +8,7 @@
         FROM City c
         WHERE c.cityId = #{id};
     </select>
-    <resultMap id="CityResultMap" type="com.solvd.laba.pojo.City">
+    <resultMap id="CityResultMap" type="com.solvd.laba.binary.City">
         <id column="city_cityId" property="cityId"/>
         <result column="city_cityName" property="city_cityName"/>
     </resultMap>

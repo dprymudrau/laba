@@ -1,10 +1,10 @@
 package com.solvd.laba.service;
 
 import com.solvd.laba.dao.interfaces.IPassenger;
-import com.solvd.laba.pojo.Passenger;
+import com.solvd.laba.binary.Passenger;
 import com.solvd.laba.utils.myBatis.MyBatis;
 
-public class PassengersImplDAO {
+public class PassengersImpl {
     private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
     public Passenger getPassengerDAOId (int id){
