@@ -1,9 +1,9 @@
-package com.solvd.laba.utils;
+package com.solvd.laba.utils.pool;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
-import static com.solvd.laba.utils.ConnectionPool.getInstance;
+import static com.solvd.laba.utils.pool.ConnectionPool.getInstance;
 
 public class ConnectionThreads extends Thread {
     private static final Logger LOGGER = LogManager.getLogger(ConnectionThreads.class);

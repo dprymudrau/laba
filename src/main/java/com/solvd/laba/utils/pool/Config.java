@@ -1,4 +1,4 @@
-package com.solvd.laba.utils;
+package com.solvd.laba.utils.pool;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

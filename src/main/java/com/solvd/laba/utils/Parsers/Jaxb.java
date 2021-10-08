@@ -1,6 +1,6 @@
 package com.solvd.laba.utils.Parsers;
 
-import com.solvd.laba.pojo.Cars;
+import com.solvd.laba.binary.Cars;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

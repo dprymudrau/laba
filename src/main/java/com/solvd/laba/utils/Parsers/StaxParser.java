@@ -16,8 +16,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class XMLstaxParser {
-    private static final Logger LOGGER = LogManager.getLogger(XMLstaxParser.class);
+public class StaxParser {
+    private static final Logger LOGGER = LogManager.getLogger(StaxParser.class);
     public static List<Drivers> parseXmlByStax(String fileName) {
         List<Drivers> driversList = new ArrayList<>();
         Drivers drivers = null;
@@ -60,7 +60,7 @@ public class XMLstaxParser {
     }
     public static void staxParser() {
         String STAXFileName = "src/main/resources/myStax.xml";
-        List<Drivers> cityList = XMLstaxParser.parseXmlByStax(STAXFileName);
+        List<Drivers> cityList = StaxParser.parseXmlByStax(STAXFileName);
         for (Drivers city : cityList) {
             LOGGER.info(city.toString());
         }

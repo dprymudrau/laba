@@ -1,10 +1,9 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.binary;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Objects;
 
 @XmlRootElement(name = "Cars")
 public class Cars {

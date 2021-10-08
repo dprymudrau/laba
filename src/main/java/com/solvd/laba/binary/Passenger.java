@@ -1,4 +1,4 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.binary;
 
 import java.util.Objects;
 
@@ -9,6 +9,9 @@ public class Passenger {
     public Passenger(String name, int id) {
         Name = name;
         Id = id;
+    }
+
+    public Passenger() {
     }
 
     public String getName() {

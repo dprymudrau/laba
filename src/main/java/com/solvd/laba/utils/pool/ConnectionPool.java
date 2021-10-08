@@ -1,4 +1,4 @@
-package com.solvd.laba.utils;
+package com.solvd.laba.utils.pool;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,7 +33,7 @@ public class ConnectionPool {
         return instance;
     }
 
-    public synchronized Connection getConnection() {
+    public static synchronized Connection getConnection() {
         if (createdConAmount < MAX_AMOUNT_OF_CON) {
             Connection conn = connectionCreate();
             createdConAmount++;
@@ -47,7 +47,7 @@ public class ConnectionPool {
         }
     }
 
-    public synchronized void releaseCon(Connection connection) throws NullPointerException {
+    public static synchronized void releaseCon(Connection connection) throws NullPointerException {
         if (connection != null) {
             connectionPool.add(connection);
         } else {

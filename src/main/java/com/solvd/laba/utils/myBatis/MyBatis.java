@@ -13,7 +13,7 @@ public class MyBatis {
 
     private MyBatis(){
         try{
-            Reader reader = Resources.getResourceAsReader("MyBatis.xml");
+            Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
             factory = new SqlSessionFactoryBuilder().build(reader);
         } catch (IOException e) {
             e.printStackTrace();

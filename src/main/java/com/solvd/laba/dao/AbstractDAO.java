@@ -1,6 +1,6 @@
 package com.solvd.laba.dao;
 
-import com.solvd.laba.utils.ConnectionPool;
+import com.solvd.laba.utils.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

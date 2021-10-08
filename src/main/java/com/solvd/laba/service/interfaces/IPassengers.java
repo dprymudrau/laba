@@ -1,2 +1,4 @@
-package com.solvd.laba.service.interfaces;public interface IPassengers {
+package com.solvd.laba.service.interfaces;
+
+public interface IPassengers {
 }

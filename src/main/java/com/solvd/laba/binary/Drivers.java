@@ -1,4 +1,4 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.binary;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

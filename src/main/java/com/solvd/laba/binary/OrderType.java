@@ -1,4 +1,4 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.binary;
 
 public class OrderType {
     private String Name;

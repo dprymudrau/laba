@@ -1,4 +1,4 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.binary;
 
 import java.util.Objects;
 

@@ -1,30 +1,30 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.binary;
 
 import java.util.Objects;
 
 public class CarType {
-    private String carName;
-    private int taxiCompaniesId;
+    private String carTypeName;
+    private int carTypeId;
 
-    public CarType(String carName, int taxiCompaniesId) {
-        this.carName = carName;
-        this.taxiCompaniesId = taxiCompaniesId;
+    public CarType() {
+        this.carTypeName = carTypeName;
+        this.carTypeId = carTypeId;
     }
 
-    public String getCarName() {
-        return carName;
+    public String getCarTypeName() {
+        return carTypeName;
     }
 
-    public void setCarName(String carName) {
-        this.carName = carName;
+    public void setCarTypeName(String carTypeName) {
+        this.carTypeName = carTypeName;
     }
 
-    public int getTaxiCompaniesId() {
-        return taxiCompaniesId;
+    public int getCarTypeId() {
+        return carTypeId;
     }
 
-    public void setTaxiCompaniesId(int taxiCompaniesId) {
-        this.taxiCompaniesId = taxiCompaniesId;
+    public void setCarTypeId(int carTypeId) {
+        this.carTypeId = carTypeId;
     }
 
     @Override
@@ -32,11 +32,12 @@ public class CarType {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CarType carType = (CarType) o;
-        return taxiCompaniesId == carType.taxiCompaniesId && Objects.equals(carName, carType.carName);
+        return carTypeId == carType.carTypeId && Objects.equals(carTypeName, carType.carTypeName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(carName, taxiCompaniesId);
+        return Objects.hash(carTypeName, carTypeId);
     }
 }
+

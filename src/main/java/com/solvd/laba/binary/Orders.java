@@ -1,10 +1,10 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.binary;
 
 import java.util.Objects;
 
 public class Orders {
     private int number;
-    private Streets name;
+    private String name;
     private String status;
 
     public int getNumber() {
@@ -15,11 +15,11 @@ public class Orders {
         this.number = number;
     }
 
-    public Streets getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Streets name) {
+    public void setName(String name) {
         this.name = name;
     }
 

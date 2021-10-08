@@ -1,6 +1,6 @@
 package com.solvd.laba.dao;
 
-import com.solvd.laba.pojo.Passenger;
+import com.solvd.laba.binary.Passenger;
 
 public interface IEntityDAO<T>{
     public void save(T t);

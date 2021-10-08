@@ -1,4 +1,4 @@
-package com.solvd.laba.pojo;
+package com.solvd.laba.binary;
 
 public class City {
     private String Name;
