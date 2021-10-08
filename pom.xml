@@ -82,7 +82,22 @@
             <version>1.5.0</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.qaprosoft</groupId>
+            <artifactId>carina-core</artifactId>
+            <version>RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.qaprosoft</groupId>
+            <artifactId>carina-cucumber</artifactId>
+            <version>RELEASE</version>
+        </dependency>
     </dependencies>
 
 
