@@ -7,9 +7,13 @@ import com.solvd.laba.binary.DepartmentName;
 import com.solvd.laba.binary.Emails;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.Date;
 import java.util.List;
 
 public class XmlAndJsonParsers {
@@ -29,6 +33,8 @@ public class XmlAndJsonParsers {
     public static void jaxbParser() {    //->>>>> JAXB Parser <<<<<-
         String JAXBFileNameToSave = "src/main/resources/xmlAndJsonParsers/JaxbW.xml";
         String JAXBFileNameToRead = "src/main/resources/xmlAndJsonParsers/JaxbR.xml";
+        new DateAdapter();   //date adapter
+
         DepartmentName departmentName = new DepartmentName();
         departmentName.setDepartmentName("Department6");
         departmentName.setItCompaniesId(15);
@@ -37,8 +43,7 @@ public class XmlAndJsonParsers {
         if (unmarshalDepartmentName != null) {
             LOGGER.info(unmarshalDepartmentName.toString());
         }
-        //date adapter
-        new DateAdapter();
+
     }
 
     public static void jacksonParser() {         //->>>>> JACKSON Parser <<<<<-
@@ -63,4 +68,7 @@ public class XmlAndJsonParsers {
             e.printStackTrace();
         }
     }
+    @XmlElement(name = "published", required = true)
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    private Date published;
 }

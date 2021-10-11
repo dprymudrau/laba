@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
-<mapper namespace="com.solvd.scheduleWithGA.dao.interfaces.CustumerContactDAO">
+<mapper namespace="com.solvd.laba.dao.interfaces.CustumerContactDAO">
     <select id="getById" resultMap="iTCompanyContactResultMap" parameterType="int">
         SELECT  a.ITCompanyContactId as ITCompanyContact_Id,
         a.iTCCName as iT_CC_Name,
@@ -15,7 +15,7 @@
         FROM Project a
         WHERE a.projectId=#{id};
     </select>
-    <resultMap id="iTCompanyContactResultMap" type="com.solvd.deliveryProject.binary.ITCompanyContact">
+    <resultMap id="iTCompanyContactResultMap" type="com.solvd.laba.binary.ITCompanyContact">
         <id column="iTCompanyContact_Id" property="iTCompanyContactId"/>
         <result column="iT_CC_Name" property="iTCCName"/>
         <result column="iT_CC_Patronymic" property="iTCCPatronymic"/>

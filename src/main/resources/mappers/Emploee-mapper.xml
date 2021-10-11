@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
-<mapper namespace="com.solvd.scheduleWithGA.dao.interfaces.EmploeeDAO">
+<mapper namespace="com.solvd.laba.dao.interfaces.EmploeeDAO">
     <select id="getById" resultMap="EmploeeResultMap" parameterType="int">
         SELECT  a.EmploeeId as Emploee_Id,
         a.cCName as cC_Name,
@@ -12,7 +12,7 @@
         FROM Project a
         WHERE a.projectId=#{id};
     </select>
-    <resultMap id="EmploeeResultMap" type="com.solvd.deliveryProject.binary.Emploee">
+    <resultMap id="EmploeeResultMap" type="com.solvd.laba.binary.Emploee">
         <id column="Emploee_Id" property="EmploeeId"/>
         <result column="cC_Name" property="cCName"/>
         <result column="cC_Surname" property="cCSurname"/>

@@ -6,17 +6,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateAdapter extends XmlAdapter<String, Date> {
-
     private static final String CUSTOM_FORMAT_STRING = "yyyy-MM-dd HH:mm:ss";
-
     private static final ThreadLocal<DateFormat> dateFormat
-            = new ThreadLocal<DateFormat>() {
-
-        @Override
-        protected DateFormat initialValue() {
-            return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        }
-    };
+            = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
 
     @Override
     public Date unmarshal(String v) throws Exception {

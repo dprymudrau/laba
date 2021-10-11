@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
-<mapper namespace="com.solvd.scheduleWithGA.dao.interfaces.TasksDAO">
+<mapper namespace="com.solvd.laba.dao.interfaces.TasksDAO">
     <select id="getById" resultMap="tasksResultMap" parameterType="int">
         SELECT  a.tasksId as tasks_Id,
         a.tasksLevel as tasks_Level,
         FROM Project a
         WHERE a.projectId=#{id};
     </select>
-    <resultMap id="tasksResultMap" type="com.solvd.deliveryProject.binary.Tasks">
+    <resultMap id="tasksResultMap" type="com.solvd.laba.binary.Tasks">
         <id column="tasks_Id" property="tasksId"/>
         <result column="tasks_Level" property="tasksLevel"/>
     </resultMap>

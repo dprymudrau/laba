@@ -9,7 +9,7 @@
         FROM Project a
         WHERE a.projectId=#{id};
     </select>
-    <resultMap id="projectResultMap" type="com.solvd.deliveryProject.binary.Project">
+    <resultMap id="projectResultMap" type="com.solvd.laba.binary.Project">
         <id column="project_Id" property="projectId"/>
         <result column="department_NameId" property="departmentNameId"/>
         <result column="departmentName_IdItCompanies_ID" property="departmentNameIdItCompaniesID"/>
