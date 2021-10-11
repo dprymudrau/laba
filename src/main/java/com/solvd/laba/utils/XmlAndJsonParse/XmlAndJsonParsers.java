@@ -19,7 +19,7 @@ public class XmlAndJsonParsers {
     }
 
     public static void staxParser() {     //->>>>> STAX Parser <<<<<-
-        String STAXFileName = "src/main/resources/Stax.xml";
+        String STAXFileName = "src/main/resources/xmlAndJsonParsers/Stax.xml";
         List<City> cityList = Stax.parseXmlByStax(STAXFileName);
         for (City city : cityList) {
             LOGGER.info(city.toString());
@@ -27,8 +27,8 @@ public class XmlAndJsonParsers {
     }
 
     public static void jaxbParser() {    //->>>>> JAXB Parser <<<<<-
-        String JAXBFileNameToSave = "src/main/resources/JaxbW.xml";
-        String JAXBFileNameToRead = "src/main/resources/JaxbR.xml";
+        String JAXBFileNameToSave = "src/main/resources/xmlAndJsonParsers/JaxbW.xml";
+        String JAXBFileNameToRead = "src/main/resources/xmlAndJsonParsers/JaxbR.xml";
         DepartmentName departmentName = new DepartmentName();
         departmentName.setDepartmentName("Department6");
         departmentName.setItCompaniesId(15);
@@ -38,7 +38,7 @@ public class XmlAndJsonParsers {
             LOGGER.info(unmarshalDepartmentName.toString());
         }
         //date adapter
-        //new DateAdapter();
+        new DateAdapter();
     }
 
     public static void jacksonParser() {         //->>>>> JACKSON Parser <<<<<-

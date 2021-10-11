@@ -15,9 +15,9 @@ public class Main{
     public static void main(String[] args) {
         LOGGER.info("Start program \"Delivery Project\".");
         //->>>>> Xml Parser work <<<<<-
-        //XmlAndJsonParsers.staxParser();
-        //XmlAndJsonParsers.jaxbParser();
-        //XmlAndJsonParsers.jacksonParser();
+        XmlAndJsonParsers.staxParser();
+        XmlAndJsonParsers.jaxbParser();
+        XmlAndJsonParsers.jacksonParser();
         //->>>>> JDBC/MyBATIS  <<<<<-
         MyService myService = new MyServiceImpl();
         myService.doSmth();
