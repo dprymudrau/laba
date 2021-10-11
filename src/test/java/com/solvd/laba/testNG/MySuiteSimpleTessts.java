@@ -1,4 +1,4 @@
-package com.solvd.laba.api;
+package com.solvd.laba.testNG;
 
 import com.solvd.laba.binary.*;
 import org.junit.Assert;

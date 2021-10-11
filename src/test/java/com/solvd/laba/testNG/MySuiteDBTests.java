@@ -1,5 +1,4 @@
-package com.solvd.laba.api;
-import com.solvd.laba.binary.Adress;
+package com.solvd.laba.testNG;
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.dao.jdbc.impl.EmploeeDAOImpl;
 import com.solvd.laba.dao.jdbc.impl.ProjectDAOImpl;

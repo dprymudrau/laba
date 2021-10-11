@@ -2,7 +2,7 @@
 <suite name="my-suite" parallel="methods" thread-count="5">
     <test name="MyTest">
         <classes>
-            <class name="com.solvd.laba.api.MySuiteDBTests">
+            <class name="com.solvd.laba.testNG.MySuiteDBTests">
                 <methods>
                     <include name="employeeGetcCPatronymicTest"/>
                     <include name="employeeGetcProjectIDTest"/>
@@ -12,7 +12,7 @@
 
                 </methods>
             </class>
-            <class name="com.solvd.laba.api.MySuiteSimpleTessts">
+            <class name="com.solvd.laba.testNG.MySuiteSimpleTessts">
                 <methods>
                      <include name="itCompaniesTest"/>
                     <include name="itCompanyContactTest"/>
