@@ -6,9 +6,13 @@ import com.solvd.laba.service.MyService;
 import com.solvd.laba.utils.MyBatis;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import static com.solvd.laba.utils.MyBatis.getSessionFactory;
 
 public class MyServiceImpl implements MyService {
+    private static final Logger LOGGER = LogManager.getLogger(com.solvd.laba.service.impl.jdbc.MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
 

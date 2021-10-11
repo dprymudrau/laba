@@ -10,6 +10,12 @@ public class Project extends BaseEntityID{
     private String project;
     private int departmentNameId ;
     private int departmentNameIdItCompaniesID;
+    public Project() {
+    }
+
+    public Project(String pro1) {
+        setProject(pro1);
+    }
 
     public String getProject() {
         return project;

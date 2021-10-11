@@ -128,6 +128,7 @@
                     <parallel>all</parallel>
                     <threadCount>5</threadCount>
                 </configuration>
+
             </plugin>
         </plugins>
     </build>

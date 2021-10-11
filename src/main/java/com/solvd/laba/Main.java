@@ -2,7 +2,7 @@ package com.solvd.laba;
 
 import com.solvd.laba.service.MyService;
 //jdbc/myBatis
-import com.solvd.laba.service.impl.myBatis.MyServiceImpl;
+import com.solvd.laba.service.impl.jdbc.MyServiceImpl;
 import com.solvd.laba.utils.XmlAndJsonParse.XmlAndJsonParsers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

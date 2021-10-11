@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="my-suite" parallel="methods" thread-count="5">
+    <test name="MyTest">
+        <classes>
+            <class name="com.solvd.laba.api.MySuiteDBTests">
+                <methods>
+                    <include name="employeeGetcCPatronymicTest"/>
+                    <include name="employeeGetcProjectIDTest"/>
+                    <include name="projectNameTest"/>
+                    <include name="projectGetByIdTest"/>
+                    <include name="emploeeTest"/>
+
+                </methods>
+            </class>
+            <class name="com.solvd.laba.api.MySuiteSimpleTessts">
+                <methods>
+                     <include name="itCompaniesTest"/>
+                    <include name="itCompanyContactTest"/>
+                    <include name="phoneNumbersTest"/>
+                    <include name="positioneTest"/>
+                    <include name="projectTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
