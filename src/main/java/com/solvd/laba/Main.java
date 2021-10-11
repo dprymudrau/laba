@@ -13,14 +13,15 @@ public class Main{
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        //->>>>> BusinessLogic <<<<<-
-        businessLogic();
+        LOGGER.info("Start program \"Delivery Project\".");
         //->>>>> Xml Parser work <<<<<-
-        XmlAndJsonParsers.staxParser();
-        XmlAndJsonParsers.jaxbParser();
-        XmlAndJsonParsers.jacksonParser();
-        //->>>>> MyBATIS  <<<<<-
+        //XmlAndJsonParsers.staxParser();
+        //XmlAndJsonParsers.jaxbParser();
+        //XmlAndJsonParsers.jacksonParser();
+        //->>>>> JDBC/MyBATIS  <<<<<-
         MyService myService = new MyServiceImpl();
         myService.doSmth();
+        LOGGER.info(" LOGGER.info текст");
+        System.out.println("System.out.println текст");
     }
 }

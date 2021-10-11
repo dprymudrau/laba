@@ -37,6 +37,8 @@ public class XmlAndJsonParsers {
         if (unmarshalDepartmentName != null) {
             LOGGER.info(unmarshalDepartmentName.toString());
         }
+        //date adapter
+        //new DateAdapter();
     }
 
     public static void jacksonParser() {         //->>>>> JACKSON Parser <<<<<-
