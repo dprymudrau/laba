@@ -1,9 +1,9 @@
 package com.solvd.laba.start;
 
-import com.solvd.laba.service.jdbc.implementation.DriversImpl;
-import com.solvd.laba.service.jdbc.implementation.ListOfOrdersImpl;
-import com.solvd.laba.service.jdbc.implementation.PassengersImpl;
-import com.solvd.laba.utils.Parsers.Jaxb;
+import com.solvd.laba.service.implementation.myBatis.PassengersImpl;
+import com.solvd.laba.service.implementation.jdbc.*;
+import com.solvd.laba.service.interfaces.*;
+import com.solvd.laba.utils.Parsers.Jaxb.Jaxb;
 import com.solvd.laba.utils.Parsers.StaxParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,12 +14,21 @@ public class Main {
     public static void main(String[] args) {
 
 
-        DriversImpl addressImpl = new DriversImpl();
-        LOGGER.info(addressImpl.getDriversDAOId(1));
-        PassengersImpl carImpl = new PassengersImpl();
-        LOGGER.info(carImpl.getPassengerDAOId(2));
-        ListOfOrdersImpl goodsImpl = new ListOfOrdersImpl();
-        LOGGER.info(goodsImpl.getListOfOrdersImplDAOId(1));
+        IDrivers drivers = new DriversImpl();
+        LOGGER.info(drivers.getDriversDAOId(1));
+
+        IListOfOrders listOfOrders = new ListOfOrdersImpl();
+        LOGGER.info(listOfOrders.getListOfOrdersDAOId(1));
+
+        IOrders orders = new OrdersImpl();
+        LOGGER.info(orders.getOrdersDAOId(1));
+
+        IPassengers passengers = new PassengersImpl();
+        LOGGER.info(passengers.getPassengerDAOId(2));
+
+        IStreets streets = new StreetsImpl();
+        LOGGER.info(streets.getStreetsDAOId(1));
+
 
 
         StaxParser.staxParser();

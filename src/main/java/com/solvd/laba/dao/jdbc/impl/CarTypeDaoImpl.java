@@ -2,16 +2,15 @@ package com.solvd.laba.dao.jdbc.impl;
 
 
         import com.solvd.laba.binary.CarType;
-        import com.solvd.laba.binary.Passenger;
         import com.solvd.laba.dao.AbstractDAO;
-        import com.solvd.laba.dao.interfaces.ICarType;
+        import com.solvd.laba.dao.interfaces.ICarTypeDAO;
         import com.solvd.laba.utils.pool.ConnectionPool;
         import org.apache.logging.log4j.LogManager;
         import org.apache.logging.log4j.Logger;
 
         import java.sql.*;
 
-public class CarTypeDaoImpl extends AbstractDAO implements ICarType {
+public class CarTypeDaoImpl extends AbstractDAO implements ICarTypeDAO {
 
     private static Logger LOGGER = LogManager.getLogger(CarTypeDaoImpl.class);
 
@@ -37,7 +36,7 @@ public class CarTypeDaoImpl extends AbstractDAO implements ICarType {
     }
 
     @Override
-    public Passenger getById(long id) {
+    public CarType getById(long id) {
         CarType carType = new CarType();
         Connection connection = ConnectionPool.getConnection();
         PreparedStatement preparedSt = null;

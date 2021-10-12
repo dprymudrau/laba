@@ -1,7 +1,13 @@
 package com.solvd.laba.binary;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(value = { "cityId" })
 public class City {
+    @JsonProperty("id")
     private String Name;
+    @JsonProperty("name")
     private int Id;
 
     public City(String name, int id) {

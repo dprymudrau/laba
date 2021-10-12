@@ -1,16 +1,15 @@
 package com.solvd.laba.dao.jdbc.impl;
 
 import com.solvd.laba.binary.Orders;
-import com.solvd.laba.binary.Passenger;
 import com.solvd.laba.dao.AbstractDAO;
-import com.solvd.laba.dao.interfaces.IOrders;
+import com.solvd.laba.dao.interfaces.IOrdersDAO;
 import com.solvd.laba.utils.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 
-    public class OrderDaoImpl extends AbstractDAO implements IOrders {
+    public class OrderDaoImpl extends AbstractDAO implements IOrdersDAO {
 
         private static Logger LOGGER = LogManager.getLogger(com.solvd.laba.dao.jdbc.impl.OrderDaoImpl.class);
 
@@ -33,7 +32,7 @@ import java.sql.*;
         }
 
         @Override
-        public Passenger getById(long id) {
+        public Orders getById(long id) {
             Orders orders = new Orders();
             Connection connection = ConnectionPool.getConnection();
             PreparedStatement preparedSt = null;

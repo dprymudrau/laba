@@ -1,16 +1,15 @@
 package com.solvd.laba.dao.jdbc.impl;
 
 import com.solvd.laba.binary.Cars;
-import com.solvd.laba.binary.Passenger;
 import com.solvd.laba.dao.AbstractDAO;
-import com.solvd.laba.dao.interfaces.ICar;
+import com.solvd.laba.dao.interfaces.ICarDAO;
 import com.solvd.laba.utils.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 
-public class CarsDaoImpl extends AbstractDAO implements ICar {
+public class CarsDaoImpl extends AbstractDAO implements ICarDAO {
 
         private static Logger LOGGER = LogManager.getLogger(com.solvd.laba.dao.jdbc.impl.CarsDaoImpl.class);
 
@@ -33,7 +32,7 @@ public class CarsDaoImpl extends AbstractDAO implements ICar {
     }
 
     @Override
-        public Passenger getById(long id) {
+        public Cars getById(long id) {
             Cars cars = new Cars();
             Connection connection = ConnectionPool.getConnection();
             PreparedStatement preparedSt = null;
@@ -44,7 +43,7 @@ public class CarsDaoImpl extends AbstractDAO implements ICar {
                 resultSet = preparedSt.executeQuery();
                 if (resultSet.next()) {
                     cars.setCarName("CarId");
-                    cars.setTaxiCompaniesId(resultSet.getLong("1");
+                    cars.setTaxiCompaniesId((int) resultSet.getLong("1"));
                 }
                 else{
                     return null;
@@ -58,4 +57,4 @@ public class CarsDaoImpl extends AbstractDAO implements ICar {
             return cars;
         }
     }
-}
+

@@ -2,8 +2,7 @@ package com.solvd.laba.service.interfaces;
 
 import com.solvd.laba.binary.Drivers;
 
-public class IDrivers {
-    public Drivers getById(int id) {
-        return null;
-    }
+public interface IDrivers {
+    Drivers getById(int id);
+    Drivers getDriversDAOId(int id);
 }

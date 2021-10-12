@@ -2,7 +2,7 @@ package com.solvd.laba.dao.jdbc.impl;
 
 import com.solvd.laba.binary.Passenger;
 import com.solvd.laba.dao.AbstractDAO;
-import com.solvd.laba.dao.interfaces.IPassenger;
+import com.solvd.laba.dao.interfaces.IPassengerDAO;
 import com.solvd.laba.utils.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class PassengerDaoImpl extends AbstractDAO implements IPassenger {
+public class PassengerDaoImpl extends AbstractDAO implements IPassengerDAO {
 
         private static Logger LOGGER = LogManager.getLogger(com.solvd.laba.dao.jdbc.impl.PassengerDaoImpl.class);
 
