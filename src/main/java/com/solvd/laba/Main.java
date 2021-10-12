@@ -21,5 +21,11 @@ public class Main {
         myService.doSmth();
         //myService.getById(2);
         LOGGER.info("End \"JDBC/MyBATIS\".");
+        //->>>>> apiTests2  <<<<<-
+        //https://api.openweathermap.org/data/2.5/weather?q=Kiev&appid=b251a86444ad47078e0fd0b41782ad83
+        //https://api.openweathermap.org/data/2.5/weather?q=Minsk&appid=b251a86444ad47078e0fd0b41782ad83
+        //https://api.openweathermap.org/data/2.5/weather?q=London&appid=b251a86444ad47078e0fd0b41782ad83
+        //https://api.openweathermap.org/data/2.5/weather?q=Tokio&appid=b251a86444ad47078e0fd0b41782ad83
+        //https://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=b251a86444ad47078e0fd0b41782ad83
     }
 }
