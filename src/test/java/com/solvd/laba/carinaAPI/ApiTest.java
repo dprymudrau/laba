@@ -25,20 +25,20 @@ public class ApiTest implements IAbstractTest {
     }
     @Test
     public void apiWeatherLondonTest(){
-        GetWeatherByCityMethod getWeatherByCityMethod = new GetWeatherByCityMethod(CITY_MINSK);
+        GetWeatherByCityMethod getWeatherByCityMethod = new GetWeatherByCityMethod(CITY_LONDON);
         getWeatherByCityMethod.callAPIExpectSuccess();
-        getWeatherByCityMethod.validateResponseAgainstSchema("apiTests2/fileMinsk.schema");
+        getWeatherByCityMethod.validateResponseAgainstSchema("apiTests2/fileLondon.schema");
     }
     @Test
     public void apiWeatherTokioTest(){
-        GetWeatherByCityMethod getWeatherByCityMethod = new GetWeatherByCityMethod(CITY_MINSK);
+        GetWeatherByCityMethod getWeatherByCityMethod = new GetWeatherByCityMethod(CITY_TOKIO);
         getWeatherByCityMethod.callAPIExpectSuccess();
-        getWeatherByCityMethod.validateResponseAgainstSchema("apiTests2/fileMinsk.schema");
+        getWeatherByCityMethod.validateResponseAgainstSchema("apiTests2/fileTokio.schema");
     }
     @Test
     public void apiWeatherMadridTest(){
-        GetWeatherByCityMethod getWeatherByCityMethod = new GetWeatherByCityMethod(CITY_MINSK);
+        GetWeatherByCityMethod getWeatherByCityMethod = new GetWeatherByCityMethod(CITY_MADRID);
         getWeatherByCityMethod.callAPIExpectSuccess();
-        getWeatherByCityMethod.validateResponseAgainstSchema("apiTests2/fileMinsk.schema");
+        getWeatherByCityMethod.validateResponseAgainstSchema("apiTests2/fileMadrid.schema");
     }
 }
