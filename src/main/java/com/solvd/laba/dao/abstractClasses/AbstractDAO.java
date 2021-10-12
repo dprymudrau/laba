@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.concurrent.TimeoutException;
 
-public abstract class AbstractDAO <T> {
+public abstract class AbstractDAO {
     private MyConnectionPool pool = MyConnectionPool.getInstance();
 
     private static final Logger LOGGER = LogManager.getLogger(AbstractDAO.class);
@@ -27,5 +27,13 @@ public abstract class AbstractDAO <T> {
         pool.putBack(connection);
     }
 
-    protected abstract void executeQuery(String query);
+    protected void closeResource(AutoCloseable autoCloseable) {
+        try {
+            autoCloseable.close();
+        } catch (Exception e) {
+            LOGGER.error("Problem with closing: " + e);
+        }
+    }
+
+//    protected abstract void executeQuery(String query);
 }

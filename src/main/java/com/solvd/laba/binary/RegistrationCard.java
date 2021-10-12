@@ -17,6 +17,11 @@ public class RegistrationCard {
         this.idVisitorCategory = idVisitorCategory;
     }
 
+    public RegistrationCard(int idVisitor, int idVisitorCategory) {
+        this.idVisitor = idVisitor;
+        this.idVisitorCategory = idVisitorCategory;
+    }
+
     public RegistrationCard() {}
 
     public int getId() {

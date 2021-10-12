@@ -75,7 +75,7 @@ public class Doctor {
         this.idSpeciality = idSpeciality;
     }
 
-    public int getIdNumberOdContract() {
+    public int getIdNumberOfContract() {
         return idNumberOdContract;
     }
 

@@ -1,4 +1,4 @@
-package com.solvd.laba.jaxb;
+package com.solvd.laba.util.jaxb;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlAdapter;

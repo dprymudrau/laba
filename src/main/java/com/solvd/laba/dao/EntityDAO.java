@@ -1,4 +1,4 @@
-package com.solvd.laba.service;
+package com.solvd.laba.dao;
 
 import java.util.ArrayList;
 
@@ -11,5 +11,5 @@ public interface EntityDAO<T, Z> {
     void insertToTable(T entity);
     void updateEntityRow(T entity);
     void deleteById(Z id);
-    void deleteAllByFilter(String condition);
+    void deleteByFilter(String condition);
 }

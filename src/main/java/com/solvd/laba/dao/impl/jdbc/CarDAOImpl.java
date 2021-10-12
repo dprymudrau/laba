@@ -2,7 +2,7 @@ package com.solvd.laba.dao.impl.jdbc;
 
 import com.solvd.laba.binary.Car;
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
-import com.solvd.laba.service.EntityDAO;
+import com.solvd.laba.dao.EntityDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,24 +12,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CarDAOImpl extends AbstractDAO<Car> implements EntityDAO<Car, Integer> {
-    private String query;
+public class CarDAOImpl extends AbstractDAO implements EntityDAO<Car, Integer> {
+    private static final String SELECT_ALL_QUERY = "SELECT * FROM Cars";
+    private static final String SELECT_ALL_WITH_CONDITION_QUERY = "SELECT * FROM Cars WHERE ";
+    private static final String SELECT_ALL_BY_ID_QUERY = "SELECT * FROM Cars WHERE idCar = ?";
+    private static final String INSERT_NEW_CAR_QUERY = "INSERT INTO Cars(idCar, carBrandName, carModel, carRegNumber, idCarFleet) VALUES (?, ?, ?, ?, ?)";
+    private static final String INSERT_AUTO_INCR_NEW_CAR_QUERY = "INSERT INTO Cars(carBrandName, carModel, carRegNumber, idCarFleet) VALUES (?, ?, ?, ?)";
+    private static final String UPDATE_CAR_QUERY = "UPDATE Cars SET carBrandName = ?, carModel = ?, carRegNumber = ?, idCarFleet = ? WHERE idCar = ?";
+    private static final String DELETE_CAR_BY_ID_QUERY = "DELETE FROM Cars WHERE idCar = ?";
+    private static final String DELETE_CAR_WITH_CONDITION_QUERY = "DELETE FROM Cars WHERE ";
     Connection connection = getConnection();
-    PreparedStatement prepStatement;
-    ResultSet resultSet;
 
     private static final Logger LOGGER = LogManager.getLogger(CarDAOImpl.class);
 
     @Override
-    public void executeQuery(String query) {
-        this.query = query;
-    }
-
-    @Override
     public void printAll() {
-        query = "SELECT * FROM Cars";
-        try {
-            prepStatement = connection.prepareStatement(query);
+        ResultSet resultSet = null;
+
+        try (PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_QUERY)) {
             resultSet = prepStatement.executeQuery();
             LOGGER.info("Cars:");
 
@@ -49,21 +49,16 @@ public class CarDAOImpl extends AbstractDAO<Car> implements EntityDAO<Car, Integ
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                resultSet.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            closeResource(resultSet);
+            releaseConnection(connection);
         }
     }
 
     @Override
     public void printByFilter(String pastWhereOperatorCondition) {
-        query = "SELECT * FROM Cars WHERE ";
-        try {
-            prepStatement = connection.prepareStatement(query + pastWhereOperatorCondition);
+        ResultSet resultSet = null;
+
+        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_WITH_CONDITION_QUERY + pastWhereOperatorCondition)) {
             resultSet = prepStatement.executeQuery();
             LOGGER.info("Cars:");
 
@@ -83,22 +78,17 @@ public class CarDAOImpl extends AbstractDAO<Car> implements EntityDAO<Car, Integ
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                resultSet.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            closeResource(resultSet);
+            releaseConnection(connection);
         }
     }
 
     @Override
     public ArrayList<Car> getAll() {
-        query = "SELECT * FROM Cars";
         ArrayList<Car> cars = new ArrayList<>();
-        try {
-            prepStatement = connection.prepareStatement(query);
+        ResultSet resultSet = null;
+
+        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_QUERY)) {
             resultSet = prepStatement.executeQuery();
 
             while (resultSet.next()) {
@@ -111,27 +101,24 @@ public class CarDAOImpl extends AbstractDAO<Car> implements EntityDAO<Car, Integ
                 cars.add(car);
                 LOGGER.debug(car + "\n is selected and received.");
             }
+            LOGGER.info("Total amount of values: " + cars.size());
+
         } catch (SQLException e) {
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                resultSet.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            closeResource(resultSet);
+            releaseConnection(connection);
         }
         return cars;
     }
 
     @Override
-    public ArrayList<Car> getAllWithFilter(String condition) {
-        query = "SELECT * FROM Cars WHERE ";
+    public ArrayList<Car> getAllWithFilter(String pastWhereOperatorCondition) {
         ArrayList<Car> cars = new ArrayList<>();
-        try {
-            prepStatement = connection.prepareStatement(query + condition);
+        ResultSet resultSet = null;
+
+        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_WITH_CONDITION_QUERY + pastWhereOperatorCondition)) {
             resultSet = prepStatement.executeQuery();
 
             while (resultSet.next()) {
@@ -144,27 +131,24 @@ public class CarDAOImpl extends AbstractDAO<Car> implements EntityDAO<Car, Integ
                 cars.add(car);
                 LOGGER.debug(car + "\n is selected and received.");
             }
+            LOGGER.info("Found values by condition: " + cars.size());
+
         } catch (SQLException e) {
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                resultSet.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            closeResource(resultSet);
+            releaseConnection(connection);
         }
         return cars;
     }
 
     @Override
     public Car getById(Integer id) {
-        query = "SELECT idCar, carBrandName, carModel, carRegNumber, idCarFleet FROM Cars WHERE idCar = ?";
         Car car = new Car();
-        try {
-            prepStatement = connection.prepareStatement(query);
+        ResultSet resultSet = null;
+
+        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_BY_ID_QUERY)) {
             prepStatement.setInt(1, id);
             resultSet = prepStatement.executeQuery();
             if (resultSet.next()) {
@@ -179,45 +163,32 @@ public class CarDAOImpl extends AbstractDAO<Car> implements EntityDAO<Car, Integ
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                resultSet.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            closeResource(resultSet);
+            releaseConnection(connection);
         }
         return car;
     }
 
     @Override
     public void insertToTable(Car entity) {
-        query = "INSERT INTO Cars(carBrandName, carModel, carRegNumber, idCarFleet) VALUES (?, ?, ?, ?)";
-        try {
-            prepStatement = connection.prepareStatement(query);
-            prepStatement.setString(1, entity.getBrandName());
-            prepStatement.setString(2, entity.getModel());
-            prepStatement.setString(3, entity.getRegNumber());
-            prepStatement.setInt(4, entity.getIdCarFleet());
+        try(PreparedStatement prepStatement = connection.prepareStatement(INSERT_NEW_CAR_QUERY)) {
+            prepStatement.setInt(1, entity.getId());
+            prepStatement.setString(2, entity.getBrandName());
+            prepStatement.setString(3, entity.getModel());
+            prepStatement.setString(4, entity.getRegNumber());
+            prepStatement.setInt(5, entity.getIdCarFleet());
             int row = prepStatement.executeUpdate();
             LOGGER.debug(row + " row is added into Cars table.");
         } catch (SQLException e) {
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            releaseConnection(connection);
         }
     }
 
     public void insertToTable(String carBrandName, String carModel, String carRegNumber, int idCarFleet) {
-        query = "INSERT INTO Cars(carBrandName, carModel, carRegNumber, idCarFleet) VALUES (?, ?, ?, ?)";
-        try {
-            prepStatement = connection.prepareStatement(query);
+        try(PreparedStatement prepStatement = connection.prepareStatement(INSERT_AUTO_INCR_NEW_CAR_QUERY)) {
             prepStatement.setString(1, carBrandName);
             prepStatement.setString(2, carModel);
             prepStatement.setString(3, carRegNumber);
@@ -228,20 +199,13 @@ public class CarDAOImpl extends AbstractDAO<Car> implements EntityDAO<Car, Integ
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            releaseConnection(connection);
         }
     }
 
     @Override
     public void updateEntityRow(Car entity) {
-        query = "UPDATE Cars SET carBrandName = ?, carModel = ?, carRegNumber = ?, idCarFleet = ? WHERE idCar = ?";
-        try {
-            prepStatement = connection.prepareStatement(query);
+        try(PreparedStatement prepStatement = connection.prepareStatement(UPDATE_CAR_QUERY)) {
             prepStatement.setString(1, entity.getBrandName());
             prepStatement.setString(2, entity.getModel());
             prepStatement.setString(3, entity.getRegNumber());
@@ -253,53 +217,38 @@ public class CarDAOImpl extends AbstractDAO<Car> implements EntityDAO<Car, Integ
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            releaseConnection(connection);
         }
     }
 
     @Override
     public void deleteById(Integer id) {
-        query = "DELETE FROM Cars WHERE idCar = ?";
-        try {
-            prepStatement = connection.prepareStatement(query);
+        try(PreparedStatement prepStatement = connection.prepareStatement(DELETE_CAR_BY_ID_QUERY)) {
             prepStatement.setInt(1, id);
             int row = prepStatement.executeUpdate();
-            LOGGER.debug(row + " row is deleted in Cars table.");
+            if (row > 0) {
+                LOGGER.debug(row + " row is deleted in Cars table.");
+            } else {
+                LOGGER.info("There is no car with id " + id);
+            }
         } catch (SQLException e) {
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            releaseConnection(connection);
         }
     }
 
-    public void deleteAllByFilter(String condition) {
-        query = "DELETE FROM Cars WHERE idCar IN (SELECT idCar FROM Cars WHERE ";
-        try {
-            prepStatement = connection.prepareStatement(query + condition + ")");
-            prepStatement.setString(1, condition);
+    @Override
+    public void deleteByFilter(String pastWhereOperatorCondition) {
+        try(PreparedStatement prepStatement = connection.prepareStatement(DELETE_CAR_WITH_CONDITION_QUERY + pastWhereOperatorCondition)) {
             int row = prepStatement.executeUpdate();
             LOGGER.debug(row + " row is deleted in Cars table.");
         } catch (SQLException e) {
             LOGGER.error("Connection failed!");
             LOGGER.error(e);
         } finally {
-            try {
-                prepStatement.close();
-                releaseConnection(connection);
-            } catch (SQLException e) {
-                LOGGER.error(e);
-            }
+            releaseConnection(connection);
         }
     }
 }

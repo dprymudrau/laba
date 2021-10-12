@@ -4,18 +4,19 @@ INSERT INTO CarFleets(capacityByCars)
 VALUES
 (8),
 (42),
-(3),
-(0);
+(5),
+(10);
 
 INSERT INTO Hospitals(hospitalName, hospitalAddress, idCarFleet)
 VALUES
 ('Municipal Gynecological Hospital', 'Minsk, Sennitskaya 53', 1),
 ('Ambulance Hospital', 'Minsk, Kizhevatova 58', 2),
-('Center of Surgery and Transplantology', 'Semashko 8', 3),
-('Municipal Clinical Hospital named Savchenko', 'Minsk, Roza Luksenburg 110', 1),
+('Center of Surgery and Transplantology', 'Semashko 8', 2),
+('Municipal Clinical Hospital named Savchenko', 'Minsk, Roza Luksenburg 110', 2),
 ('Municipal Clinical Psychiatric Dispensary', 'Minsk, Behtereva 5', 3),
 ('Municipal Clinical Narcological Dispensary', 'Minsk, Gastely 16', 3),
-('LODE', 'Nezavisimosti 58', 4);
+('LODE', 'Nezavisimosti 58', 4),
+('Municipal Clinical Hospital for Infectious Disease', 'Kropotkina 76', 2);
 
 INSERT INTO WorkShifts(nameOfShift, clockIn, clockOut, idHospital)
 VALUES
@@ -30,10 +31,12 @@ VALUES
 
 INSERT INTO Visitors(visitorName, visitorSurname, visitorDayOfBirth, visitorAddress, diagnosis, visitDate, dischargeDate)
 VALUES
-('Vasya', 'Pupkin', '1978-09-22', 'Minsk, Nezavisimosti 8', 'Alcoholism', '2021-09-03', null),
-('Alexey', 'Puplikov', '1992-07-04', 'Minsk, Masherova 104', 'Wickness', '2020-01-01', '2020-01-05'),
-('Alexandr', 'Lukash', '1954-08-30', 'Minsk, Drozdi 12', 'Manic schizophrenia due to alcoholism', '1994-06-20', null),
-('Erast', 'Fandorin', '2008-11-15', 'Grodno, Lenina 246', 'Covid', '2019-04-14', '2019-06-09');
+('Vasya', 'Pupkin', '1978-09-22', 'Minsk, Nezavisimosti 8', 'Alcoholism', '2021-10-11', null),
+('Alexey', 'Puplikov', '1992-07-04', 'Minsk, Masherova 104', 'Wickness', '2021-10-11', null),
+('Alexandr', 'Lukash', '1954-08-30', 'Minsk, Drozdi 12', 'Manic schizophrenia due to alcoholism', '2021-10-11', null),
+('Erast', 'Fandorin', '2008-11-15', 'Minsk, Lenina 246', 'Covid', '2021-10-11', null),
+('Anatoliy', 'Rogochev', '1955-08-24', 'Minsk, Stolipina 114', 'Viral respiratory infection', '2021-10-11', null),
+('Vitaliy', 'Korobich', '1985-11-19', 'Minsk, Nezavisimosti 134', 'Viral respiratory infection', '2021-10-11', null);
 
 INSERT INTO VisitorCategories(healthConditionCategory, visitCategory)
 VALUES
@@ -42,7 +45,8 @@ VALUES
 ('Sick', 'Initial inspection'),
 ('Sick', 'Secondary inspection'),
 ('Seriously ill', 'Initial inspection'),
-('Seriously ill', 'Secondary inspection');
+('Seriously ill', 'Secondary inspection'),
+('Death', 'Medical examination');
 
 INSERT INTO VisitorAgeGroupCategories(ageGroupCategory)
 VALUES
@@ -54,9 +58,11 @@ VALUES
 INSERT INTO RegistrationCards(idHospital, idVisitor, idVisitorAgeGroupCategory, idVisitorCategory)
 VALUES
 (5, 3, 4, 5),
-(4, 2, 3, 2),
+(7, 2, 3, 2),
 (2, 4, 2, 2),
-(6, 1, 3, 3);
+(6, 1, 3, 3),
+(4, 5, 4, 3),
+(4, 6, 3, 3);
 
 INSERT INTO WorkerContracts(idNumberOfContract, idHospital, dateOfSigning)
 VALUES
@@ -68,7 +74,10 @@ VALUES
 (629265, 4, '1999-08-15'),
 (634795, 4, '2017-11-01'),
 (758273, 6, '2020-09-02'),
-(126573, 6, '2001-02-18');
+(126573, 6, '2001-02-18'),
+(1212, 7, '2000-01-01'),
+(1313, 8, '2000-02-02'),
+(1414, 8, '2000-03-03');
 
 INSERT INTO WorkPositions(nameOfPosition, nameOfCategory)
 VALUES
@@ -90,7 +99,9 @@ VALUES
 ('Gynecologist'),
 ('Therapist'),
 ('Expert in narcology'),
-('Psychiatrist');
+('Psychiatrist'),
+('Virologist'),
+('Pulmonologist');
 
 INSERT INTO Cars(carBrandName, carModel, carRegNumber, idCarFleet)
 VALUES
@@ -117,7 +128,10 @@ INSERT INTO Doctors(doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition
 VALUES
 ('Pavel', 'Dorofeev', '1974-09-09', 4, 4, 215602, 4),
 ('Kseniya', 'Dzuba', '1980-04-17', 4, 1, 629265, 4),
-('Anastasiya', 'Volframovna', '1976-01-09', 4, 3, 132747, 4);
+('Anastasiya', 'Volframovna', '1976-01-09', 4, 3, 132747, 4),
+('Kirill', 'Vakulenko', '1980-02-19', 4, 6, 1313, 4),
+('Nazar', 'Lesichanskiy', '1980-04-24', 4, 6, 1414, 4),
+('Anastasiya', 'Perepelkina', '1981-01-02', 4, 7, 1212, 4);
 
 INSERT INTO Nurses(nurseName, nurseSurname, nurseDateOfBirth, idWorkPosition, idNumberOfContract, idWorkExp)
 VALUES

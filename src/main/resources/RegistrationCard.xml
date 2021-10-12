@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RegistationCard>
+    <RegCardId></RegCardId>
+    <Hospital>
+        <hospitalName></hospitalName>
+        <hospitalAddress></hospitalAddress>
+    </Hospital>
+    <Visitor>
+        <name></name>
+        <surname></surname>
+        <birthday></birthday>
+        <address></address>
+        <diagnosis></diagnosis>
+        <visitDate></visitDate>
+        <dischargeDate/>
+
+        <VisitorAgeGroupCategory>
+            <ageGroupCategory></ageGroupCategory>
+        </VisitorAgeGroupCategory>
+        <VisitorCategories >
+            <healthConditionCategory></healthConditionCategory>
+            <visitCategory></visitCategory>
+        </VisitorCategories>
+    </Visitor>
+
+</RegistationCard>

@@ -66,6 +66,8 @@ SELECT * FROM Visitors WHERE idVisitor = 1;
 SELECT * FROM Cars WHERE idCarFleet = 3;
 SELECT idCar, carBrandName, carModel, carRegNumber, idCarFleet FROM Cars WHERE idCar = 2;
 SELECT * FROM Cars;
+INSERT INTO Cars(carBrandName, carModel, carRegNumber, idCarFleet) VALUES ("BMW", "X6", "7777OC-7", 3);
 SELECT idCar FROM Cars WHERE carBrandName = 'BMW';
 DELETE FROM Cars WHERE idCar IN (SELECT idCar FROM Cars WHERE carBrandName = 'BMW');
 SELECT * FROM Cars;
+drop database HospitalsDB;

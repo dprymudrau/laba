@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<Visitors>
+    <Visitor id = '10'>
+        <name>Aleksandr</name>
+        <surname>Pushkin</surname>
+        <birthday>1990-02-14</birthday>
+        <address>Minsk</address>
+        <diagnosis>Acute respiratory illness</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = '11'>
+        <name>Alexey</name>
+        <surname>Dudko</surname>
+        <birthday>1984-05-10</birthday>
+        <address>Minsk</address>
+        <diagnosis>Acute respiratory illness</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = "12">
+        <name>Dmitriy</name>
+        <surname>Topol</surname>
+        <birthday>1990-07-10</birthday>
+        <address>Minsk</address>
+        <diagnosis>Covid</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = "13">
+        <name>Sergey</name>
+        <surname>Zavezin</surname>
+        <birthday>2001-01-08</birthday>
+        <address>Minsk</address>
+        <diagnosis>Covid</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = "14">
+        <name>Kirill</name>
+        <surname>Motylev</surname>
+        <birthday>1999-03-19</birthday>
+        <address>Minsk</address>
+        <diagnosis>Covid</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = "15">
+        <name>Vasiliy</name>
+        <surname>Shved</surname>
+        <birthday>2002-09-25</birthday>
+        <address>Minsk</address>
+        <diagnosis>Bronchitis</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = "16">
+        <name>Andrey</name>
+        <surname>Danilchenko</surname>
+        <birthday>2012-11-28</birthday>
+        <address>Minsk</address>
+        <diagnosis>Vomit</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = "17">
+        <name>Andrey</name>
+        <surname>Malishev</surname>
+        <birthday>1970-12-29</birthday>
+        <address>Minsk</address>
+        <diagnosis>Covid</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = "18">
+        <name>Anton</name>
+        <surname>Klichko</surname>
+        <birthday>1981-12-12</birthday>
+        <address>Minsk</address>
+        <diagnosis>Covid</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = "19">
+        <name>Anton</name>
+        <surname>Zavadskiy</surname>
+        <birthday>1983-06-01</birthday>
+        <address>Minsk</address>
+        <diagnosis>Alcohol poisoning</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+    <Visitor id = "20">
+        <name>Yaroslav</name>
+        <surname>Kazakov</surname>
+        <birthday>1951-04-03</birthday>
+        <address>Minsk</address>
+        <diagnosis>Covid</diagnosis>
+        <visitDate>2021-10-11</visitDate>
+        <dischargeDate>null</dischargeDate>
+    </Visitor>
+</Visitors>

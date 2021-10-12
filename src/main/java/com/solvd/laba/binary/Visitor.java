@@ -25,6 +25,10 @@ public class Visitor {
         this.dischargeDate = dischargeDate;
     }
 
+    public Visitor(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
     public Visitor() {}
 
     public int getId() {
