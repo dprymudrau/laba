@@ -1,0 +1,3 @@
+[2021-10-12 05:10:21] [TestRunRegistrar.java] [1] [WARN] Reporting disabled: using no op test run registrar
+[2021-10-12 05:10:21] [IMessager.java] [1] [INFO] TEST [laba - test3] STARTED at [05:10:21 2021-10-12]
+[2021-10-12 05:10:21] [IMessager.java] [1] [INFO] TEST [laba - test3] PASSED at [05:10:21 2021-10-12]

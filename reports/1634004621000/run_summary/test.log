@@ -1,0 +1,4 @@
+[2021-10-12 05:10:21] [IMessager.java] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2021-10-12 05:10:21] [IMessager.java] [1] [INFO] RESULT #1: TEST [laba - test1] FAIL [log=file://E:\Git\laba\.\reports\1634004621000/0d56524a-9d3d-4f12-8778-610327fb4395/test.log]
+[2021-10-12 05:10:21] [IMessager.java] [1] [INFO] RESULT #2: TEST [laba - test2] PASS [log=file://E:\Git\laba\.\reports\1634004621000/0da3088d-1774-4e20-846e-d112b50654e6/test.log]
+[2021-10-12 05:10:21] [IMessager.java] [1] [INFO] RESULT #3: TEST [laba - test3] PASS [log=file://E:\Git\laba\.\reports\1634004621000/b30b08fe-5198-4847-9b9a-aa5b531a9076/test.log]

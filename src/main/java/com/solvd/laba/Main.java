@@ -19,7 +19,7 @@ public class Main {
         LOGGER.info("Start \"JDBC/MyBATIS\".");
         MyService myService = new MyServiceImpl();
         myService.doSmth();
-        //myService.getById(2);
+        //myService.getById(0);
         LOGGER.info("End \"JDBC/MyBATIS\".");
         //->>>>> apiTests2  <<<<<-
         //https://api.openweathermap.org/data/2.5/weather?q=Kiev&appid=b251a86444ad47078e0fd0b41782ad83
