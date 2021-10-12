@@ -86,7 +86,7 @@
 "type": "object",
 "properties": {
 "speed": {
-"type": "integer"
+"type": "number"
 },
 "deg": {
 "type": "integer"

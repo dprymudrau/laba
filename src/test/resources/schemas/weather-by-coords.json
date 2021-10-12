@@ -1,0 +1,1038 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "lat": {
+      "type": "number"
+    },
+    "lon": {
+      "type": "number"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "timezone_offset": {
+      "type": "integer"
+    },
+    "current": {
+      "type": "object",
+      "properties": {
+        "dt": {
+          "type": "integer"
+        },
+        "sunrise": {
+          "type": "integer"
+        },
+        "sunset": {
+          "type": "integer"
+        },
+        "temp": {
+          "type": "number"
+        },
+        "feels_like": {
+          "type": "number"
+        },
+        "pressure": {
+          "type": "integer"
+        },
+        "humidity": {
+          "type": "integer"
+        },
+        "dew_point": {
+          "type": "number"
+        },
+        "uvi": {
+          "type": "integer"
+        },
+        "clouds": {
+          "type": "integer"
+        },
+        "visibility": {
+          "type": "integer"
+        },
+        "wind_speed": {
+          "type": "number"
+        },
+        "wind_deg": {
+          "type": "integer"
+        },
+        "wind_gust": {
+          "type": "number"
+        },
+        "weather": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "main": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "main",
+                "description",
+                "icon"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "dt",
+        "sunrise",
+        "sunset",
+        "temp",
+        "feels_like",
+        "pressure",
+        "humidity",
+        "dew_point",
+        "uvi",
+        "clouds",
+        "visibility",
+        "wind_speed",
+        "wind_deg",
+        "wind_gust",
+        "weather"
+      ]
+    },
+    "minutely": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "dt": {
+              "type": "integer"
+            },
+            "precipitation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "dt",
+            "precipitation"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "lat",
+    "lon",
+    "timezone",
+    "timezone_offset",
+    "current",
+    "minutely"
+  ]
+}
