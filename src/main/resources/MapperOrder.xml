@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace = "com.solvd.laba.dao.interfaces.OrdersDAO">
+    <select id="getById" parameterType ="int" resultMap="orderResultMap">
+
+    </select>
+    <resultMap id="OrderResultMap" type="com.solvd.laba.binary.Orders">
+        <id column="order_orderId" property="orderId"/>
+        <result column="order_orderName" property="order_orderName"/>
+    </resultMap>
+</mapper>
