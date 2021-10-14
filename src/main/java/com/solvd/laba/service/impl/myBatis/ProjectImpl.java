@@ -1,9 +1,6 @@
 package com.solvd.laba.service.impl.myBatis;
 
-import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.binary.Project;
-import com.solvd.laba.dao.interfases.EmploeeDAO;
-import com.solvd.laba.dao.interfases.ProjectDAO;
 import com.solvd.laba.service.MyService;
 import com.solvd.laba.service.ProjectServise;
 import com.solvd.laba.utils.MyBatis;
@@ -12,10 +9,11 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ProjectImpl implements MyService,ProjectServise {
+public class ProjectImpl implements MyService, ProjectServise {
     private static final Logger LOGGER = LogManager.getLogger(com.solvd.laba.service.impl.jdbc.MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
-    private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
+    private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
+
     @Override
     public void doSmth() {
 
@@ -23,34 +21,42 @@ public class ProjectImpl implements MyService,ProjectServise {
 
     @Override
     public Object getById(Object id) {
-        Emploee emploee = null;
-        try{
+        Project project = null;
+        try {
             SqlSession sqlSession = factory.openSession();
-            EmploeeDAO emploeeDAO = sqlSession.getMapper(EmploeeDAO.class);
-            emploee = EmploeeDAO.getById();
+            ProjectImpl project1 = sqlSession.getMapper(ProjectImpl.class);
+            project = (Project) project1.getById(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return emploee;
+        return project;
     }
 
     @Override
     public Object setById(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
     }
 
     @Override
     public Object checkDb(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
     }
 
     @Override
     public Object getProject(Object id) {
-        return null;
+        Project project = null;
+        try {
+            SqlSession sqlSession = factory.openSession();
+            ProjectImpl projec = sqlSession.getMapper(ProjectImpl.class);
+            project = (Project) projec.getById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return project;
     }
 
     @Override
     public Object setProject(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
     }
 }

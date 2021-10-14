@@ -1,7 +1,6 @@
 package com.solvd.laba.service.impl.myBatis;
 
-import com.solvd.laba.binary.Emploee;
-import com.solvd.laba.dao.interfases.EmploeeDAO;
+import com.solvd.laba.binary.*;
 import com.solvd.laba.service.MyService;
 import com.solvd.laba.service.SetContactData;
 import com.solvd.laba.utils.MyBatis;
@@ -13,34 +12,34 @@ import org.apache.logging.log4j.Logger;
 public class CustContactImpl implements MyService, SetContactData {
     private static final Logger LOGGER = LogManager.getLogger(com.solvd.laba.service.impl.jdbc.MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
-    private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
+    private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
     @Override
-    public Object emailsID(Object id) {
-        return null;
+    public Object getById(Object id) {
+        СustomerСontact custumerC = null;
+        try {
+            SqlSession sqlSession = factory.openSession();
+            CustContactImpl custC = sqlSession.getMapper(CustContactImpl.class);
+            custumerC = (СustomerСontact) custC.getById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return custumerC;
+    }
+
+    @Override
+    public Emails emailsID(Object id) {
+        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
     }
 
     @Override
     public Object phoneNumbersID(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
     }
 
     @Override
     public void doSmth() {
-
-    }
-
-    @Override
-    public Object getById(Object id) {
-        Emploee emploee = null;
-        try{
-            SqlSession sqlSession = factory.openSession();
-            EmploeeDAO emploeeDAO = sqlSession.getMapper(EmploeeDAO.class);
-            emploee = EmploeeDAO.getById();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return emploee;
+        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
     }
 
     @Override
@@ -50,6 +49,6 @@ public class CustContactImpl implements MyService, SetContactData {
 
     @Override
     public Object checkDb(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
     }
 }

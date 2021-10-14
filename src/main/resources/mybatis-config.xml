@@ -16,10 +16,10 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mappers/Emploee-mapper.xml"/>
-        <mapper resource="mappers/CustumerContact-mapper.xml"/>
-        <mapper resource="mappers/CustumerContact-mapper.xml"/>
-        <mapper resource="mappers/ITCompanyContact-mapper.xml"/>
-        <mapper resource="mappers/Tasks-mapper.xml"/>
+        <mapper resource="mappers/emploee-mapper.xml"/>
+        <mapper resource="mappers/custumerContact-mapper.xml"/>
+        <mapper resource="mappers/custumerContact-mapper.xml"/>
+        <mapper resource="mappers/iTCompanyContact-mapper.xml"/>
+        <mapper resource="mappers/tasks-mapper.xml"/>
     </mappers>
 </configuration>

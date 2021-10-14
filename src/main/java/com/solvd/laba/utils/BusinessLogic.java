@@ -1,6 +1,7 @@
 package com.solvd.laba.utils;
 
 import com.solvd.laba.service.impl.myBatis.*; //jdbc or myBatis
+import com.solvd.laba.binary.*;
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.service.*;
 import com.solvd.laba.dao.impl.jdbc.*; //only Dao
@@ -22,6 +23,12 @@ public class BusinessLogic {
         SetNameServise sItName = null;
         sItName = new ItNameImpl(sItName);
         myService.doSmth();
+
+
+        CustContactImpl custContact = new CustContactImpl();
+        СustomerСontact customer1;
+        customer1 = (СustomerСontact) custContact.getById(1L);
+
 
         EmploeeDAOImpl employee = new EmploeeDAOImpl();
         Emploee employee1 = employee.getById(1L);          //get a customer   cCName='Name1'

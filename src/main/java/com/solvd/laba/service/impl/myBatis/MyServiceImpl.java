@@ -1,7 +1,6 @@
 package com.solvd.laba.service.impl.myBatis;
 
 import com.solvd.laba.dao.interfases.EmploeeDAO;
-import com.solvd.laba.dao.impl.jdbc.EmploeeDAOImpl;
 import com.solvd.laba.service.MyService;
 import com.solvd.laba.utils.MyBatis;
 import org.apache.ibatis.session.SqlSession;
