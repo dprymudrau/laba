@@ -1,5 +1,6 @@
 package com.solvd.laba.testNG;
 import com.solvd.laba.binary.Emploee;
+import com.solvd.laba.binary.Project;
 import com.solvd.laba.dao.jdbc.impl.EmploeeDAOImpl;
 import com.solvd.laba.dao.jdbc.impl.ProjectDAOImpl;
 
@@ -24,7 +25,11 @@ public class MySuiteDBTests {
     public void projectNameTest(){
         ProjectDAOImpl project = new ProjectDAOImpl();
         project.setProject("New Project Name");
-        Assert.assertEquals(project.getById(5L), "Project{id=0, project='Project5-amet', departmentNameId=0, departmentNameIdItCompaniesID=0}");
+        Project expextedProject = new Project();
+        expextedProject.setProject("Pr1");
+        expextedProject.setDepartmentNameId(1);
+        expextedProject.setDepartmentNameIdItCompaniesID(3);
+        Assert.assertEquals(project.getById(5L),expextedProject,"test message");
     }
     @Test
     public void projectGetByIdTest(){

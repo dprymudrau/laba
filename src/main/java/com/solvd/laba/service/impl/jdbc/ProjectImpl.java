@@ -1,50 +1,19 @@
-package com.solvd.laba.service.impl.myBatis;
+package com.solvd.laba.service.impl.jdbc;
 
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.dao.interfases.EmploeeDAO;
 import com.solvd.laba.service.MyService;
-import com.solvd.laba.service.SetNameServise;
+import com.solvd.laba.service.ProjectServise;
 import com.solvd.laba.utils.MyBatis;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SetNameImpl implements MyService,SetNameServise {
-    private static final Logger LOGGER = LogManager.getLogger(com.solvd.laba.service.impl.jdbc.MyServiceImpl.class);
+public class ProjectImpl implements MyService,ProjectServise {
+    private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
-
-    @Override
-    public Object getCCName(Object id) {
-        return null;
-    }
-
-    @Override
-    public Object setCCName(Object id) {
-        return null;
-    }
-
-    @Override
-    public Object getCCSurname(Object id) {
-        return null;
-    }
-
-    @Override
-    public Object setCCSurname(Object id) {
-        return null;
-    }
-
-    @Override
-    public Object getCCPatronymic(Object id) {
-        return null;
-    }
-
-    @Override
-    public Object setCCPatronymic(Object id) {
-        return null;
-    }
-
     @Override
     public void doSmth() {
 
@@ -70,6 +39,16 @@ public class SetNameImpl implements MyService,SetNameServise {
 
     @Override
     public Object checkDb(Object id) {
+        return null;
+    }
+
+    @Override
+    public Object getProject(Object id) {
+        return null;
+    }
+
+    @Override
+    public Object setProject(Object id) {
         return null;
     }
 }
