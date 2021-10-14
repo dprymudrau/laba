@@ -22,7 +22,7 @@ public class MyServiceImpl implements MyService {
         EmploeeDAOImpl employee = new EmploeeDAOImpl();
 
         getById(employee);
-        //throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
+        //throw new UnsupportedOperationException("This method isn't implemented for JDBC Service");
     }
 
     @Override

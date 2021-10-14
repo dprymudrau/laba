@@ -1,41 +1,37 @@
-package com.solvd.laba.utils.XmlAndJsonParse;
+package com.solvd.laba.service.impl.jdbc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.solvd.laba.Main;
 import com.solvd.laba.binary.City;
 import com.solvd.laba.binary.DepartmentName;
 import com.solvd.laba.binary.Emails;
+import com.solvd.laba.utils.XmlAndJsonParse.Jaxb;
+import com.solvd.laba.utils.XmlAndJsonParse.Stax;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.Date;
 import java.util.List;
 
-public class XmlAndJsonParsers {
+public class ParserServiseImpl {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public XmlAndJsonParsers() {
-    }
-
-    public static void staxParser() {     //->>>>> STAX Parser <<<<<-
-        String STAXFileName = "src/main/resources/xmlAndJsonParsers/Stax.xml";
+    public static void staxParser(String path) {     //->>>>> STAX Parser <<<<<-
+        String STAXFileName = path;
         List<City> cityList = Stax.parseXmlByStax(STAXFileName);
         for (City city : cityList) {
             LOGGER.info(city.toString());
         }
     }
 
-    public static void jaxbParser() {    //->>>>> JAXB Parser <<<<<-
-        String JAXBFileNameToSave = "src/main/resources/xmlAndJsonParsers/JaxbW.xml";
-        String JAXBFileNameToRead = "src/main/resources/xmlAndJsonParsers/JaxbR.xml";
+    public static void jaxbParser(String readString, String writeString) {    //->>>>> JAXB Parser <<<<<-
+        String JAXBFileNameToSave = writeString;
+        String JAXBFileNameToRead = readString;
+
         DepartmentName departmentName = new DepartmentName();
-        departmentName.setDate(new Date());
-        //date adapter
         departmentName.setDepartmentName("Department6");
         departmentName.setItCompaniesId(15);
         Jaxb.convertObjectToXml(departmentName, JAXBFileNameToSave);//save the object to XML file
@@ -43,11 +39,12 @@ public class XmlAndJsonParsers {
         if (unmarshalDepartmentName != null) {
             LOGGER.info(unmarshalDepartmentName.toString());
         }
-        int h =5;
+        departmentName.setDate(new Date());
+        //date adapter
 
     }
 
-    public static void jacksonParser() {         //->>>>> JACKSON Parser <<<<<-
+    public static void jacksonParser(String string) {         //->>>>> JACKSON Parser <<<<<-
         Emails emails = new Emails();
         emails.setEmails("Mail6");
         StringWriter writer = new StringWriter();
@@ -60,7 +57,7 @@ public class XmlAndJsonParsers {
         String result = writer.toString();
         LOGGER.info(result);
 
-        String jsonString = "{ \"emails\":\"mail\"}";
+        String jsonString = string;
         StringReader reader = new StringReader(jsonString);
         ObjectMapper mapper1 = new ObjectMapper();
         try {
@@ -69,7 +66,4 @@ public class XmlAndJsonParsers {
             e.printStackTrace();
         }
     }
-    @XmlElement(name = "published", required = true)
-    @XmlJavaTypeAdapter(DateAdapter.class)
-    private Date published;
 }

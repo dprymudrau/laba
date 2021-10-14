@@ -16,6 +16,9 @@ public class SetCustNameImpl implements MyService,SetNameServise {
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
 
+    public SetCustNameImpl(SetNameServise sCName) {
+    }
+
     @Override
     public Object getCCName(Object id) {
         return null;
