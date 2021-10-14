@@ -9,7 +9,7 @@ import java.io.File;
 
 
 public class Jaxb {
-    static DepartmentName fromXmlToObject(String filePath) { // restore the object from the XML file
+    public static DepartmentName fromXmlToObject(String filePath) { // restore the object from the XML file
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(DepartmentName.class);
             Unmarshaller un = jaxbContext.createUnmarshaller();
@@ -21,7 +21,7 @@ public class Jaxb {
         return null;
     }
 
-    static void convertObjectToXml(DepartmentName departmentName, String filePath) {   // save the object to XML file
+    public static void convertObjectToXml(DepartmentName departmentName, String filePath) {   // save the object to XML file
         try {
             JAXBContext context = JAXBContext.newInstance(DepartmentName.class);
             Marshaller marshaller = context.createMarshaller();

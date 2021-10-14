@@ -3,6 +3,7 @@ package com.solvd.laba;
 import com.solvd.laba.service.MyService;
 //jdbc/myBatis
 import com.solvd.laba.service.impl.jdbc.MyServiceImpl;
+import com.solvd.laba.service.impl.myBatis.ParserServiseImpl;
 import com.solvd.laba.utils.XmlAndJsonParse.XmlAndJsonParsers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,6 +20,9 @@ public class Main {
         LOGGER.info("Start \"JDBC/MyBATIS\".");
         MyService myService = new MyServiceImpl();
         myService.doSmth();
+        ParserServiseImpl.staxParser("src/main/resources/xmlAndJsonParsers/Stax.xml");
+        ParserServiseImpl.jaxbParser("src/main/resources/xmlAndJsonParsers/JaxbR.xml", "src/main/resources/xmlAndJsonParsers/JaxbW.xml");
+        ParserServiseImpl.jacksonParser("{ \"emails\":\"mail\"}");
         //myService.getById(0);
         LOGGER.info("End \"JDBC/MyBATIS\".");
         //->>>>> apiTests2  <<<<<-
