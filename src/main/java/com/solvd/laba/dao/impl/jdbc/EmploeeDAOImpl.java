@@ -1,4 +1,4 @@
-package com.solvd.laba.dao.jdbc.impl;
+package com.solvd.laba.dao.impl.jdbc;
 
 import com.solvd.laba.dao.AbstractDAO;
 import com.solvd.laba.dao.interfases.EmploeeDAO;

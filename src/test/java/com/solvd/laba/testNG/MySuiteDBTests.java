@@ -1,8 +1,8 @@
 package com.solvd.laba.testNG;
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.binary.Project;
-import com.solvd.laba.dao.jdbc.impl.EmploeeDAOImpl;
-import com.solvd.laba.dao.jdbc.impl.ProjectDAOImpl;
+import com.solvd.laba.dao.impl.jdbc.EmploeeDAOImpl;
+import com.solvd.laba.dao.impl.jdbc.ProjectDAOImpl;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

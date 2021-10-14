@@ -1,10 +1,9 @@
 package com.solvd.laba.utils;
 
-
-import com.solvd.laba.binary.Emploee;
-import com.solvd.laba.dao.jdbc.impl.*;
-import com.solvd.laba.service.*;
+import com.solvd.laba.dao.impl.jdbc.*;
 import com.solvd.laba.service.impl.jdbc.*;
+import com.solvd.laba.binary.Emploee;
+import com.solvd.laba.service.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
