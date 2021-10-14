@@ -11,12 +11,12 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SetCustNameImpl implements MyService,SetNameServise {
+public class CustNameImpl implements MyService,SetNameServise {
     private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
 
-    public SetCustNameImpl(SetNameServise sCName) {
+    public CustNameImpl(SetNameServise sCName) {
     }
 
     @Override

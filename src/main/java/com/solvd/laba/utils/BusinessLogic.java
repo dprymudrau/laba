@@ -1,9 +1,9 @@
 package com.solvd.laba.utils;
 
-import com.solvd.laba.dao.impl.jdbc.*;
-import com.solvd.laba.service.impl.jdbc.*;
+import com.solvd.laba.service.impl.myBatis.*; //jdbc or myBatis
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.service.*;
+import com.solvd.laba.dao.impl.jdbc.*; //only Dao
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,12 +15,12 @@ public class BusinessLogic {
         LOGGER.info("Start \"JDBC/MyBATIS\".");
         MyService myService = new MyServiceImpl();
         ProjectServise projectServise = new ProjectImpl();
-        SetContactData sCData = new CustContactDataImpl();
-        SetContactData sItData = new ItContactDataImpl();
+        SetContactData sCData = new CustContactImpl();
+        SetContactData sItData = new ItContactImpl();
         SetNameServise sCName = null;
-        sCName = new SetCustNameImpl(sCName);
+        sCName = new CustNameImpl(sCName);
         SetNameServise sItName = null;
-        sItName = new SetItNameImpl(sItName);
+        sItName = new ItNameImpl(sItName);
         myService.doSmth();
 
         EmploeeDAOImpl employee = new EmploeeDAOImpl();

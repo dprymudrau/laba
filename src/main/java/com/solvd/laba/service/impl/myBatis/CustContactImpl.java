@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ItContactDataImpl implements MyService, SetContactData {
+public class CustContactImpl implements MyService, SetContactData {
     private static final Logger LOGGER = LogManager.getLogger(com.solvd.laba.service.impl.jdbc.MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory= MyBatis.getSessionFactory();

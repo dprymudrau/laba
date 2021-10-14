@@ -1,24 +1,32 @@
-package com.solvd.laba.service.impl.myBatis;
+package com.solvd.laba.service.impl.jdbc;
 
 import com.solvd.laba.binary.Emploee;
+import com.solvd.laba.binary.ITCompanyContact;
 import com.solvd.laba.dao.interfases.EmploeeDAO;
 import com.solvd.laba.service.MyService;
 import com.solvd.laba.service.SetNameServise;
-import com.solvd.laba.service.impl.jdbc.MyServiceImpl;
 import com.solvd.laba.utils.MyBatis;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SetItNameImpl implements MyService,SetNameServise {
+public class ItNameImpl implements MyService, SetNameServise {
     private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
-    private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
+    private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
-    public SetItNameImpl(Object sItName) {
+    public ItNameImpl() {
     }
 
+    public ItNameImpl(Object id) {
+        ITCompanyContact contact = new ITCompanyContact();
+        contact.setiTCCName((String) setCCName(id));
+        contact.setiTCCSurname((String) setCCSurname(id));
+        contact.setiTCCPatronymic((String) setCCPatronymic(id));
+    }
+
+    //iTCCName
     @Override
     public Object getCCName(Object id) {
         return null;
@@ -56,15 +64,7 @@ public class SetItNameImpl implements MyService,SetNameServise {
 
     @Override
     public Object getById(Object id) {
-        Emploee emploee = null;
-        try{
-            SqlSession sqlSession = factory.openSession();
-            EmploeeDAO emploeeDAO = sqlSession.getMapper(EmploeeDAO.class);
-            emploee = EmploeeDAO.getById();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return emploee;
+        return null;
     }
 
     @Override

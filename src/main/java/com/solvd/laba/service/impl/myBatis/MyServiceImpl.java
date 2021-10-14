@@ -16,9 +16,6 @@ public class MyServiceImpl implements MyService {
 
     @Override
     public void doSmth() {
-        EmploeeDAOImpl employee = new EmploeeDAOImpl();
-
-        getById(employee);
         //throw new UnsupportedOperationException("This method isn't implemented for JDBC Service");
     }
 

@@ -11,19 +11,19 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SetCustNameImpl implements MyService, SetNameServise {
+public class CustNameImpl implements MyService, SetNameServise {
     private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
 
-    public SetCustNameImpl(Object id){
+    public CustNameImpl(Object id){
         СustomerСontact contact = new СustomerСontact();
         contact.setcCName((String) setCCName(id));
         contact.setcCSurname((String) setCCSurname(id));
         contact.setcCPatronymic((String) setCCPatronymic(id));
     }
 
-    public SetCustNameImpl() {
+    public CustNameImpl() {
     }
 
     @Override

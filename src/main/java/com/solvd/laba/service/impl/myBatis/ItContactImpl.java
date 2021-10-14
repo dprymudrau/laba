@@ -1,4 +1,4 @@
-package com.solvd.laba.service.impl.jdbc;
+package com.solvd.laba.service.impl.myBatis;
 
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.dao.interfases.EmploeeDAO;
@@ -10,10 +10,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CustContactDataImpl implements MyService, SetContactData {
-    private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
+public class ItContactImpl implements MyService, SetContactData {
+    private static final Logger LOGGER = LogManager.getLogger(com.solvd.laba.service.impl.jdbc.MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
-    private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
+    private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
 
     @Override
     public Object emailsID(Object id) {
@@ -27,11 +27,20 @@ public class CustContactDataImpl implements MyService, SetContactData {
 
     @Override
     public void doSmth() {
+
     }
 
     @Override
     public Object getById(Object id) {
-        return null;
+        Emploee emploee = null;
+        try{
+            SqlSession sqlSession = factory.openSession();
+            EmploeeDAO emploeeDAO = sqlSession.getMapper(EmploeeDAO.class);
+            emploee = EmploeeDAO.getById();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return emploee;
     }
 
     @Override
