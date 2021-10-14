@@ -2,8 +2,9 @@ package com.solvd.laba.testNG;
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.dao.jdbc.impl.EmploeeDAOImpl;
 import com.solvd.laba.dao.jdbc.impl.ProjectDAOImpl;
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 
 public class MySuiteDBTests {

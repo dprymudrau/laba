@@ -1,8 +1,9 @@
 package com.solvd.laba.testNG;
 
 import com.solvd.laba.binary.*;
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 
 public class MySuiteSimpleTessts {
     @Test

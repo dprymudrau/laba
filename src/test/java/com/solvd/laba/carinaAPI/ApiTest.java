@@ -1,8 +1,9 @@
 package com.solvd.laba.carinaAPI;
 
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
+import com.qaprosoft.carina.core.foundation.api.annotation.SuccessfulHttpStatus;
 import com.solvd.laba.api.GetWeatherByCityMethod;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class ApiTest implements IAbstractTest {
     private final static String CITY_KIEV = "Kiev";

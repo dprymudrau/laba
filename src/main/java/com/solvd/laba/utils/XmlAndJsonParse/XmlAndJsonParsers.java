@@ -33,7 +33,6 @@ public class XmlAndJsonParsers {
     public static void jaxbParser() {    //->>>>> JAXB Parser <<<<<-
         String JAXBFileNameToSave = "src/main/resources/xmlAndJsonParsers/JaxbW.xml";
         String JAXBFileNameToRead = "src/main/resources/xmlAndJsonParsers/JaxbR.xml";
-        new DateAdapter();   //date adapter
 
         DepartmentName departmentName = new DepartmentName();
         departmentName.setDepartmentName("Department6");
@@ -43,6 +42,8 @@ public class XmlAndJsonParsers {
         if (unmarshalDepartmentName != null) {
             LOGGER.info(unmarshalDepartmentName.toString());
         }
+        departmentName.setDate(new Date());
+        //date adapter
 
     }
 

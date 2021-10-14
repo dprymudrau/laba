@@ -4,14 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.solvd</groupId>
     <artifactId>laba</artifactId>
-
     <version>V-1.0</version>
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <org.apache.log4j>2.14.1</org.apache.log4j>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <!-- Carina test -->
@@ -20,33 +19,7 @@
         <java.version>11</java.version>
         <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
         <zebrunner-agent.version>RELEASE</zebrunner-agent.version>
-        <suite>helloWorld</suite>
     </properties>
-
-    <repositories>        <!-- Carina test -->
-        <repository>
-            <id>qaprosoft_snapshots</id>
-            <name>Qaprosoft Snapshots</name>
-            <url>https://ci.qaprosoft.com/nexus/content/repositories/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>zebrunner_snapshots</id>
-            <name>zebrunner Snapshots</name>
-            <url>https://nexus.zebrunner.dev/repository/ce-snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>        <!-- Carina test -->
 
     <dependencies>
         <dependency>
@@ -84,10 +57,7 @@
             <artifactId>mybatis</artifactId>
             <version>3.5.7</version>
         </dependency>
-
-
-        <!-- JAVAX -->
-        <dependency>
+        <dependency> <!-- JAVAX -->
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
@@ -106,33 +76,13 @@
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
             <version>2.3.1</version>
-        </dependency>
-        <!-- JAVAX -->
+        </dependency>  <!-- JAVAX -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.12.5</version>
         </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>2.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- Carina test -->
-
-        <dependency>
+        <dependency>  <!-- Carina test -->
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.4.0</version>
@@ -160,16 +110,23 @@
             <artifactId>carina-cucumber</artifactId>
             <version>RELEASE</version>
         </dependency>
-        <dependency>
-            <!--we need it to reuse benefits of zebrunner testng agent for webdriver
-                sesssion(s) declaration -->
+        <dependency> <!--we need it to reuse benefits of zebrunner testng agent for webdriver sesssion(s) declaration -->
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
             <version>1.10.18</version>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>3.141.59</version>
+        </dependency>   <!-- Carina test -->
     </dependencies>
-
-
 
     <build>
         <plugins>
@@ -182,8 +139,7 @@
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
-            <!-- MAVEN SITE -->
-            <plugin>
+            <plugin> <!-- MAVEN SITE -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
@@ -192,9 +148,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.0.0</version>
-            </plugin>
-            <!-- MAVEN SITE -->
-
+            </plugin><!-- MAVEN SITE -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -203,7 +157,6 @@
                     <parallel>all</parallel>
                     <threadCount>5</threadCount>
                 </configuration>
-
             </plugin>
         </plugins>
     </build>
