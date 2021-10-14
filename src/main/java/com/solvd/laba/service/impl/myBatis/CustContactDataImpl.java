@@ -1,60 +1,27 @@
-package com.solvd.laba.service.impl.jdbc;
+package com.solvd.laba.service.impl.myBatis;
 
 import com.solvd.laba.binary.Emploee;
-import com.solvd.laba.binary.ITCompanyContact;
 import com.solvd.laba.dao.interfases.EmploeeDAO;
 import com.solvd.laba.service.MyService;
-import com.solvd.laba.service.SetNameServise;
+import com.solvd.laba.service.SetContactData;
 import com.solvd.laba.utils.MyBatis;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SetItNameImpl implements MyService,SetNameServise {
-    private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
+public class CustContactDataImpl implements MyService, SetContactData {
+    private static final Logger LOGGER = LogManager.getLogger(com.solvd.laba.service.impl.jdbc.MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
 
-    public SetItNameImpl(Object id){
-        ITCompanyContact contact = new ITCompanyContact();
-        contact.setiTCCName((String) setCCName(id));
-        contact.setiTCCSurname((String) setCCSurname(id));
-        contact.setiTCCPatronymic((String) setCCPatronymic(id));
-    }
-
-    public SetItNameImpl() {
-
-    }
-
-    //iTCCName
     @Override
-    public Object getCCName(Object id) {
+    public Object emailsID(Object id) {
         return null;
     }
 
     @Override
-    public Object setCCName(Object id) {
-        return null;
-    }
-
-    @Override
-    public Object getCCSurname(Object id) {
-        return null;
-    }
-
-    @Override
-    public Object setCCSurname(Object id) {
-        return null;
-    }
-
-    @Override
-    public Object getCCPatronymic(Object id) {
-        return null;
-    }
-
-    @Override
-    public Object setCCPatronymic(Object id) {
+    public Object phoneNumbersID(Object id) {
         return null;
     }
 

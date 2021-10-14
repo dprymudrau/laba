@@ -16,11 +16,15 @@ public class SetCustNameImpl implements MyService, SetNameServise {
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
 
-    private SetCustNameImpl(Object id){
+    public SetCustNameImpl(Object id){
         СustomerСontact contact = new СustomerСontact();
         contact.setcCName((String) setCCName(id));
         contact.setcCSurname((String) setCCSurname(id));
         contact.setcCPatronymic((String) setCCPatronymic(id));
+
+    }
+
+    public SetCustNameImpl() {
 
     }
 
