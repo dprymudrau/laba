@@ -1,6 +1,6 @@
 package com.solvd.laba.utils;
 
-import com.solvd.laba.service.impl.myBatis.*; //jdbc or myBatis
+import com.solvd.laba.service.impl.jdbc.*; //jdbc or myBatis
 import com.solvd.laba.binary.*;
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.service.*;
@@ -23,12 +23,11 @@ public class BusinessLogic {
         SetNameServise sItName = null;
         sItName = new ItNameImpl(sItName);
         myService.doSmth();
-
-
-        CustContactImpl custContact = new CustContactImpl();
-        СustomerСontact customer1;
-        customer1 = (СustomerСontact) custContact.getById(1L);
-
+        projectServise.getProject("Proj d");
+        sCData.emailsID("Mail@mail.com");
+        sItData.phoneNumbersID("2-3-4");
+        sCName.setCCName("Set New Name");
+        sItName.setCCName("SetNeWItName");
 
         EmploeeDAOImpl employee = new EmploeeDAOImpl();
         Emploee employee1 = employee.getById(1L);          //get a customer   cCName='Name1'

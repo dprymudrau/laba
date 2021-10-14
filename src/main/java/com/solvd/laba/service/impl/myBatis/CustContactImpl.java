@@ -28,8 +28,16 @@ public class CustContactImpl implements MyService, SetContactData {
     }
 
     @Override
-    public Emails emailsID(Object id) {
-        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
+    public Object emailsID(Object id) {
+        СustomerСontact custumerC = null;
+        try {
+            SqlSession sqlSession = factory.openSession();
+            CustContactImpl custC = sqlSession.getMapper(CustContactImpl.class);
+            custumerC = (СustomerСontact) custC.getById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return custumerC;
     }
 
     @Override

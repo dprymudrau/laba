@@ -27,7 +27,7 @@ public class ItNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCName(Object id) {
-        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
+        return null;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ItNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCSurname(Object id) {
-        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
+        return null;
     }
 
     @Override
@@ -47,7 +47,7 @@ public class ItNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCPatronymic(Object id) {
-        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
+        return null;
     }
 
     @Override

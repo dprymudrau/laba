@@ -46,8 +46,15 @@ public class ItContactImpl implements MyService, SetContactData {
 
     @Override
     public Object phoneNumbersID(Object id) {
-        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
-    }
+        ITCompanyContact contact = null;
+        try {
+            SqlSession sqlSession = factory.openSession();
+            ItContactImpl emploeeDAO = sqlSession.getMapper(ItContactImpl.class);
+            contact = (ITCompanyContact) emploeeDAO.getById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return contact;    }
 
     @Override
     public void doSmth() {

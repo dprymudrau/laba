@@ -10,7 +10,7 @@ public class CustNameImpl implements MyService, SetNameServise {
     private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
 
 
-    public CustNameImpl(Object id){
+    public CustNameImpl(Object id) {
         СustomerСontact contact = new СustomerСontact();
         contact.setcCName((String) setCCName(id));
         contact.setcCSurname((String) setCCSurname(id));
@@ -27,7 +27,7 @@ public class CustNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCName(Object id) {
-        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
+        return null;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CustNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCSurname(Object id) {
-        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
+        return null;
     }
 
     @Override
@@ -47,12 +47,11 @@ public class CustNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCPatronymic(Object id) {
-        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
+        return null;
     }
 
     @Override
     public void doSmth() {
-
     }
 
     @Override
