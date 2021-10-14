@@ -9,6 +9,9 @@ import org.apache.logging.log4j.Logger;
 public class MyServiceImpl implements MyService {
     private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
 
+    public MyServiceImpl(MyService myService) {
+    }
+
     @Override
     public void doSmth() {
         EmploeeDAOImpl employee = new EmploeeDAOImpl();

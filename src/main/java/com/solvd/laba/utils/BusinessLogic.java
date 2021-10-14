@@ -14,14 +14,14 @@ public class BusinessLogic {
     public static void businessLogic(){
 
         LOGGER.info("Start \"JDBC/MyBATIS\".");
-        MyService myService = new MyServiceImpl();
+        MyService myService = null;
+        myService= new MyServiceImpl(myService);
         ProjectServise projectServise = new ProjectImpl();
-        SetContactData sCData = new CustContactImpl();
-        SetContactData sItData = new ItContactImpl();
-        SetNameServise sCName = null;
-        sCName = new CustNameImpl(sCName);
-        SetNameServise sItName = null;
-        sItName = new ItNameImpl(sItName);
+        SetContactData sCData= new CustContactImpl();
+        SetContactData sItData= new ItContactImpl();
+        SetNameServise sCName = new CustNameImpl();
+        SetNameServise sItName = new ItNameImpl();
+
         myService.doSmth();
         projectServise.getProject("Proj d");
         sCData.emailsID("Mail@mail.com");

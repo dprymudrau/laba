@@ -13,6 +13,10 @@ public class MyServiceImpl implements MyService {
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
 
+    public MyServiceImpl(MyService myService) {
+    }
+
+
     @Override
     public void doSmth() {
         //throw new UnsupportedOperationException("This method isn't implemented for JDBC Service");

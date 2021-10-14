@@ -18,8 +18,7 @@ public class ItNameImpl implements MyService, SetNameServise {
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
-    public ItNameImpl(Object sItName) {
-    }
+
 
     @Override
     public Object getById(Object id) {

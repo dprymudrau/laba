@@ -14,6 +14,8 @@ public class ProjectImpl implements MyService, ProjectServise {
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
+
+
     @Override
     public void doSmth() {
 

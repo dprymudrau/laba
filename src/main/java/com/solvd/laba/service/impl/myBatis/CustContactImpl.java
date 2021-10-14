@@ -14,6 +14,7 @@ public class CustContactImpl implements MyService, SetContactData {
     private static MyBatis MyBatisFactory;
     private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
+
     @Override
     public Object getById(Object id) {
         СustomerСontact custumerC = null;
