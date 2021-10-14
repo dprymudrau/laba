@@ -1,6 +1,6 @@
 
 ${project.build.directory}
-
+/src/main/java/com/solvd/laba/service/impl/interfases/
 target/
 logs/
 out/
