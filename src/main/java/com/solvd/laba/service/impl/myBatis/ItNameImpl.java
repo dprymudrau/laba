@@ -59,7 +59,7 @@ public class ItNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCName(Object id) {
-        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
+        return null;
     }
 
     @Override

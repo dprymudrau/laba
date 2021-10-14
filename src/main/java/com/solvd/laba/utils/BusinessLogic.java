@@ -1,6 +1,6 @@
 package com.solvd.laba.utils;
 
-import com.solvd.laba.service.impl.jdbc.*; //jdbc or myBatis
+import com.solvd.laba.service.impl.myBatis.*; //jdbc or myBatis
 import com.solvd.laba.binary.*;
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.service.*;
