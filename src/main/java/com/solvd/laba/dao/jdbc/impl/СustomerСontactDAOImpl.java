@@ -32,8 +32,8 @@ public class СustomerСontactDAOImpl extends AbstractDAO implements СustomerС
         Connection connection = getConnection();
         ResultSet resultSet = null;
         СustomerСontact сustomerСontact = new СustomerСontact();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(MY_QUERY)){
-            LOGGER.debug("preparedStatement" + preparedStatement +" created.");
+        try (PreparedStatement preparedStatement = connection.prepareStatement(MY_QUERY)) {
+            LOGGER.debug("preparedStatement" + preparedStatement + " created.");
             preparedStatement.setLong(1, id.longValue());
             LOGGER.debug("Query" + MY_QUERY + "started");
             resultSet = preparedStatement.executeQuery();

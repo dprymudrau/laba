@@ -3,10 +3,7 @@ package com.solvd.laba.utils;
 
 import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.dao.jdbc.impl.*;
-import com.solvd.laba.service.MyService;
-import com.solvd.laba.service.ProjectServise;
-import com.solvd.laba.service.SetContactData;
-import com.solvd.laba.service.SetNameServise;
+import com.solvd.laba.service.*;
 import com.solvd.laba.service.impl.jdbc.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

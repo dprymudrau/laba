@@ -21,11 +21,9 @@ public class SetCustNameImpl implements MyService, SetNameServise {
         contact.setcCName((String) setCCName(id));
         contact.setcCSurname((String) setCCSurname(id));
         contact.setcCPatronymic((String) setCCPatronymic(id));
-
     }
 
     public SetCustNameImpl() {
-
     }
 
     @Override
@@ -65,15 +63,7 @@ public class SetCustNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object getById(Object id) {
-        Emploee emploee = null;
-        try{
-            SqlSession sqlSession = factory.openSession();
-            EmploeeDAO emploeeDAO = sqlSession.getMapper(EmploeeDAO.class);
-            emploee = EmploeeDAO.getById();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return emploee;
+        return null;
     }
 
     @Override

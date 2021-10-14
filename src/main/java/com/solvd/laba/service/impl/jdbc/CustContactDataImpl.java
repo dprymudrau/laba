@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 public class CustContactDataImpl implements MyService, SetContactData {
     private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
-    private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
+    private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
     @Override
     public Object emailsID(Object id) {
@@ -27,20 +27,11 @@ public class CustContactDataImpl implements MyService, SetContactData {
 
     @Override
     public void doSmth() {
-
     }
 
     @Override
     public Object getById(Object id) {
-        Emploee emploee = null;
-        try{
-            SqlSession sqlSession = factory.openSession();
-            EmploeeDAO emploeeDAO = sqlSession.getMapper(EmploeeDAO.class);
-            emploee = EmploeeDAO.getById();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return emploee;
+        return null;
     }
 
     @Override

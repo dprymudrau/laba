@@ -33,8 +33,8 @@ public class ProjectDAOImpl extends AbstractDAO implements ProjectDAO {
         Connection connection = getConnection();
         ResultSet resultSet = null;
         Project project = new Project();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(MY_QUERY)){
-            LOGGER.debug("preparedStatement" + preparedStatement +" created.");
+        try (PreparedStatement preparedStatement = connection.prepareStatement(MY_QUERY)) {
+            LOGGER.debug("preparedStatement" + preparedStatement + " created.");
             preparedStatement.setLong(1, id.longValue());
             LOGGER.debug("Query" + MY_QUERY + "started");
             resultSet = preparedStatement.executeQuery();

@@ -19,7 +19,7 @@ import java.util.List;
 public class ParserServiseImpl {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public static void staxParser(String path) {     //->>>>> STAX Parser <<<<<-
+    public static void staxParser(String path) {
         String STAXFileName = path;
         List<City> cityList = Stax.parseXmlByStax(STAXFileName);
         for (City city : cityList) {
@@ -27,7 +27,7 @@ public class ParserServiseImpl {
         }
     }
 
-    public static void jaxbParser(String readString, String writeString) {    //->>>>> JAXB Parser <<<<<-
+    public static void jaxbParser(String readString, String writeString) {
         String JAXBFileNameToSave = writeString;
         String JAXBFileNameToRead = readString;
 
@@ -44,7 +44,7 @@ public class ParserServiseImpl {
 
     }
 
-    public static void jacksonParser(String string) {         //->>>>> JACKSON Parser <<<<<-
+    public static void jacksonParser(String string) {
         Emails emails = new Emails();
         emails.setEmails("Mail6");
         StringWriter writer = new StringWriter();

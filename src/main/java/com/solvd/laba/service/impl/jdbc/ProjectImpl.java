@@ -10,26 +10,18 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ProjectImpl implements MyService,ProjectServise {
+public class ProjectImpl implements MyService, ProjectServise {
     private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
-    private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
+    private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
+
     @Override
     public void doSmth() {
-
     }
 
     @Override
     public Object getById(Object id) {
-        Emploee emploee = null;
-        try{
-            SqlSession sqlSession = factory.openSession();
-            EmploeeDAO emploeeDAO = sqlSession.getMapper(EmploeeDAO.class);
-            emploee = EmploeeDAO.getById();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return emploee;
+        return null;
     }
 
     @Override

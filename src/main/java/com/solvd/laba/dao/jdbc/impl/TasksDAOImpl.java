@@ -32,8 +32,8 @@ public class TasksDAOImpl extends AbstractDAO implements TasksDAO {
         Connection connection = getConnection();
         ResultSet resultSet = null;
         Tasks tasks = new Tasks();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(MY_QUERY)){
-            LOGGER.debug("preparedStatement" + preparedStatement +" created.");
+        try (PreparedStatement preparedStatement = connection.prepareStatement(MY_QUERY)) {
+            LOGGER.debug("preparedStatement" + preparedStatement + " created.");
             preparedStatement.setLong(1, id.longValue());
             LOGGER.debug("Query" + MY_QUERY + "started");
             resultSet = preparedStatement.executeQuery();

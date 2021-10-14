@@ -11,20 +11,19 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SetItNameImpl implements MyService,SetNameServise {
+public class SetItNameImpl implements MyService, SetNameServise {
     private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
     private static MyBatis MyBatisFactory;
-    private final static SqlSessionFactory factory= MyBatis.getSessionFactory();
+    private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
-    public SetItNameImpl(Object id){
+    public SetItNameImpl() {
+    }
+
+    public SetItNameImpl(Object id) {
         ITCompanyContact contact = new ITCompanyContact();
         contact.setiTCCName((String) setCCName(id));
         contact.setiTCCSurname((String) setCCSurname(id));
         contact.setiTCCPatronymic((String) setCCPatronymic(id));
-    }
-
-    public SetItNameImpl() {
-
     }
 
     //iTCCName
@@ -65,15 +64,7 @@ public class SetItNameImpl implements MyService,SetNameServise {
 
     @Override
     public Object getById(Object id) {
-        Emploee emploee = null;
-        try{
-            SqlSession sqlSession = factory.openSession();
-            EmploeeDAO emploeeDAO = sqlSession.getMapper(EmploeeDAO.class);
-            emploee = EmploeeDAO.getById();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return emploee;
+        return null;
     }
 
     @Override

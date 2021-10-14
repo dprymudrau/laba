@@ -20,15 +20,12 @@ public class EmploeeDAOImpl extends AbstractDAO implements EmploeeDAO {
     @Override
     public void save(Emploee emploee) {
         throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
-
     }
 
     @Override
     public void delete(Emploee emploee) {
         throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
-
     }
-
 
     @Override
     public Emploee getById(Long id) {
