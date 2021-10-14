@@ -43,7 +43,6 @@ public class XmlAndJsonParsers {
         if (unmarshalDepartmentName != null) {
             LOGGER.info(unmarshalDepartmentName.toString());
         }
-        int h =5;
 
     }
 
@@ -69,6 +68,7 @@ public class XmlAndJsonParsers {
             e.printStackTrace();
         }
     }
+
     @XmlElement(name = "published", required = true)
     @XmlJavaTypeAdapter(DateAdapter.class)
     private Date published;

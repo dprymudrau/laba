@@ -32,6 +32,7 @@ public class ParserServiseImpl {
         String JAXBFileNameToRead = readString;
 
         DepartmentName departmentName = new DepartmentName();
+        departmentName.setDate(new Date());
         departmentName.setDepartmentName("Department6");
         departmentName.setItCompaniesId(15);
         Jaxb.convertObjectToXml(departmentName, JAXBFileNameToSave);//save the object to XML file
@@ -40,8 +41,6 @@ public class ParserServiseImpl {
             LOGGER.info(unmarshalDepartmentName.toString());
         }
         departmentName.setDate(new Date());
-        //date adapter
-
     }
 
     public static void jacksonParser(String string) {         //->>>>> JACKSON Parser <<<<<-
