@@ -31,10 +31,22 @@ public class WebTest implements IAbstractTest {
     }
     @Test()
     public void test2() {
-
+        WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "src/main/java/com/solvd/laba/utils/other/chromedriver.exe");
+        driver.get("https://demoqa.com/");
+        HomePage homePage = new HomePage(getDriver());
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+        homePage = new HomePage(getDriver());
     }
     @Test()
     public void test3() {
-
+        WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "src/main/java/com/solvd/laba/utils/other/chromedriver.exe");
+        driver.get("https://demoqa.com/");
+        HomePage homePage = new HomePage(getDriver());
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+        homePage = new HomePage(getDriver());
     }
 }
