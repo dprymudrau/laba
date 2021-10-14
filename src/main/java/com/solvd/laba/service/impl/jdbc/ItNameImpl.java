@@ -1,20 +1,13 @@
 package com.solvd.laba.service.impl.jdbc;
 
-import com.solvd.laba.binary.Emploee;
 import com.solvd.laba.binary.ITCompanyContact;
-import com.solvd.laba.dao.interfases.EmploeeDAO;
 import com.solvd.laba.service.MyService;
 import com.solvd.laba.service.SetNameServise;
-import com.solvd.laba.utils.MyBatis;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ItNameImpl implements MyService, SetNameServise {
     private static final Logger LOGGER = LogManager.getLogger(MyServiceImpl.class);
-    private static MyBatis MyBatisFactory;
-    private final static SqlSessionFactory factory = MyBatis.getSessionFactory();
 
     public ItNameImpl() {
     }
@@ -34,7 +27,7 @@ public class ItNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCName(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
     }
 
     @Override
@@ -44,7 +37,7 @@ public class ItNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCSurname(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
     }
 
     @Override
@@ -54,11 +47,12 @@ public class ItNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setCCPatronymic(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
     }
 
     @Override
     public void doSmth() {
+        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
 
     }
 
@@ -69,11 +63,11 @@ public class ItNameImpl implements MyService, SetNameServise {
 
     @Override
     public Object setById(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
     }
 
     @Override
     public Object checkDb(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
     }
 }

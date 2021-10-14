@@ -34,7 +34,7 @@ public class MyServiceImpl implements MyService {
 
     @Override
     public Object setById(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for Jdbc Service");
     }
 
     @Override

@@ -45,7 +45,7 @@ public class CustContactImpl implements MyService, SetContactData {
 
     @Override
     public Object setById(Object id) {
-        return null;
+        throw new UnsupportedOperationException("This method isn't implemented for MyBatis Service");
     }
 
     @Override
