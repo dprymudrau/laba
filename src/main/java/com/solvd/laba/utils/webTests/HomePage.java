@@ -11,6 +11,8 @@ public class HomePage extends AbstractPage {
     private ExtendedWebElement getButtonsPage;
     @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[2]")
     private ExtendedWebElement getFormsPage;
+    @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[4]")
+    private ExtendedWebElement getWigetsPage;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -21,9 +23,12 @@ public class HomePage extends AbstractPage {
         getButtonsPage.click();
         return new ButtonsPage(driver);
     }
-    public PracticeForm getFormsPage() {
+    public PracticeForm openFormsPage() {
         getFormsPage.click();
         return new PracticeForm(driver);
     }
-
+    public SliderPage openWigetsPage() {
+        getWigetsPage.click();
+        return new SliderPage(driver);
+    }
 }

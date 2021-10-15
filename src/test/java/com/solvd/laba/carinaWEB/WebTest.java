@@ -1,9 +1,7 @@
 package com.solvd.laba.carinaWEB;
 
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
-import com.solvd.laba.utils.webTests.ButtonsPage;
-import com.solvd.laba.utils.webTests.HomePage;
-import com.solvd.laba.utils.webTests.PracticeForm;
+import com.solvd.laba.utils.webTests.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -26,7 +24,7 @@ public class WebTest implements IAbstractTest {
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
         homePage = new HomePage(getDriver());
-        PracticeForm practiceForm = homePage.getFormsPage().formClick();
+        PracticeForm practiceForm = homePage.openFormsPage().formClick();
         practiceForm.setFirstName("Alena");
         practiceForm.setLastName("Vozniuk");
         practiceForm.setMail("MyRandomMail@gmail.com");
@@ -36,6 +34,13 @@ public class WebTest implements IAbstractTest {
 
     @Test()
     public void test3() {
-
+        HomePage homePage = new HomePage(getDriver());
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+        homePage = new HomePage(getDriver());
+        SliderPage sliderPage = homePage.openWigetsPage().sliderClick();
+        sliderPage.sliderMove(25);
+        sliderPage.getProgressBarPage();
+        sliderPage.clickStartStopButton();
     }
 }
