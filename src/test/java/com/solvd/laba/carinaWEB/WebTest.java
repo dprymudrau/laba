@@ -27,11 +27,13 @@ public class WebTest implements IAbstractTest {
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
         homePage = new HomePage(getDriver());
         PracticeForm practiceForm = homePage.getFormsPage().formClick();
-        practiceForm.setFirstName("Name");
-        practiceForm.setLastName("LName");
-        int b =8;
-
+        practiceForm.setFirstName("Alena");
+        practiceForm.setLastName("Vozniuk");
+        practiceForm.setMail("MyRandomMail@gmail.com");
+        practiceForm.setMale();
+        practiceForm.clicSubmit();
     }
+
     @Test()
     public void test3() {
 
