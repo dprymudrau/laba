@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace = "com.solvd.laba.dao.interfaces.ProductsDAO">
+    <select id="getById" parameterType ="int" resultMap="productResultMap">
+
+    </select>
+    <resultMap id="ProductResultMap" type="com.solvd.laba.binary.Products">
+        <id column="product_productId" property="productId"/>
+        <result column="product_productName" property="product_productName"/>
+    </resultMap>
+</mapper>
