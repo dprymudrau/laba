@@ -5,10 +5,22 @@ import java.util.Objects;
 public class Passenger {
     private String Name;
     private int Id;
+    private String phoneNumber;
 
     public Passenger(String name, int id) {
         Name = name;
         Id = id;
+    }
+    public Passenger(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public Passenger() {

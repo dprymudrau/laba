@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
-<mapper namespace = "com.solvd.laba.dao.interfaces.IOrdersDAO">
+<mapper namespace = "com.solvd.laba.dao.interfaces.OrderDAO">
     <select id="getById" parameterType ="int" resultMap="ResultMap">
-        SELECT  r.orderId as orders_orderId,
-        c.orderName as orders_orderName
-        FROM Orders r
+        SELECT  r.orderId as order_orderId,
+        r.numbersOfOrder as order_numbersOfOrder
+        r.price as order_price
+        p.passengerId as passenger_passengerId
+        d.driverId as driver_driverId
+        c.cityId as city_cityId
+        s.streetId as street_streetId
+        c.carId as car_carId
+        LEFT JOIN Check h ON r.orderId = r.price =  p.passengerId = d.driverId = c.cityId = s.streetId = c.carId
+        FROM Order r
         WHERE o.orderId = #{id};
     </select>
-    <resultMap id="OrdersResultMap" type="com.solvd.laba.binary.Orders">
-        <id column="orders_orderId" property="orderId"/>
-        <result column="orders_orderName" property="orderName"/>
+    <resultMap id="OrdersResultMap" type="com.solvd.laba.binary.Order">
+        <id column="order_orderId" property="orderId"/>
+        <result column="order_numbersOfOrder" property="numbersOfOrder"/>
+        <result column="price" property="order_price"/>
+        <result column="passengerId" property="passenger_passengerId"/>
+        <result column="driverId" property="driver_driverId"/>
+        <result column="cityId" property="city_cityId"/>
+        <result column="streetId" property="street_streetId"/>
+        <result column="carId" property="car_carId"/>
     </resultMap>
 </mapper>
+

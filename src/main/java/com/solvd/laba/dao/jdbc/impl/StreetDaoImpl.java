@@ -2,7 +2,7 @@ package com.solvd.laba.dao.jdbc.impl;
 
 import com.solvd.laba.binary.Street;
 import com.solvd.laba.dao.AbstractDAO;
-import com.solvd.laba.dao.interfaces.IStreetDAO;
+import com.solvd.laba.dao.interfaces.StreetDAO;
 import com.solvd.laba.utils.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,26 +12,29 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class StreetsDaoImpl extends AbstractDAO implements IStreetDAO {
+public class StreetDaoImpl extends AbstractDAO implements StreetDAO {
 
 
-        private static Logger LOGGER = LogManager.getLogger(com.solvd.laba.dao.jdbc.impl.StreetsDaoImpl.class);
+        private static Logger LOGGER = LogManager.getLogger(StreetDaoImpl.class);
 
-        private static String GET_STREETS_BY_ID_Q = "SELECT * FROM Streets WHERE id = ?";
+        private static String GET_STREETS_BY_ID_Q = "SELECT * FROM Street WHERE streetId = ?";
 
 
     @Override
     public void save(Street street) {
+        throw new UnsupportedOperationException("This method isn't implemented");
 
     }
 
     @Override
     public void delete(Street street) {
+        throw new UnsupportedOperationException("This method isn't implemented");
 
     }
 
     @Override
     public void update(Street street) {
+        throw new UnsupportedOperationException("This method isn't implemented");
 
     }
 
@@ -47,7 +50,11 @@ public class StreetsDaoImpl extends AbstractDAO implements IStreetDAO {
                 resultSet = preparedSt.executeQuery();
                 if (resultSet.next()) {
                     street.setName("Name");
-                    street.setStreetId((int) resultSet.getLong("1"));
+                    street.setStreetId(1);
+                    street.setNumber(1);
+                    street.getStreetId();
+                    street.getName();
+                    street.getNumber();
                 }
                 else{
                     return null;

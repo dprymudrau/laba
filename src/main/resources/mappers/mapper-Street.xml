@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
-<mapper namespace = "com.solvd.laba.dao.interfaces.IOrdersDAO">
+<mapper namespace = "com.solvd.laba.dao.interfaces.StreetDAO">
     <select id="getById" parameterType ="int" resultMap="ResultMap">
-        SELECT  s.streetsId as streets_streetsId,
-        s.streetsName as streets_streetsName
-        FROM Streets s
-        WHERE o.orderId = #{id};
+        SELECT  s.streetId as streets_streetsId,
+        s.name as streets_name
+        s.number as streets_number
+        FROM Street s
+        WHERE s.streetId = #{id};
     </select>
     <resultMap id="OrdersResultMap" type="com.solvd.laba.binary.Street">
-        <id column="streets_streetsId" property="streetsId"/>
-        <result column="streets_streetsName" property="streetsName"/>
+        <id column="street_streetId" property="streetId"/>
+        <result column="street_name" property="name"/>
+        <result column="streets_number" property="number"/>
     </resultMap>
 </mapper>

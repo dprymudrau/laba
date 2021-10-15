@@ -13,8 +13,8 @@ public class ConnectionPool {
     private static final Logger LOGGER = LogManager.getLogger(ConnectionPool.class);
     private static ConnectionPool instance;
     private static final int MAX_AMOUNT_OF_CON = 5;
-    private int createdConAmount = 0;
-    private List<Connection> connectionPool = new ArrayList<>(MAX_AMOUNT_OF_CON);
+    private static int createdConAmount = 0;
+    private static List<Connection> connectionPool = new ArrayList<>(MAX_AMOUNT_OF_CON);
 
 
     private ConnectionPool() {
@@ -55,7 +55,7 @@ public class ConnectionPool {
         }
     }
 
-    private Connection connectionCreate() {
+    private static Connection connectionCreate() {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(Config.getProperty("url"),

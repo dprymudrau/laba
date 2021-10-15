@@ -1,17 +1,13 @@
 package com.solvd.laba.service.implementation.jdbc;
 
-import com.solvd.laba.dao.jdbc.impl.OrderDaoImpl;
-import com.solvd.laba.service.interfaces.IOrders;
+import com.solvd.laba.binary.Car;
+import com.solvd.laba.dao.jdbc.impl.CarDaoImpl;
+import com.solvd.laba.service.interfaces.CarService;
 
-public class OrdersImpl implements IOrders {
+public class CarServiceImpl implements CarService {
     @Override
-    public Orders getById(int id) {
-        OrderDaoImpl ordersDao = new OrderDaoImpl();
-        return ordersDao.getById(id);
-    }
-
-    @Override
-    public Orders getOrdersDAOId(int id) {
-        return null;
+    public Car getById(int id) {
+        CarDaoImpl carDao = new CarDaoImpl();
+        return carDao.getById(id);
     }
 }

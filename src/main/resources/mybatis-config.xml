@@ -16,11 +16,10 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="resources/mapper-Car.xml"/>
-        <mapper resource="resource/mapper-City.xml"/>
-        <mapper resource="resources/mapper-Drivers.xml"/>
-        <mapper resource="resources/mapper-Orders.xml"/>
-        <mapper resource="resources/mapper-Streets.xml"/>
-        <mapper resource="resources/mapper-Passengers.xml"/>
+        <mapper resource="mappers/mapper-Car.xml"/>
+        <mapper resource="mappers/mapper-Driver.xml"/>
+        <mapper resource="mappers/mapper-Order.xml"/>
+        <mapper resource="mappers/mapper-Passenger.xml"/>
+        <mapper resource="mappers/mapper-Street.xml"/>
     </mappers>
 </configuration>

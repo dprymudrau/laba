@@ -2,7 +2,6 @@ package com.solvd.laba.service.interfaces;
 
 import com.solvd.laba.binary.Passenger;
 
-public interface IPassengers {
+public interface PassengerService {
     Passenger getById(int id);
-    Passenger getPassengerDAOId (int id);
 }

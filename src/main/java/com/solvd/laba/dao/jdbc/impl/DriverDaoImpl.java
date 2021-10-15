@@ -2,33 +2,35 @@ package com.solvd.laba.dao.jdbc.impl;
 
 import com.solvd.laba.binary.Driver;
 import com.solvd.laba.dao.AbstractDAO;
-import com.solvd.laba.dao.interfaces.IDriverDAO;
+import com.solvd.laba.dao.interfaces.DriverDAO;
 import com.solvd.laba.utils.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 
-public class DriversDaoImpl extends AbstractDAO implements IDriverDAO {
+public class DriverDaoImpl extends AbstractDAO implements DriverDAO {
 
-        private static Logger LOGGER = LogManager.getLogger(com.solvd.laba.dao.jdbc.impl.DriversDaoImpl.class);
+        private static Logger LOGGER = LogManager.getLogger(DriverDaoImpl.class);
 
-        private static String GET_DRIVERS_BY_ID_Q = "SELECT * FROM Drivers WHERE id = ?";
+        private static String GET_DRIVERS_BY_ID_Q = "SELECT * FROM Driver WHERE driverId = ?";
 
 
     @Override
     public void save(Driver driver) {
+        throw new UnsupportedOperationException("This method isn't implemented");
 
     }
 
     @Override
     public void delete(Driver driver) {
+        throw new UnsupportedOperationException("This method isn't implemented");
 
     }
 
     @Override
     public void update(Driver driver) {
-
+        throw new UnsupportedOperationException("This method isn't implemented");
     }
 
     @Override
@@ -42,8 +44,9 @@ public class DriversDaoImpl extends AbstractDAO implements IDriverDAO {
                 preparedSt.setLong(1, id);
                 resultSet = preparedSt.executeQuery();
                 if (resultSet.next()) {
-                    driver.setId((int) resultSet.getLong("DriverId"));
+                    driver.setDriverId(1);
                     driver.setName("Name");
+                    driver.setPhoneNumber(2653);
                 }
                 else{
                     return null;

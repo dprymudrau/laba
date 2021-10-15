@@ -2,18 +2,18 @@ package com.solvd.laba.binary;
 
 import java.util.Objects;
 
-public class Streets {
+public class Street {
     private String Name;
     private int streetId;
     private int number;
 
-    public Streets(String name, int streetId, int number) {
+    public Street(String name, int streetId, int number) {
         Name = name;
         this.streetId = streetId;
         this.number = number;
     }
 
-    public Streets() {
+    public Street() {
 
     }
 
@@ -45,8 +45,8 @@ public class Streets {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Streets streets = (Streets) o;
-        return streetId == streets.streetId && number == streets.number && Objects.equals(Name, streets.Name);
+        Street street = (Street) o;
+        return streetId == street.streetId && number == street.number && Objects.equals(Name, street.Name);
     }
 
     @Override

@@ -3,50 +3,32 @@ package com.solvd.laba.binary;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Drivers {
-    private static final Logger LOGGER = LogManager.getLogger(Drivers.class);
-    private String Name;
-    private int Id;
-    private int Age;
+import java.util.Objects;
+
+public class Driver {
+    private static final Logger LOGGER = LogManager.getLogger(Driver.class);
+    private String name;
+    private int driverId;
     private int phoneNumber;
 
-    public Drivers(String name, int id, int age, int phoneNumber) {
-        Name = name;
-        Id = id;
-        Age = age;
-        this.phoneNumber = phoneNumber;
-    }
+    public Driver() {
 
-    public Drivers() {
-
-    }
-
-    public static Logger getLOGGER() {
-        return LOGGER;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
-    public int getId() {
-        return Id;
+    public int getDriverId() {
+        return driverId;
     }
 
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public int getAge() {
-        return Age;
-    }
-
-    public void setAge(int age) {
-        Age = age;
+    public void setDriverId(int driverId) {
+        this.driverId = driverId;
     }
 
     public int getPhoneNumber() {
@@ -57,14 +39,16 @@ public class Drivers {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return driverId == driver.driverId && phoneNumber == driver.phoneNumber && Objects.equals(name, driver.name);
+    }
 
     @Override
-    public String toString() {
-        return "Drivers{" +
-                "Name='" + Name + '\'' +
-                ", Id=" + Id +
-                ", Age=" + Age +
-                ", phoneNumber=" + phoneNumber +
-                '}';
+    public int hashCode() {
+        return Objects.hash(name, driverId, phoneNumber);
     }
 }

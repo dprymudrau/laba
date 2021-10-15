@@ -2,7 +2,7 @@ package com.solvd.laba.dao.jdbc.impl;
 
 import com.solvd.laba.binary.Passenger;
 import com.solvd.laba.dao.AbstractDAO;
-import com.solvd.laba.dao.interfaces.IPassengerDAO;
+import com.solvd.laba.dao.interfaces.PassengerDAO;
 import com.solvd.laba.utils.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,24 +12,27 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class PassengerDaoImpl extends AbstractDAO implements IPassengerDAO {
+public class PassengerDaoImpl extends AbstractDAO implements PassengerDAO {
 
         private static Logger LOGGER = LogManager.getLogger(com.solvd.laba.dao.jdbc.impl.PassengerDaoImpl.class);
 
-        private static String GET_PASSENGER_BY_ID_Q = "SELECT * FROM Passenger WHERE id = ?";
+        private static String GET_PASSENGER_BY_ID_Q = "SELECT * FROM Passenger WHERE passengerId = ?";
 
     @Override
     public void save(Passenger passenger) {
+        throw new UnsupportedOperationException("This method isn't implemented");
 
     }
 
     @Override
     public void delete(Passenger passenger) {
+        throw new UnsupportedOperationException("This method isn't implemented");
 
     }
 
     @Override
     public void update(Passenger passenger) {
+        throw new UnsupportedOperationException("This method isn't implemented");
 
     }
 
@@ -45,7 +48,8 @@ public class PassengerDaoImpl extends AbstractDAO implements IPassengerDAO {
                 resultSet = preparedSt.executeQuery();
                 if (resultSet.next()) {
                     passenger.setName("Name");
-                    passenger.setId((int) resultSet.getLong("1"));
+                    passenger.setId(1);
+                    passenger.setPhoneNumber("0953045512");
                 }
                 else{
                     return null;

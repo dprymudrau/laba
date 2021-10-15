@@ -15,6 +15,10 @@ public class City {
         Id = id;
     }
 
+    public City() {
+
+    }
+
     public String getName() {
         return Name;
     }

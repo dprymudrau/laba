@@ -1,4 +1,6 @@
-package com.solvd.laba.utils.parsers.jaxb;
+package com.solvd.laba.binary;
+
+import com.solvd.laba.utils.parsers.jaxb.DateAdapter;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -8,11 +10,36 @@ import java.util.Date;
 import java.util.Objects;
 
 @XmlRootElement(name = "car")
-@XmlType(propOrder = { "id", "name", "date" })
+@XmlType(propOrder = { "carId", "carName", "numberOfTheCar", "carTypeId","dateOfConstruct", "taxiCompaniesId" })
 public class Car {
     private int carId;
     private String carName;
+    private int numberOfTheCar;
+    private int carTypeId;
     private Date dateOfConstruct;
+    private int taxiCompaniesId;
+
+
+
+    public Date getDateOfConstruct() {
+        return dateOfConstruct;
+    }
+
+    public int getNumberOfTheCar() {
+        return numberOfTheCar;
+    }
+
+    public void setNumberOfTheCar(int numberOfTheCar) {
+        this.numberOfTheCar = numberOfTheCar;
+    }
+
+    public int getCarTypeId() {
+        return carTypeId;
+    }
+
+    public void setCarTypeId(int carTypeId) {
+        this.carTypeId = carTypeId;
+    }
 
     public int getTaxiCompaniesId() {
         return taxiCompaniesId;
@@ -22,13 +49,11 @@ public class Car {
         this.taxiCompaniesId = taxiCompaniesId;
     }
 
-    private int taxiCompaniesId;
-
     public void setCarId(int carId) {
         this.carId = carId;
     }
 
-    @XmlElement(name = "name")
+    @XmlElement(name = "carName")
     public void setCarName(String carName) {
         this.carName = carName;
     }
@@ -67,5 +92,4 @@ public class Car {
                 ", dateOfConstruct=" + dateOfConstruct +
                 '}';
     }
-
 }

@@ -1,6 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Cars>
-    <id>1</id>
-    <carName>Toyota</carName>
-    <taxiCompaniesId>1</taxiCompaniesId>
-</Cars>
+<car>
+    <carId id="101">
+        <carName>"Audi"</carName>
+        <numberOfTheCar>"456448"</numberOfTheCar>
+        <dateOfConstruct>2020-05-04</dateOfConstruct>
+    </carId>
+    <carId id="102">
+        <carName>"BMW"</carName>
+        <numberOfTheCar>"0231015"</numberOfTheCar>
+        <dateOfConstruct>2014-06-05</dateOfConstruct>
+    </carId>
+</car>

@@ -1,19 +1,14 @@
 package com.solvd.laba.service.implementation.jdbc;
 
 import com.solvd.laba.binary.Street;
-import com.solvd.laba.dao.jdbc.impl.StreetsDaoImpl;
-import com.solvd.laba.service.interfaces.IStreets;
+import com.solvd.laba.dao.jdbc.impl.StreetDaoImpl;
+import com.solvd.laba.service.interfaces.StreetService;
 
-public class StreetsImpl implements IStreets {
+public class StreetServiceImpl implements StreetService {
 
     @Override
     public Street getById(int id) {
-        StreetsDaoImpl streetDao = new StreetsDaoImpl();
+        StreetDaoImpl streetDao = new StreetDaoImpl();
         return streetDao.getById(id);
-    }
-
-    @Override
-    public Street getStreetsDAOId(int id) {
-        return null;
     }
 }

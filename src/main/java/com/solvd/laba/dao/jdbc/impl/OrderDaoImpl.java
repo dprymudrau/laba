@@ -2,7 +2,7 @@ package com.solvd.laba.dao.jdbc.impl;
 
 import com.solvd.laba.binary.Order;
 import com.solvd.laba.dao.AbstractDAO;
-import com.solvd.laba.dao.interfaces.IListOfOrdersDAO;
+import com.solvd.laba.dao.interfaces.OrderDAO;
 import com.solvd.laba.utils.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,13 +12,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ListOfOrdersDaoImpl extends AbstractDAO implements IListOfOrdersDAO {
+public class OrderDaoImpl extends AbstractDAO implements OrderDAO {
 
-        private static Logger LOGGER = LogManager.getLogger(com.solvd.laba.dao.jdbc.impl.ListOfOrdersDaoImpl.class);
+        private static Logger LOGGER = LogManager.getLogger(OrderDaoImpl.class);
 
-    private static String GET_LISTOFORDERS_BY_ID_Q = "SELECT * FROM ListOfOrders WHERE listOfOrdersId = ?";
+    private static String GET_ORDER_BY_ID_Q = "SELECT * FROM ListOfOrders WHERE listOfOrdersId = ?";
 
-    private static String PUT_LISTOFORDERS_BY_ID_Q =
+    private static String PUT_ORDER_BY_ID_Q =
                 "INSERT INTO ListOfOrders (listOfOrdersId, numbersOfOrder, price, passengerId, orderTypeId, driverId, cityId, streetId, carId)"
                         + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -29,8 +29,8 @@ public class ListOfOrdersDaoImpl extends AbstractDAO implements IListOfOrdersDAO
             PreparedStatement preparedSt = null;
             ResultSet resultSet = null;
             try {
-                preparedSt = connection.prepareStatement(GET_LISTOFORDERS_BY_ID_Q);
-                preparedSt.setLong(1, order.getListOfOrdersId());
+                preparedSt = connection.prepareStatement(PUT_ORDER_BY_ID_Q);
+                preparedSt.setLong(1, order.getOrderId());
                 preparedSt.setLong(2, order.getNumbersOfOrder());
                 preparedSt.setLong(3, order.getPrice());
                 preparedSt.setLong(4, order.getPassengerId());
@@ -55,12 +55,12 @@ public class ListOfOrdersDaoImpl extends AbstractDAO implements IListOfOrdersDAO
 
     @Override
     public void delete(Order order) {
-
+        throw new UnsupportedOperationException("This method isn't implemented");
     }
 
     @Override
     public void update(Order order) {
-
+        throw new UnsupportedOperationException("This method isn't implemented");
     }
 
     @Override
@@ -70,11 +70,18 @@ public class ListOfOrdersDaoImpl extends AbstractDAO implements IListOfOrdersDAO
             PreparedStatement preparedSt = null;
             ResultSet resultSet = null;
             try {
-                preparedSt = connection.prepareStatement(GET_LISTOFORDERS_BY_ID_Q);
+                preparedSt = connection.prepareStatement(GET_ORDER_BY_ID_Q);
                 preparedSt.setLong(1, id);
                 resultSet = preparedSt.executeQuery();
                 if (resultSet.next()) {
-                    order.setListOfOrdersId((int) resultSet.getLong(1));
+                    order.setOrderId(1);
+                    order.setNumbersOfOrder(1);
+                    order.setCarId(2);
+                    order.setCityId(1);
+                    order.setDriverId(1);
+                    order.setPassengerId(3);
+                    order.setStreetId(1);
+                    order.setOrderTypeId(3);
                 }
                 else{
                     return null;

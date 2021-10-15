@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MySuite" parallel="methods" thread-count="5">
+    <test name="MyTest">
+        <classes>
+            <class name="com.solvd.laba.testNG.SuiteDBTest">
+                <methods>
+                    <include name="carServiceTest"/>
+                    <include name="driverServiceTest"/>
+                    <include name="orderServiceTest"/>
+                    <include name="passengerServiceTest"/>
+                    <include name="streetServiceTest"/>
+                </methods>
+            </class>
+<!--            <class name="com.solvd.airport.XmlParserTest">-->
+<!--                <methods>-->
+<!--                    <include name="saxParserTest"/>-->
+<!--                    <include name="jaxbMarshallerTest"/>-->
+<!--                    <include name="jaxbUnmarshallerTest"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="com.solvd.airport.JsonParserTest">-->
+<!--                <methods>-->
+<!--                    <include name="jacksonWriteObject"/>-->
+<!--                    <include name="jacksonReadObject"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+        </classes>
+    </test>
+</suite>

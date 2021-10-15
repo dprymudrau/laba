@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
-<mapper namespace = "com.solvd.laba.dao.interfaces.IOrdersDAO">
+<mapper namespace = "com.solvd.laba.dao.interfaces.PassengerDAO">
     <select id="getById" parameterType ="int" resultMap="ResultMap">
-        SELECT  s.passengerId as passenger_passengerId,
-        s.spassengerName as spassenger_passengerName
-        FROM Passenger s
-        WHERE o.passengerId = #{id};
+        SELECT  p.id as passenger_id,
+        p.name as passenger_name
+        p.phoneNumber as passenger_phoneNumber
+        FROM Passenger p
+        WHERE p.id = #{id};
     </select>
     <resultMap id="OrdersResultMap" type="com.solvd.laba.binary.Passenger">
-        <id column="streets_streetsId" property="streetsId"/>
-        <result column="streets_streetsName" property="streetsName"/>
+        <id column="passenger_id" property="id"/>
+        <result column="passenger_name" property="name"/>
+        <result column="passenger_phoneNumber" property="phoneNumber"/>
     </resultMap>
 </mapper>
