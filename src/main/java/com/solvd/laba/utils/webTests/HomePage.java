@@ -7,18 +7,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends AbstractPage {
+    @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[1]")
+    private ExtendedWebElement getButtonsPage;
 
-    @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
-    private ExtendedWebElement signInButton;
 
     public HomePage(WebDriver driver) {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_URL);
     }
 
-    public SignInPage openRegisterPage() {
-        signInButton.click();
-        return new SignInPage(driver);
+    public ButtonsPage openButtonsPage() {
+        getButtonsPage.click();
+        return new ButtonsPage(driver);
     }
+
 
 }

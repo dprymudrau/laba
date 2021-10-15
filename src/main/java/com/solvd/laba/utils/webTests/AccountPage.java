@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 public class AccountPage extends AbstractPage {
 
     @FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")
-    private ExtendedWebElement signOutButton;
+    private ExtendedWebElement elementsButton;
 
     public AccountPage(WebDriver driver) {
         super(driver);
@@ -17,7 +17,7 @@ public class AccountPage extends AbstractPage {
     }
 
     public SignInPage signOutClick() {
-        signOutButton.click();
+        elementsButton.click();
         return new SignInPage(driver);
     }
 }
