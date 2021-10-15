@@ -20,10 +20,12 @@ public class ButtonsPage extends AbstractPage {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
     }
+
     public ButtonsPage buttonClick() {
         buttonClick.click();
         return new ButtonsPage(driver);
     }
+
     public ButtonsPage doubleClick() {
         doubleClickMe.doubleClick();
         return new ButtonsPage(driver);

@@ -25,23 +25,29 @@ public class PracticeForm extends AbstractPage {
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
     }
+
     public PracticeForm formClick() {
         buttonClick.click();
         return new PracticeForm(driver);
     }
+
     public void setFirstName(String text) {
         firstName.type(text);
     }
+
     public void setLastName(String text) {
         lastName.type(text);
     }
+
     public void setMail(String text) {
         mail.type(text);
     }
+
     public PracticeForm setMale() {
         gender.click();
         return new PracticeForm(driver);
     }
+
     public PracticeForm clicSubmit() {
         submit.click();
         return new PracticeForm(driver);

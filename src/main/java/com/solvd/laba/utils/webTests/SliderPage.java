@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SliderPage extends AbstractPage{
+public class SliderPage extends AbstractPage {
     @FindBy(xpath = "/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[4]/div/ul/li[4]")
     private ExtendedWebElement sliderPage;
     @FindBy(xpath = "/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[4]/div/ul/li[4]")
@@ -25,6 +25,7 @@ public class SliderPage extends AbstractPage{
         super(driver);
         setPageOpeningStrategy(PageOpeningStrategy.BY_ELEMENT);
     }
+
     public SliderPage sliderClick() {
         sliderPage.click();
         return new SliderPage(driver);
@@ -35,10 +36,12 @@ public class SliderPage extends AbstractPage{
         sliderValue.type(String.valueOf(moveRange));
         return new SliderPage(driver);
     }
+
     public SliderPage getProgressBarPage() {
         progressBarPage.click();
         return new SliderPage(driver);
     }
+
     public SliderPage clickStartStopButton() {
         startButton.click();
         return new SliderPage(driver);

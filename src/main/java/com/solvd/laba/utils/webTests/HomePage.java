@@ -23,10 +23,12 @@ public class HomePage extends AbstractPage {
         getButtonsPage.click();
         return new ButtonsPage(driver);
     }
+
     public PracticeForm openFormsPage() {
         getFormsPage.click();
         return new PracticeForm(driver);
     }
+
     public SliderPage openWigetsPage() {
         getWigetsPage.click();
         return new SliderPage(driver);

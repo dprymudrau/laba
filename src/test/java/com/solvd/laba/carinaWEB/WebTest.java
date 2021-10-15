@@ -16,8 +16,9 @@ public class WebTest implements IAbstractTest {
         buttonsPage.doubleClick();
         buttonsPage.rightClick();
         //buttonsPage.click();
-        int k =5;
+        int k = 5;
     }
+
     @Test()
     public void test2() {
         HomePage homePage = new HomePage(getDriver());
