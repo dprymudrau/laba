@@ -9,7 +9,8 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[1]")
     private ExtendedWebElement getButtonsPage;
-
+    @FindBy(xpath = "//*[@id=\"app\"]/div/div/div[2]/div/div[2]")
+    private ExtendedWebElement getFormsPage;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -20,6 +21,9 @@ public class HomePage extends AbstractPage {
         getButtonsPage.click();
         return new ButtonsPage(driver);
     }
-
+    public PracticeForm getFormsPage() {
+        getFormsPage.click();
+        return new PracticeForm(driver);
+    }
 
 }

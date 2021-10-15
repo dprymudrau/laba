@@ -3,6 +3,7 @@ package com.solvd.laba.carinaWEB;
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.solvd.laba.utils.webTests.ButtonsPage;
 import com.solvd.laba.utils.webTests.HomePage;
+import com.solvd.laba.utils.webTests.PracticeForm;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,6 +22,14 @@ public class WebTest implements IAbstractTest {
     }
     @Test()
     public void test2() {
+        HomePage homePage = new HomePage(getDriver());
+        homePage.open();
+        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+        homePage = new HomePage(getDriver());
+        PracticeForm practiceForm = homePage.getFormsPage().formClick();
+        practiceForm.setFirstName("Name");
+        practiceForm.setLastName("LName");
+        int b =8;
 
     }
     @Test()
