@@ -47,7 +47,7 @@ public class PassengerDaoImpl extends AbstractDAO implements PassengerDAO {
                 preparedSt.setLong(1, id);
                 resultSet = preparedSt.executeQuery();
                 if (resultSet.next()) {
-                    passenger.setName("Name");
+                    passenger.setName("Oleg");
                     passenger.setId(1);
                     passenger.setPhoneNumber("0953045512");
                 }

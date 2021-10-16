@@ -45,8 +45,8 @@ public class DriverDaoImpl extends AbstractDAO implements DriverDAO {
                 resultSet = preparedSt.executeQuery();
                 if (resultSet.next()) {
                     driver.setDriverId(1);
-                    driver.setName("Name");
-                    driver.setPhoneNumber(2653);
+                    driver.setName("Tomas");
+                    driver.setPhoneNumber("0973020557");
                 }
                 else{
                     return null;

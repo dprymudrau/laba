@@ -1,11 +1,28 @@
 package com.solvd.laba.binary;
 
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.Objects;
+@JsonIgnoreProperties(value = { "cityId" })
 public class Street {
+    @JsonProperty("name")
     private String Name;
+    @JsonProperty("id")
     private int streetId;
+    @JsonProperty("num")
     private int number;
+    private int cityId;
+
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
+    }
+
 
     public Street(String name, int streetId, int number) {
         Name = name;

@@ -49,9 +49,9 @@ public class StreetDaoImpl extends AbstractDAO implements StreetDAO {
                 preparedSt.setLong(1, id);
                 resultSet = preparedSt.executeQuery();
                 if (resultSet.next()) {
-                    street.setName("Name");
+                    street.setName("Lugovaya");
                     street.setStreetId(1);
-                    street.setNumber(1);
+                    street.setNumber(65);
                     street.getStreetId();
                     street.getName();
                     street.getNumber();

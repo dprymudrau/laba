@@ -1,18 +1,2 @@
-[
-  {
-    "id": 1,
-    "name": "Kyiv",
-    "streets": [
-      {
-        "id": 1,
-        "name": "Luhova",
-        "house": [
-          {
-            "id": 1,
-            "name": "Chaikovsky",
-            "num": 35
-          }
-        ]
-      }
-    ]
-  }]
+[ {
+} ]

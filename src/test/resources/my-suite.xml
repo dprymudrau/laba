@@ -9,6 +9,13 @@
                     <include name="orderServiceTest"/>
                     <include name="passengerServiceTest"/>
                     <include name="streetServiceTest"/>
+
+                    <include name="streetDaoTest"/>
+                    <include name="orderDaoTest"/>
+
+                    <include name="carTypeTest"/>
+                    <include name="cityTest"/>
+                    <include name="orderTypeTest"/>
                 </methods>
             </class>
 <!--            <class name="com.solvd.airport.XmlParserTest">-->

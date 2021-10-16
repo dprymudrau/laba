@@ -3,12 +3,19 @@ package com.solvd.laba.binary;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIgnoreProperties(value = { "cityId" })
+import java.util.ArrayList;
+
+@JsonIgnoreProperties(value = { "cityId", "name", "id", "street", "city" })
 public class City {
     @JsonProperty("id")
     private String Name;
     @JsonProperty("name")
     private int Id;
+    ArrayList<City> city;
+
+    public ArrayList<City> getCity() {
+        return city;
+    }
 
     public City(String name, int id) {
         Name = name;
@@ -35,4 +42,10 @@ public class City {
         Id = id;
     }
 
+    public void setStreet(Street street1) {
+    }
+
+    public int getStreet() {
+        return 0;
+    }
 }
