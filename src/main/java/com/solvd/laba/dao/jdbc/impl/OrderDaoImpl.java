@@ -82,6 +82,7 @@ public class OrderDaoImpl extends AbstractDAO implements OrderDAO {
                     order.setPassengerId(3);
                     order.setStreetId(1);
                     order.setOrderTypeId(3);
+                    order.setPrice(320);
                 }
                 else{
                     return null;

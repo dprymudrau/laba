@@ -2,11 +2,11 @@
     <carId id="101">
         <carName>"Audi"</carName>
         <numberOfTheCar>"456448"</numberOfTheCar>
-        <dateOfConstruct>2020-05-04</dateOfConstruct>
+        <dateOfConstruct>2020-05-04 20:25:05</dateOfConstruct>
     </carId>
     <carId id="102">
         <carName>"BMW"</carName>
         <numberOfTheCar>"0231015"</numberOfTheCar>
-        <dateOfConstruct>2014-06-05</dateOfConstruct>
+        <dateOfConstruct>2014-06-05 12:20:59</dateOfConstruct>
     </carId>
 </car>

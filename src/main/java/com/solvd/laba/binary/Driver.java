@@ -1,15 +1,21 @@
 package com.solvd.laba.binary;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
-
+@JsonIgnoreProperties(value = { "streetId" })
 public class Driver {
     private static final Logger LOGGER = LogManager.getLogger(Driver.class);
-    private String name;
+    @JsonProperty("driverId")
     private int driverId;
+    @JsonProperty("name")
     private String phoneNumber;
+    @JsonProperty("phoneNumber")
+    private String name;
+
 
     public Driver() {
 

@@ -2,6 +2,7 @@ package com.solvd.laba.utils.parsers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.solvd.laba.binary.City;
+import com.solvd.laba.binary.Street;
 import com.solvd.laba.utils.parsers.jaxb.DateAdapter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,10 +15,11 @@ import java.util.Date;
 
 public class JacksonParser {
     private static final Logger LOGGER = LogManager.getLogger();
+
     public static void jacksonParser() {
         City city = new City();
-        city.setId(1);
-        city.setName("Lviv");
+        city.getCityId();
+        city.getCityName();
         StringWriter writer = new StringWriter();
         ObjectMapper mapper = new ObjectMapper();
         try {
@@ -30,6 +32,7 @@ public class JacksonParser {
 
 
     }
+
     @XmlElement(name = "published", required = true)
     @XmlJavaTypeAdapter(DateAdapter.class)
     private Date date;

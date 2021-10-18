@@ -4,48 +4,49 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
-
-@JsonIgnoreProperties(value = { "cityId", "name", "id", "street", "city" })
+@JsonIgnoreProperties(value = {})
 public class City {
-    @JsonProperty("id")
-    private String Name;
-    @JsonProperty("name")
-    private int Id;
-    ArrayList<City> city;
+    @JsonProperty("cityId")
+    private int cityId;
+    @JsonProperty("cityName")
+    private String cityName;
 
-    public ArrayList<City> getCity() {
-        return city;
+
+    public ArrayList<Street> getStreets() {
+        return streets;
     }
 
+    public void setStreets(ArrayList<Street> streets) {
+        this.streets = streets;
+    }
+
+    @JsonProperty("streets")
+    ArrayList<Street> streets;
+
+
     public City(String name, int id) {
-        Name = name;
-        Id = id;
+        cityName = cityName;
+        cityId = id;
     }
 
     public City() {
 
     }
 
-    public String getName() {
-        return Name;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setCityName(String name) {
+        cityName = cityName;
     }
 
-    public int getId() {
-        return Id;
+    public int getCityId() {
+        return cityId;
     }
 
-    public void setId(int id) {
-        Id = id;
+    public void setCityId(int id) {
+        cityId = id;
     }
 
-    public void setStreet(Street street1) {
-    }
-
-    public int getStreet() {
-        return 0;
-    }
 }

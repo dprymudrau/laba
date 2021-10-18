@@ -5,27 +5,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.Objects;
-@JsonIgnoreProperties(value = { "cityId" })
+
+@JsonIgnoreProperties(value = {"cityId"})
 public class Street {
-    @JsonProperty("name")
-    private String Name;
-    @JsonProperty("id")
+    @JsonProperty("streetId")
     private int streetId;
-    @JsonProperty("num")
+    @JsonProperty("streetName")
+    private String streetName;
+
     private int number;
-    private int cityId;
 
-    public int getCityId() {
-        return cityId;
+    public ArrayList<Driver> getDrivers() {
+        return drivers;
     }
 
-    public void setCityId(int cityId) {
-        this.cityId = cityId;
+    public void setDrivers(ArrayList<Driver> drivers) {
+        this.drivers = drivers;
     }
 
+    @JsonProperty("drivers")
+    private ArrayList<Driver> drivers;
 
-    public Street(String name, int streetId, int number) {
-        Name = name;
+
+    public Street(String streetName, int streetId, int number) {
+        streetName = streetName;
         this.streetId = streetId;
         this.number = number;
     }
@@ -34,12 +37,12 @@ public class Street {
 
     }
 
-    public String getName() {
-        return Name;
+    public String getStreetName() {
+        return streetName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setStreetName(String name) {
+        streetName = name;
     }
 
     public int getStreetId() {
@@ -63,11 +66,14 @@ public class Street {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Street street = (Street) o;
-        return streetId == street.streetId && number == street.number && Objects.equals(Name, street.Name);
+        return streetId == street.streetId && number == street.number && Objects.equals(streetName, street.streetName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Name, streetId, number);
+        return Objects.hash(streetName, streetId, number);
+    }
+
+    public void setDriver(ArrayList<Driver> drivers) {
     }
 }

@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @XmlRootElement(name = "car")
-@XmlType(propOrder = { "carId", "carName", "numberOfTheCar", "carTypeId","dateOfConstruct", "taxiCompaniesId" })
+@XmlType(propOrder = {"carId", "carName", "numberOfTheCar", "carTypeId", "dateOfConstruct", "taxiCompaniesId"})
 public class Car {
     private int carId;
     private String carName;
@@ -19,12 +19,11 @@ public class Car {
     private Date dateOfConstruct;
     private int taxiCompaniesId;
 
-
-
+    @XmlJavaTypeAdapter(DateAdapter.class)
     public Date getDateOfConstruct() {
         return dateOfConstruct;
     }
-
+    @XmlElement(name = "numberOfTheCar")
     public int getNumberOfTheCar() {
         return numberOfTheCar;
     }
@@ -32,7 +31,7 @@ public class Car {
     public void setNumberOfTheCar(int numberOfTheCar) {
         this.numberOfTheCar = numberOfTheCar;
     }
-
+    @XmlElement(name = "carTypeId")
     public int getCarTypeId() {
         return carTypeId;
     }
@@ -40,7 +39,7 @@ public class Car {
     public void setCarTypeId(int carTypeId) {
         this.carTypeId = carTypeId;
     }
-
+    @XmlElement(name = "taxiCompaniesId")
     public int getTaxiCompaniesId() {
         return taxiCompaniesId;
     }
@@ -48,7 +47,7 @@ public class Car {
     public void setTaxiCompaniesId(int taxiCompaniesId) {
         this.taxiCompaniesId = taxiCompaniesId;
     }
-
+    @XmlElement(name = "carId")
     public void setCarId(int carId) {
         this.carId = carId;
     }

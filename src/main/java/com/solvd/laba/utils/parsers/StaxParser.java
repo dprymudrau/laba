@@ -1,4 +1,5 @@
 package com.solvd.laba.utils.parsers;
+
 import com.solvd.laba.binary.Passenger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,8 +18,8 @@ import java.util.List;
 
 public class StaxParser {
     private static final Logger LOGGER = LogManager.getLogger(StaxParser.class);
-    public static void staxParser() throws FileNotFoundException, XMLStreamException
-    {
+
+    public static void staxParser() throws FileNotFoundException, XMLStreamException {
         File file = new File("src/main/resources/passenger.xml");
 
         // Instance of the class which helps on reading tags
@@ -33,16 +34,14 @@ public class StaxParser {
         //Create Employee object. It will get all the data using setter methods.
         //And at last, it will stored in above 'employeeList'
         Passenger passenger = null;
-        while (eventReader.hasNext())
-        {
+        while (eventReader.hasNext()) {
             XMLEvent xmlEvent = eventReader.nextEvent();
 
-            if (xmlEvent.isStartElement())
-            {
+            if (xmlEvent.isStartElement()) {
                 StartElement startElement = xmlEvent.asStartElement();
 
                 //As soo as employee tag is opened, create new Employee object
-                if("passenger".equalsIgnoreCase(startElement.getName().getLocalPart())) {
+                if ("passenger".equalsIgnoreCase(startElement.getName().getLocalPart())) {
                     passenger = new Passenger();
                 }
 
@@ -50,19 +49,17 @@ public class StaxParser {
                 @SuppressWarnings("unchecked")
                 Iterator<Attribute> iterator = startElement.getAttributes();
 
-                while (iterator.hasNext())
-                {
+                while (iterator.hasNext()) {
                     Attribute attribute = iterator.next();
                     QName name = attribute.getName();
-                    if("id".equalsIgnoreCase(name.getLocalPart())) {
+                    if ("id".equalsIgnoreCase(name.getLocalPart())) {
                         passenger.setId(Integer.valueOf(attribute.getValue()));
                     }
                 }
 
                 //Now everytime content tags are found;
                 //Move the iterator and read data
-                switch (startElement.getName().getLocalPart())
-                {
+                switch (startElement.getName().getLocalPart()) {
                     case "name":
                         Characters nameDataEvent = (Characters) eventReader.nextEvent();
                         passenger.setName(nameDataEvent.getData());
@@ -75,13 +72,12 @@ public class StaxParser {
                 }
             }
 
-            if (xmlEvent.isEndElement())
-            {
+            if (xmlEvent.isEndElement()) {
                 EndElement endElement = xmlEvent.asEndElement();
 
                 //If employee tag is closed then add the employee object to list;
                 //and be ready to read next employee data
-                if("passenger".equalsIgnoreCase(endElement.getName().getLocalPart())) {
+                if ("passenger".equalsIgnoreCase(endElement.getName().getLocalPart())) {
                     passengerList.add(passenger);
                 }
             }

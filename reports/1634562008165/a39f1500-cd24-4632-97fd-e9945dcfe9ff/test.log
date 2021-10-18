@@ -1,0 +1,109 @@
+[2021-10-18 04:00:08] [CarinaListener.java] [1] [INFO] 
+============= Test configuration =============
+url=http://automationpractice.com/index.php
+env=STAG
+selenium_url=http://localhost:4444/wd/hub
+max_driver_count=3
+proxy_protocols=http,https,ftp
+browsermob_port=0
+auto_screenshot=true
+explicit_timeout=20
+retry_interval=5
+project_report_directory=./reports
+max_screen_history=10
+big_screen_width=-1
+big_screen_height=-1
+init_retry_count=0
+init_retry_interval=1
+retry_count=0
+locale=en_US
+thread_count=-1
+data_provider_thread_count=-1
+core_log_level=INFO
+core_log_packages=com.qaprosoft.carina.core
+log_all_json=true
+date_format=HH:mm:ss yyyy-MM-dd
+time_format=HH:mm:ss
+test_naming_pattern={method_name}
+element_loading_strategy=BY_PRESENCE_OR_VISIBILITY
+page_opening_strategy=BY_URL_AND_ELEMENT
+localization_encoding=UTF-8
+localization_testing=false
+default_device_timezone=GMT
+default_device_time_format=24
+default_device_language=en_US
+selenium_url=http://localhost:4444/wd/hub
+
+------------- Driver capabilities -----------
+capabilities.browserName=chrome
+================================================
+
+[2021-10-18 04:00:08] [TestRunRegistrar.java] [1] [WARN] Reporting disabled: using no op test run registrar
+[2021-10-18 04:00:10] [Reflections.java] [1] [INFO] Reflections took 2186 ms to scan 14 urls, producing 1975 keys and 8873 values 
+[2021-10-18 04:00:11] [FilterTestsListener.java] [1] [INFO] There are no any rules and limitations
+[2021-10-18 04:00:11] [CarinaListener.java] [1] [INFO] Set thread-count=1
+[2021-10-18 04:00:11] [CarinaListener.java] [1] [INFO] Set data-provider-thread-count=1
+[2021-10-18 04:00:11] [CarinaListener.java] [1] [INFO] disable TestRail integration!
+[2021-10-18 04:00:11] [CarinaListener.java] [1] [INFO] CARINA_CORE_VERSION: 7.2.11
+[2021-10-18 04:00:11] [TestRunRegistrar.java] [1] [WARN] Reporting disabled: using no op test run registrar
+[2021-10-18 04:00:11] [TestRunRegistrar.java] [1] [WARN] Reporting disabled: using no op test run registrar
+[2021-10-18 04:00:11] [IMessager.java] [1] [INFO] TEST [laba - test1] STARTED at [16:00:11 2021-10-18]
+[2021-10-18 04:00:11] [IMessager.java] [1] [ERROR] TEST [laba - test1] FAILED at [16:00:11 2021-10-18] - org/openqa/selenium/remote/AbstractDriverOptions
+
+java.base/java.lang.ClassLoader.defineClass1(Native Method)
+java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+java.base/java.lang.ClassLoader.defineClass1(Native Method)
+java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:151)
+java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:825)
+java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:723)
+java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:646)
+java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:604)
+java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+com.qaprosoft.carina.core.foundation.webdriver.core.capability.AbstractCapabilities.addChromeOptions(AbstractCapabilities.java:177)
+com.qaprosoft.carina.core.foundation.webdriver.core.capability.AbstractCapabilities.initCapabilities(AbstractCapabilities.java:107)
+com.qaprosoft.carina.core.foundation.webdriver.core.capability.AbstractCapabilities.initBaseCapabilities(AbstractCapabilities.java:62)
+com.qaprosoft.carina.core.foundation.webdriver.core.capability.impl.desktop.ChromeCapabilities.getCapability(ChromeCapabilities.java:30)
+com.qaprosoft.carina.core.foundation.webdriver.core.factory.impl.DesktopFactory.getCapabilities(DesktopFactory.java:92)
+com.qaprosoft.carina.core.foundation.webdriver.core.factory.impl.DesktopFactory.create(DesktopFactory.java:61)
+com.qaprosoft.carina.core.foundation.webdriver.core.factory.DriverFactory.create(DriverFactory.java:69)
+com.qaprosoft.carina.core.foundation.webdriver.IDriverPool.createDriver(IDriverPool.java:387)
+com.qaprosoft.carina.core.foundation.webdriver.IDriverPool.getDriver(IDriverPool.java:129)
+com.qaprosoft.carina.core.foundation.webdriver.IDriverPool.getDriver(IDriverPool.java:85)
+com.qaprosoft.carina.core.foundation.webdriver.IDriverPool.getDriver(IDriverPool.java:72)
+com.solvd.laba.webTest.WebTest.test1(WebTest.java:11)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.base/java.lang.reflect.Method.invoke(Method.java:564)
+org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+org.testng.TestRunner.privateRun(TestRunner.java:794)
+org.testng.TestRunner.run(TestRunner.java:596)
+org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+org.testng.SuiteRunner.run(SuiteRunner.java:276)
+org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+org.testng.TestNG.runSuites(TestNG.java:1063)
+org.testng.TestNG.run(TestNG.java:1031)
+com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)

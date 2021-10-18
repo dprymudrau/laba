@@ -16,21 +16,11 @@
                     <include name="carTypeTest"/>
                     <include name="cityTest"/>
                     <include name="orderTypeTest"/>
+
+                    <include name="jacksonWriteObject"/>
+                    <include name="jacksonReadObject"/>
                 </methods>
             </class>
-<!--            <class name="com.solvd.airport.XmlParserTest">-->
-<!--                <methods>-->
-<!--                    <include name="saxParserTest"/>-->
-<!--                    <include name="jaxbMarshallerTest"/>-->
-<!--                    <include name="jaxbUnmarshallerTest"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="com.solvd.airport.JsonParserTest">-->
-<!--                <methods>-->
-<!--                    <include name="jacksonWriteObject"/>-->
-<!--                    <include name="jacksonReadObject"/>-->
-<!--                </methods>-->
-<!--            </class>-->
         </classes>
     </test>
 </suite>

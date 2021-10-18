@@ -1,0 +1,17 @@
+[ {
+  "cityId" : 1,
+  "cityName" : "Odessa",
+  "street" : [ {
+    "streetId" : 1,
+    "streetName" : "Lugova",
+    "drivers" : [ {
+      "driverId" : 1,
+      "name" : "Glib",
+      "phoneNumber" : "0982240555"
+    }, {
+      "driverId" : 2,
+      "name" : "Tom",
+      "phoneNumber" : "0983690580"
+    } ]
+  } ]
+} ]

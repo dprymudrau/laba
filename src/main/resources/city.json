@@ -1,2 +1,9 @@
 [ {
+  "cityId" : 1,
+  "cityName" : "Odessa",
+  "street" : [{
+    "streetId" : 1,
+    "name" : "Lugova",
+    "number" : "60"
+  }]
 } ]

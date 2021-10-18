@@ -5,7 +5,7 @@ import com.solvd.laba.service.interfaces.*;
 import com.solvd.laba.utils.parsers.JacksonParser;
 import com.solvd.laba.utils.parsers.jaxb.Jaxb;
 import com.solvd.laba.utils.parsers.StaxParser;
-import com.solvd.laba.utils.parsers.jaxb.JaxbContext;
+import com.solvd.laba.utils.parsers.jaxb.JaxbParse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,7 +32,7 @@ public class Main {
         LOGGER.info(street.getById(1));
 
         StaxParser.staxParser();
-        Jaxb.jaxbParser();
-        JacksonParser.jacksonParser();
+        JaxbParse.jaxbParser();
+        //JacksonParser.jacksonParser();
     }
 }
