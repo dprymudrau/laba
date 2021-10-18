@@ -1,8 +1,7 @@
 package com.solvd.laba.dao.impl.jdbc;
 
-import com.solvd.laba.binary.Car;
 import com.solvd.laba.binary.Doctor;
-import com.solvd.laba.dao.EntityDAO;
+import com.solvd.laba.dao.interfaces.IDoctorDAO;
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,13 +9,13 @@ import org.apache.logging.log4j.Logger;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class DoctorDAOImpl extends AbstractDAO implements EntityDAO<Doctor, Integer> {
+public class DoctorDAOImpl extends AbstractDAO implements IDoctorDAO {
     private static final String SELECT_ALL_QUERY = "SELECT * FROM Doctors";
     private static final String SELECT_ALL_WITH_CONDITION_QUERY = "SELECT * FROM Doctors WHERE ";
     private static final String SELECT_ALL_BY_ID_QUERY = "SELECT * FROM Doctors WHERE idDoctor = ?";
-    private static final String INSERT_NEW_DOCTOR_QUERY = "INSERT INTO Doctors(idDoctor, doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpecialty, idNumberOfContract , idWorkExp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String INSERT_AUTO_INCR_NEW_DOCTOR_QUERY = "INSERT INTO Doctors(doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpecialty, idNumberOfContract , idWorkExp) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    private static final String UPDATE_DOCTOR_QUERY = "UPDATE Doctors SET doctorName = ?, doctorSurname = ?, doctorDateOfBirth = ?, idWorkPosition = ?, idSpecialty = ?, idNumberOfContract = ?, idWorkExp = ? WHERE idDoctor = ?";
+    private static final String INSERT_NEW_DOCTOR_QUERY = "INSERT INTO Doctors(idDoctor, doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpeciality, idNumberOfContract , idWorkExp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String INSERT_AUTO_INCR_NEW_DOCTOR_QUERY = "INSERT INTO Doctors(doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpeciality, idNumberOfContract , idWorkExp) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    private static final String UPDATE_DOCTOR_QUERY = "UPDATE Doctors SET doctorName = ?, doctorSurname = ?, doctorDateOfBirth = ?, idWorkPosition = ?, idSpeciality = ?, idNumberOfContract = ?, idWorkExp = ? WHERE idDoctor = ?";
     private static final String DELETE_DOCTOR_BY_ID_QUERY = "DELETE FROM Doctors WHERE idDoctor = ?";
     private static final String DELETE_DOCTOR_WITH_CONDITION_QUERY = "DELETE FROM Doctors WHERE ";
     Connection connection = getConnection();
@@ -37,7 +36,7 @@ public class DoctorDAOImpl extends AbstractDAO implements EntityDAO<Doctor, Inte
                 String doctorSurname = resultSet.getString("doctorSurname");
                 Date doctorDateOfBirth = resultSet.getDate("doctorDateOfBirth");
                 int idWorkPosition = resultSet.getInt("idWorkPosition");
-                int idSpecialty = resultSet.getInt("idSpecialty");
+                int idSpeciality = resultSet.getInt("idSpeciality");
                 int idNumberOfContract = resultSet.getInt("idNumberOfContract");
                 int idWorkExp = resultSet.getInt("idWorkExp");
                 LOGGER.info("id -> " + id +
@@ -45,7 +44,7 @@ public class DoctorDAOImpl extends AbstractDAO implements EntityDAO<Doctor, Inte
                         ", doctor surname -> " + doctorSurname +
                         ", doctor birthday -> " + doctorDateOfBirth +
                         ", id work position -> " + idWorkPosition +
-                        ", id specialty -> " + idSpecialty +
+                        ", id speciality -> " + idSpeciality +
                         ", id number of contract -> " + idNumberOfContract +
                         ", id work exp -> " + idWorkExp);
             }
@@ -72,7 +71,7 @@ public class DoctorDAOImpl extends AbstractDAO implements EntityDAO<Doctor, Inte
                 String doctorSurname = resultSet.getString("doctorSurname");
                 Date doctorDateOfBirth = resultSet.getDate("doctorDateOfBirth");
                 int idWorkPosition = resultSet.getInt("idWorkPosition");
-                int idSpecialty = resultSet.getInt("idSpecialty");
+                int idSpeciality = resultSet.getInt("idSpeciality");
                 int idNumberOfContract = resultSet.getInt("idNumberOfContract");
                 int idWorkExp = resultSet.getInt("idWorkExp");
                 LOGGER.info("id -> " + id +
@@ -80,7 +79,7 @@ public class DoctorDAOImpl extends AbstractDAO implements EntityDAO<Doctor, Inte
                         ", doctor surname -> " + doctorSurname +
                         ", doctor birthday -> " + doctorDateOfBirth +
                         ", id work position -> " + idWorkPosition +
-                        ", id specialty -> " + idSpecialty +
+                        ", id speciality -> " + idSpeciality +
                         ", id number of contract -> " + idNumberOfContract +
                         ", id work exp -> " + idWorkExp);
             }
@@ -107,10 +106,10 @@ public class DoctorDAOImpl extends AbstractDAO implements EntityDAO<Doctor, Inte
                 String doctorSurname = resultSet.getString("doctorSurname");
                 Date doctorDateOfBirth = resultSet.getDate("doctorDateOfBirth");
                 int idWorkPosition = resultSet.getInt("idWorkPosition");
-                int idSpecialty = resultSet.getInt("idSpecialty");
+                int idSpeciality = resultSet.getInt("idSpeciality");
                 int idNumberOfContract = resultSet.getInt("idNumberOfContract");
                 int idWorkExp = resultSet.getInt("idWorkExp");
-                Doctor doctor = new Doctor(id, doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpecialty, idNumberOfContract, idWorkExp);
+                Doctor doctor = new Doctor(id, doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpeciality, idNumberOfContract, idWorkExp);
                 doctors.add(doctor);
                 LOGGER.debug(doctor + "\n is selected and received.");
             }
@@ -140,10 +139,10 @@ public class DoctorDAOImpl extends AbstractDAO implements EntityDAO<Doctor, Inte
                 String doctorSurname = resultSet.getString("doctorSurname");
                 Date doctorDateOfBirth = resultSet.getDate("doctorDateOfBirth");
                 int idWorkPosition = resultSet.getInt("idWorkPosition");
-                int idSpecialty = resultSet.getInt("idSpecialty");
+                int idSpeciality = resultSet.getInt("idSpeciality");
                 int idNumberOfContract = resultSet.getInt("idNumberOfContract");
                 int idWorkExp = resultSet.getInt("idWorkExp");
-                Doctor doctor = new Doctor(id, doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpecialty, idNumberOfContract, idWorkExp);
+                Doctor doctor = new Doctor(id, doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpeciality, idNumberOfContract, idWorkExp);
                 doctors.add(doctor);
                 LOGGER.debug(doctor + "\n is selected and received.");
             }
@@ -173,7 +172,7 @@ public class DoctorDAOImpl extends AbstractDAO implements EntityDAO<Doctor, Inte
                 doctor.setSurname(resultSet.getString("doctorSurname"));
                 doctor.setBirthday(resultSet.getDate("doctorDateOfBirth"));
                 doctor.setIdWorkPosition(resultSet.getInt("idWorkPosition"));
-                doctor.setIdSpeciality(resultSet.getInt("idSpecialty"));
+                doctor.setIdSpeciality(resultSet.getInt("idSpeciality"));
                 doctor.setIdNumberOdContract(resultSet.getInt("idNumberOfContract"));
                 doctor.setIdWorkExp(resultSet.getInt("idWorkExp"));
                 LOGGER.debug(doctor + "\n is selected and received.");
@@ -209,13 +208,13 @@ public class DoctorDAOImpl extends AbstractDAO implements EntityDAO<Doctor, Inte
         }
     }
 
-    public void insertToTable(String doctorName, String doctorSurname, Date doctorDateOfBirth, int idWorkPosition, int idSpecialty, int idNumberOfContract, int idWorkExp) {
+    public void insertToTable(String doctorName, String doctorSurname, Date doctorDateOfBirth, int idWorkPosition, int idSpeciality, int idNumberOfContract, int idWorkExp) {
         try(PreparedStatement prepStatement = connection.prepareStatement(INSERT_AUTO_INCR_NEW_DOCTOR_QUERY)) {
             prepStatement.setString(1, doctorName);
             prepStatement.setString(2, doctorSurname);
             prepStatement.setDate(3, doctorDateOfBirth);
             prepStatement.setInt(4, idWorkPosition);
-            prepStatement.setInt(5, idSpecialty);
+            prepStatement.setInt(5, idSpeciality);
             prepStatement.setInt(6, idNumberOfContract);
             prepStatement.setInt(7, idWorkExp);
             int row = prepStatement.executeUpdate();

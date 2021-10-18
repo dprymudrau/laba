@@ -3,18 +3,18 @@ package com.solvd.laba.service.impl.jdbc;
 import com.solvd.laba.binary.RegistrationCard;
 import com.solvd.laba.binary.Visitor;
 import com.solvd.laba.dao.impl.jdbc.DoctorDAOImpl;
+import com.solvd.laba.service.IDoctorService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.Random;
 
-public class DoctorServiceImpl extends DoctorDAOImpl implements DoctorService {
+public class DoctorServiceImpl extends DoctorDAOImpl implements IDoctorService {
     private static final Logger LOGGER = LogManager.getLogger(DoctorServiceImpl.class);
 
     public void patientExamination(Visitor visitor) {
-        RegistrationCardServiceImpl service = new RegistrationCardServiceImpl();
-        RegistrationCard identifiedRegCard = service.findRegCardByVisitorId(visitor.getId());
+        RegistrationCardService service = new RegistrationCardService();
+        RegistrationCard identifiedRegCard = service.getByVisitorId(visitor.getId());
         int currentPatientHealthCondition = identifiedRegCard.getIdVisitorCategory();
         boolean covidCheck = "Covid".equals(visitor.getDiagnosis());
 
@@ -48,9 +48,5 @@ public class DoctorServiceImpl extends DoctorDAOImpl implements DoctorService {
             }
             service.updateEntityRow(identifiedRegCard);
         }
-    }
-
-    public void patientExamination(ArrayList<Visitor> visitors) {
-
     }
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.laba.dao.interfaces.IVisitorAgeGroupCategoryDAO">
+    <select id="getAll" resultMap="ageGroupCategoryResultMap">
+        SELECT * FROM VisitorAgeGroupCategories
+    </select>
+    <select id="getAllWithFilter" parameterType="String" resultMap="ageGroupCategoryResultMap">
+        SELECT * FROM VisitorAgeGroupCategories WHERE #{condition}
+    </select>
+    <select id="getById" parameterType="int" resultMap="ageGroupCategoryResultMap">
+        SELECT * FROM VisitorAgeGroupCategories WHERE idVisitorAgeGroupCategory = #{id}
+    </select>
+    <insert id="insertToTable"  parameterType="com.solvd.laba.binary.VisitorAgeGroupCategory">
+        INSERT INTO VisitorAgeGroupCategories(idVisitorAgeGroupCategory, ageGroupCategory) VALUES (#{id}, #{ageGroupCategory})
+    </insert>
+    <update id="updateEntityRow">
+        UPDATE VisitorAgeGroupCategories SET ageGroupCategory = #{ageGroupCategory} WHERE idVisitorAgeGroupCategory = #{id}
+    </update>
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM VisitorAgeGroupCategories WHERE idVisitorAgeGroupCategory = #{id}
+    </delete>
+    <resultMap id="ageGroupCategoryResultMap" type="com.solvd.laba.binary.VisitorAgeGroupCategory" autoMapping="false">
+        <id column="idVisitorAgeGroupCategory" property="id"/>
+        <result column="ageGroupCategory" property="ageGroupCategory"/>
+    </resultMap>
+</mapper>

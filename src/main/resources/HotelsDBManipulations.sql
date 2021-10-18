@@ -1,6 +1,11 @@
 USE HospitalsDB;
 
+SELECT * FROM Cars;
 SELECT * FROM CarFleets;
+SELECT c.idCar, c.carBrandName, c.carModel, c.carRegNumber, cf.capacityByCars FROM Cars c
+RIGHT JOIN CarFleets cf ON c.idCarFleet=cf.idCarFleet;
+SELECT * FROM Cars WHERE idCarFleet = 3;
+SELECT * FROM CarFleets WHERE idCarFleet = 3;
 
 SELECT * FROM Hospitals;
 SELECT h.hospitalName, h.hospitalAddress, c.capacityByCars FROM Hospitals h
@@ -27,7 +32,7 @@ SELECT * FROM WorkerContracts;
 SELECT * FROM WorkPositions;
 SELECT * FROM WorkExperience ORDER BY salaryIndex ASC;
 SELECT * FROM Specialities;
-SELECT * FROM Car;
+SELECT * FROM Cars;
 SELECT * FROM DriverLicenses;
 
 SELECT wc.idNumberOfContract, h.hospitalName, wc.dateOfSigning FROM WorkerContracts wc
@@ -71,3 +76,8 @@ SELECT idCar FROM Cars WHERE carBrandName = 'BMW';
 DELETE FROM Cars WHERE idCar IN (SELECT idCar FROM Cars WHERE carBrandName = 'BMW');
 SELECT * FROM Cars;
 drop database HospitalsDB;
+DELETE FROM Cars WHERE idCar = 100;
+DELETE FROM Cars WHERE carBrandName = 'TestCar' LIMIT 1;
+UPDATE Cars SET carBrandName = 'TestCar2ndEdit', carModel = 'Testing', carRegNumber = 'Testing', idCarFleet = 2 WHERE idCar = 100;
+delete from RegistrationCards where idRegistrationCard = 99;
+delete from Visitors where idVisitor = 99 limit 1;

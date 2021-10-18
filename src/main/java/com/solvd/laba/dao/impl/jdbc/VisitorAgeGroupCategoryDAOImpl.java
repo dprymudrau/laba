@@ -1,7 +1,7 @@
 package com.solvd.laba.dao.impl.jdbc;
 
 import com.solvd.laba.binary.VisitorAgeGroupCategory;
-import com.solvd.laba.dao.EntityDAO;
+import com.solvd.laba.dao.interfaces.IVisitorAgeGroupCategoryDAO;
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class VisitorAgeGroupCategoryDAOImpl extends AbstractDAO implements EntityDAO<VisitorAgeGroupCategory, Integer> {
+public class VisitorAgeGroupCategoryDAOImpl extends AbstractDAO implements IVisitorAgeGroupCategoryDAO {
     private static final String SELECT_ALL_QUERY = "SELECT * FROM VisitorAgeGroupCategories";
     private static final String SELECT_ALL_WITH_CONDITION_QUERY = "SELECT * FROM VisitorAgeGroupCategories WHERE ";
     private static final String SELECT_ALL_BY_ID_QUERY = "SELECT * FROM VisitorAgeGroupCategories WHERE idVisitorAgeGroupCategory = ?";

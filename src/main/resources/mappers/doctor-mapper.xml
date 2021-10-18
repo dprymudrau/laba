@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.laba.dao.interfaces.IDoctorDAO">
+    <select id="getAll" resultMap="doctorResultMap">
+        SELECT * FROM Doctors
+    </select>
+    <select id="getAllWithFilter" parameterType="String" resultMap="doctorResultMap">
+        SELECT * FROM Doctors WHERE #{condition}
+    </select>
+    <select id="getById" parameterType="int" resultMap="doctorResultMap">
+        SELECT * FROM Doctors WHERE idDoctor = #{id}
+    </select>
+    <insert id="insertToTable"  parameterType="com.solvd.laba.binary.Doctor">
+        INSERT INTO Doctors(idDoctor, doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpeciality, idNumberOfContract , idWorkExp)
+        VALUES (#{id}, #{name}, #{surname}, #{birthday}, #{idWorkPosition}, #{idSpeciality}, #{idNumberOdContract}, #{idWorkExp})
+    </insert>
+    <update id="updateEntityRow">
+        UPDATE Doctors SET doctorName = #{name}, doctorSurname = #{surname}, doctorDateOfBirth = #{birthday},
+        idWorkPosition = #{idWorkPosition}, idSpeciality = #{idSpeciality}, idNumberOfContract = #{idNumberOdContract},
+        idWorkExp = #{idWorkExp} WHERE idDoctor = #{id}
+    </update>
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM Doctors WHERE idDoctor = #{id}
+    </delete>
+    <resultMap id="doctorResultMap" type="com.solvd.laba.binary.Doctor" autoMapping="false">
+        <id column="idDoctor" property="id"/>
+        <result column="doctorName" property="name"/>
+        <result column="doctorSurname" property="surname"/>
+        <result column="doctorDateOfBirth" property="birthday"/>
+        <result column="idWorkPosition" property="idWorkPosition"/>
+        <result column="idSpeciality" property="idSpeciality"/>
+        <result column="idNumberOfContract" property="idNumberOfContract"/>
+        <result column="idWorkExp" property="idWorkExp"/>
+    </resultMap>
+</mapper>

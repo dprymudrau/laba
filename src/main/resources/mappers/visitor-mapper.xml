@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.laba.dao.interfaces.IVisitorDAO">
+    <select id="getAll" resultMap="visitorResultMap">
+        SELECT * FROM Visitors
+    </select>
+    <select id="getById" parameterType="int" resultMap="visitorResultMap">
+        SELECT * FROM Visitors WHERE idVisitor = #{id}
+    </select>
+    <insert id="insertToTable"  parameterType="com.solvd.laba.binary.Visitor">
+        INSERT INTO Visitors(idVisitor, visitorName, visitorSurname, visitorDayOfBirth, visitorAddress, diagnosis, visitDate, dischargeDate)
+        VALUES (#{id}, #{name}, #{surname}, #{birthday}, #{address}, #{diagnosis}, #{visitDate}, #{dischargeDate})
+    </insert>
+    <update id="updateEntityRow">
+        UPDATE Visitors SET visitorName = #{name}, visitorSurname = #{surname}, visitorDayOfBirth = #{birthday}, visitorAddress = #{address}, diagnosis = #{diagnosis}, visitDate = #{visitDate}, dischargeDate = #{dischargeDate} WHERE idVisitor = #{id}
+    </update>
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM Visitors WHERE idVisitor = #{id}
+    </delete>
+    <resultMap id="visitorResultMap" type="com.solvd.laba.binary.Visitor" autoMapping="false">
+        <id column="idVisitor" property="id"/>
+        <result column="visitorName" property="name"/>
+        <result column="visitorSurname" property="surname"/>
+        <result column="visitorDayOfBirth" property="birthday"/>
+        <result column="visitorAddress" property="address"/>
+        <result column="diagnosis" property="diagnosis"/>
+        <result column="visitDate" property="visitDate"/>
+        <result column="dischargeDate" property="dischargeDate"/>
+    </resultMap>
+</mapper>

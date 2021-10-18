@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<visitor id="99">
+    <name>TestName</name>
+    <surname>Test</surname>
+    <birthday>1986-04-09T00:00:00+04:00</birthday>
+    <address>Minsk</address>
+    <diagnosis>Covid</diagnosis>
+    <visitDate>2021-10-07T00:00:00+03:00</visitDate>
+    <dischargeDate>2021-12-09T00:00:00+03:00</dischargeDate>
+</visitor>

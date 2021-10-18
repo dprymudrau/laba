@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.laba.dao.interfaces.ICarDAO">
+
+    <select id="getAll" resultMap="carResultMap">
+        SELECT * FROM Cars
+    </select>
+    <select id="getAllByCarFleetId" parameterType="int" resultMap="carResultMap">
+        SELECT * FROM Cars WHERE idCarFleet = #{idCarFleet}
+    </select>
+    <select id="getById" parameterType="int" resultMap="carResultMap">
+        SELECT * FROM Cars WHERE idCar = #{id}
+    </select>
+    <insert id="insertToTable"  parameterType="com.solvd.laba.binary.Car">
+        INSERT INTO Cars(idCar, carBrandName, carModel, carRegNumber, idCarFleet) VALUES (#{id}, #{brandName}, #{model}, #{regNumber}, #{idCarFleet})
+    </insert>
+    <update id="updateEntityRow">
+        UPDATE Cars SET carBrandName = #{brandName}, carModel = #{model}, carRegNumber = #{regNumber}, idCarFleet = #{idCarFleet} WHERE idCar = #{id}
+    </update>
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM Cars WHERE idCar = #{id}
+    </delete>
+    <resultMap id="carResultMap" type="com.solvd.laba.binary.Car" autoMapping="false">
+        <id column="idCar" property="id"/>
+        <result column="carBrandName" property="brandName"/>
+        <result column="carModel" property="model"/>
+        <result column="carRegNumber" property="regNumber"/>
+        <result column="idCarFleet" property="idCarFleet"/>
+    </resultMap>
+</mapper>

@@ -1,8 +1,8 @@
 package com.solvd.laba.dao.impl.jdbc;
 
 import com.solvd.laba.binary.CarFleet;
+import com.solvd.laba.dao.interfaces.ICarFleetDAO;
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
-import com.solvd.laba.dao.EntityDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CarFleetDAOImpl extends AbstractDAO implements EntityDAO<CarFleet, Integer> {
+public class CarFleetDAOImpl extends AbstractDAO implements ICarFleetDAO {
     private static final String SELECT_ALL_QUERY = "SELECT * FROM CarFleets";
     private static final String SELECT_ALL_WITH_CONDITION_QUERY = "SELECT * FROM CarFleets WHERE ";
     private static final String SELECT_ALL_BY_ID_QUERY = "SELECT * FROM CarFleets WHERE idCarFleet = ?";

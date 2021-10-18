@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "Test suite" parallel = "classes" thread-count = "5">
+    <test name = "My test">
+        <classes>
+            <class name = "com.solvd.laba.util.saxParserTest">
+                <methods>
+                    <include name = "saxParsingTest"/>
+                </methods>
+            </class>
+            <class name = "com.solvd.laba.service.impl.myBatis.CarFleetServiceTest">
+                <methods>
+                    <exclude name="countCurrentCarsAmountTest"/>
+                </methods>
+            </class>
+            <class name="com.solvd.laba.service.impl.myBatis.DoctorServiceTest"/>
+            <class name="com.solvd.laba.dao.JdbcImplTest">
+                <methods>
+                    <exclude name="deleteByIdTest"/>
+                    <exclude name="deleteByFilter"/>
+                    <exclude name="getAllByCarFleetIdTest"/>
+                    <exclude name="getAllTest"/>
+                </methods>
+            </class>
+            <class name="com.solvd.laba.util.jaxbParserTest"></class>
+        </classes>
+    </test>
+</suite>

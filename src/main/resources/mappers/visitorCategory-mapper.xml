@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.laba.dao.interfaces.IVisitorCategoryDAO">
+    <select id="getAll" resultMap="visitCategoryResultMap">
+        SELECT * FROM VisitorCategories
+    </select>
+    <select id="getAllWithFilter" parameterType="String" resultMap="visitCategoryResultMap">
+        SELECT * FROM VisitorCategories WHERE #{condition}
+    </select>
+    <select id="getById" parameterType="int" resultMap="visitCategoryResultMap">
+        SELECT * FROM VisitorCategories WHERE idVisitorCategory = #{id}
+    </select>
+    <insert id="insertToTable"  parameterType="com.solvd.laba.binary.VisitorCategory">
+        INSERT INTO VisitorCategories(idVisitorCategory, healthConditionCategory, visitCategory) VALUES (#{id}, #{healthConditionCategory}, #{visitCategory})
+    </insert>
+    <update id="updateEntityRow">
+        UPDATE VisitorCategories SET healthConditionCategory = #{healthConditionCategory}, visitCategory = #{visitCategory} WHERE idVisitorCategory = #{id}
+    </update>
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM VisitorCategories WHERE idVisitorCategory = #{id}
+    </delete>
+    <resultMap id="visitCategoryResultMap" type="com.solvd.laba.binary.VisitorCategory" autoMapping="false">
+        <id column="idVisitorCategory" property="id"/>
+        <result column="healthConditionCategory" property="healthConditionCategory"/>
+        <result column="visitCategory" property="visitCategory"/>
+    </resultMap>
+</mapper>

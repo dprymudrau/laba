@@ -1,8 +1,14 @@
 package com.solvd.laba.binary;
 
-import java.sql.Date;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.util.Date;
 import java.util.Objects;
 
+@XmlRootElement(name = "visitor")
+@XmlType(propOrder = {"id", "name", "surname", "birthday", "address", "diagnosis", "visitDate", "dischargeDate"})
 public class Visitor {
     private int id;
     private String name;
@@ -25,16 +31,13 @@ public class Visitor {
         this.dischargeDate = dischargeDate;
     }
 
-    public Visitor(String diagnosis) {
-        this.diagnosis = diagnosis;
-    }
-
     public Visitor() {}
 
     public int getId() {
         return id;
     }
 
+    @XmlAttribute
     public void setId(int id) {
         this.id = id;
     }
@@ -43,6 +46,7 @@ public class Visitor {
         return name;
     }
 
+    @XmlElement(name = "name")
     public void setName(String name) {
         this.name = name;
     }
@@ -51,6 +55,7 @@ public class Visitor {
         return surname;
     }
 
+    @XmlElement(name = "surname")
     public void setSurname(String surname) {
         this.surname = surname;
     }
@@ -59,6 +64,7 @@ public class Visitor {
         return birthday;
     }
 
+    @XmlElement(name = "birthday")
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
@@ -67,6 +73,7 @@ public class Visitor {
         return address;
     }
 
+    @XmlElement(name = "address")
     public void setAddress(String address) {
         this.address = address;
     }
@@ -75,6 +82,7 @@ public class Visitor {
         return diagnosis;
     }
 
+    @XmlElement(name = "diagnosis")
     public void setDiagnosis(String diagnosis) {
         this.diagnosis = diagnosis;
     }
@@ -83,6 +91,7 @@ public class Visitor {
         return visitDate;
     }
 
+    @XmlElement(name = "visitDate")
     public void setVisitDate(Date visitDate) {
         this.visitDate = visitDate;
     }
@@ -91,6 +100,7 @@ public class Visitor {
         return dischargeDate;
     }
 
+    @XmlElement(name = "dischargeDate")
     public void setDischargeDate(Date dischargeDate) {
         this.dischargeDate = dischargeDate;
     }
@@ -100,7 +110,9 @@ public class Visitor {
         if (this == o) return true;
         if (!(o instanceof Visitor)) return false;
         Visitor visitor = (Visitor) o;
-        return id == visitor.id && name.equals(visitor.name) && surname.equals(visitor.surname) && birthday.equals(visitor.birthday) && address.equals(visitor.address) && diagnosis.equals(visitor.diagnosis) && visitDate.equals(visitor.visitDate) && dischargeDate.equals(visitor.dischargeDate);
+        return id == visitor.id && name.equals(visitor.name) && surname.equals(visitor.surname)
+                && birthday.equals(visitor.birthday) && address.equals(visitor.address)
+                && diagnosis.equals(visitor.diagnosis) && visitDate.equals(visitor.visitDate);
     }
 
     @Override

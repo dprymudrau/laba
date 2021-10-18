@@ -1,12 +1,16 @@
 package com.solvd.laba.runner;
 
-import com.solvd.laba.service.impl.jdbc.DoctorServiceImpl;
-import com.solvd.laba.util.jaxb.FullRegCardInfo;
+import com.solvd.laba.binary.RegistrationCard;
+import com.solvd.laba.binary.Visitor;
+import com.solvd.laba.service.impl.myBatis.RegistrationCardService;
+import com.solvd.laba.util.DateConverter;
 import com.solvd.laba.util.jaxb.JAXBImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.xml.bind.JAXBException;
+import java.sql.Date;
+import java.util.ArrayList;
 
 public class Runner {
     private static final Logger LOGGER = LogManager.getLogger(Runner.class);
@@ -28,6 +32,8 @@ public class Runner {
 //        Car car = new Car(3, "BMW", "X6", "1378HM-7", 1);
 //        carFleetService.insertNewCarToFleet(1, car);
 
+
+        //sax
 //        System.out.println();
 //        SAXRunner.readXML();
 //        ArrayList<Visitor> visitors = XMLHandler.getVisitors();
@@ -38,16 +44,50 @@ public class Runner {
 //                    visitor.getAddress(), visitor.getDiagnosis(), visitor.getVisitDate(), visitor.getDischargeDate());
 //        }
 
-        FullRegCardInfo frci = new FullRegCardInfo();
-        frci.setVisitorName("Robert");
-        frci.setDiagnosis("Covid");
+        //jaxb
+        String filePath = "src/main/resources/Visitor.xml";
+        Visitor visitorToXml = new Visitor(77, "TestName", "Test", DateConverter.getUtilDate("1986-04-09"), "Minsk", "Covid", DateConverter.getUtilDate("2021-10-07"), DateConverter.getUtilDate("2021-12-09"));
         JAXBImpl jaxb = new JAXBImpl();
-        System.out.println(jaxb.marshaller(frci));
+        jaxb.marshal(visitorToXml, filePath);
+        Visitor visitorFromXml = jaxb.unmarshal(filePath);
+        LOGGER.info(visitorFromXml);
 
-        String xmldata = ""
 
+        //mybatis
+//        CarFleetServiceImpl carFleetService = new CarFleetServiceImpl();
+//        CarService carService = new CarService();
+//        CarFleet fleet = carFleetService.getCarFleetById(3);
+//        LOGGER.info(fleet);
+//        carService.deleteCarById(7);
+//        LOGGER.info(carFleetService.countCurrentCarsAmount(fleet.getId()));
+//        LOGGER.info(carFleetService.checkFreeParkingSlot(fleet.getId()));
+//        LOGGER.info(carService.getAll());
+//        Car car1 = new Car(8, "BMW", "X6", "1378HM-7", 3);
+//        Car car2 = new Car(3, "GAZ", "32214 \"Gazel\"", "6351TE-7", 3);
+//        LOGGER.info(carFleetService.doesCarFleetContainCar(fleet.getId(), car2));
+//        Car newCar = new Car(7, "BMW", "X5", "1580HM-7", 3);
+//        carFleetService.insertNewCarToFleet(3, newCar);
+//        LOGGER.info(carService.getAll());
+//        LOGGER.info(carFleetService.doesCarFleetContainCar(fleet.getId(), newCar));
 
-        DoctorServiceImpl docService = new DoctorServiceImpl();
+//        VisitorService visitorService = new VisitorService();
+//        ArrayList<Visitor> visitors = visitorService.getAllVisitors();
+//        visitorService.deleteVisitorById(7);
+//        LOGGER.info(visitors);
+//        System.out.println();
+        Visitor newVisitor = new Visitor(7, "Vitaliy", "Shulga", new Date(1984-12-31), "Homeless", "Covid", new Date(2021-11-11), null);
+//        visitorService.insertVisitor(newVisitor);
+//        LOGGER.info(visitors);
+        RegistrationCardService regCardService = new RegistrationCardService();
+        ArrayList<RegistrationCard> cards = regCardService.getAllRegCards();
+//        LOGGER.info(cards);
+//        RegistrationCard newCardForNewVisitor = new RegistrationCard(7, 2, newVisitor.getId(), 3, 3);
+//        regCardService.addRegCardToTable(newCardForNewVisitor);
+//        LOGGER.info(regCardService.findRegCardByVisitorId(7));
+//        RegistrationCard newConsoledCard = regCardService.createRegCardForNewVisitorByConsole(7, newVisitor);
+//        LOGGER.info(newConsoledCard);
 
+//        DoctorServiceImpl docService = new DoctorServiceImpl();
+//        docService.patientExamination(newVisitor);
     }
 }

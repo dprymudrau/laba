@@ -1,7 +1,7 @@
-package com.solvd.laba.service.impl.jdbc;
+package com.solvd.laba.service;
 
 import com.solvd.laba.binary.Visitor;
 
-public interface DoctorService {
+public interface IDoctorService {
     void patientExamination(Visitor visitor);
 }

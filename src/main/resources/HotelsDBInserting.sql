@@ -124,7 +124,7 @@ VALUES
 (002, 'A, B, C', 1, 3, '2017-11-01', '2021-11-01'),
 (003, 'A, C', 6, 1, '2011-09-10', '2022-09-10');
 
-INSERT INTO Doctors(doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpecialty, idNumberOfContract , idWorkExp)
+INSERT INTO Doctors(doctorName, doctorSurname, doctorDateOfBirth, idWorkPosition, idSpeciality, idNumberOfContract , idWorkExp)
 VALUES
 ('Pavel', 'Dorofeev', '1974-09-09', 4, 4, 215602, 4),
 ('Kseniya', 'Dzuba', '1980-04-17', 4, 1, 629265, 4),

@@ -1,8 +1,8 @@
-package com.solvd.laba.service.impl.jdbc;
+package com.solvd.laba.service;
 
 import com.solvd.laba.binary.Car;
 
-public interface CarFleetService<T> {
+public interface ICarFleetService<T> {
 
     int countCurrentCarsAmount(T carFleetId);
     boolean checkFreeParkingSlot(T carFleetId);

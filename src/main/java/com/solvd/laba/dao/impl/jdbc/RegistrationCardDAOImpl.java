@@ -1,8 +1,7 @@
 package com.solvd.laba.dao.impl.jdbc;
 
 import com.solvd.laba.binary.RegistrationCard;
-import com.solvd.laba.binary.Visitor;
-import com.solvd.laba.dao.EntityDAO;
+import com.solvd.laba.dao.interfaces.IRegistrationCardDAO;
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,9 +9,10 @@ import org.apache.logging.log4j.Logger;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class RegistrationCardDAOImpl extends AbstractDAO implements EntityDAO<RegistrationCard, Integer> {
+public class RegistrationCardDAOImpl extends AbstractDAO implements IRegistrationCardDAO {
     private static final String SELECT_ALL_QUERY = "SELECT * FROM RegistrationCards";
     private static final String SELECT_ALL_WITH_CONDITION_QUERY = "SELECT * FROM RegistrationCards WHERE ";
+    private static final String SELECT_BY_VISITOR_ID_QUERY = "SELECT * FROM RegistrationCards WHERE idVisitor = ?";
     private static final String SELECT_ALL_BY_ID_QUERY = "SELECT * FROM RegistrationCards WHERE idRegistrationCard = ?";
     private static final String INSERT_NEW_REG_CARD_QUERY = "INSERT INTO RegistrationCards(idRegistrationCard, idHospital, idVisitor, idVisitorAgeGroupCategory, idVisitorCategory) VALUES (?, ?, ?, ?, ?)";
     private static final String INSERT_AUTO_INCR_NEW_REG_CARD_QUERY = "INSERT INTO RegistrationCards(idHospital, idVisitor, idVisitorAgeGroupCategory, idVisitorCategory) VALUES (?, ?, ?, ?)";
@@ -112,36 +112,6 @@ public class RegistrationCardDAOImpl extends AbstractDAO implements EntityDAO<Re
     }
 
     @Override
-    public ArrayList<RegistrationCard> getAllWithFilter(String pastWhereOperatorCondition) {
-        ArrayList<RegistrationCard> registrationCards = new ArrayList<>();
-        ResultSet resultSet = null;
-
-        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_WITH_CONDITION_QUERY + pastWhereOperatorCondition)) {
-            resultSet = prepStatement.executeQuery();
-
-            while (resultSet.next()) {
-                int idRegCard = resultSet.getInt("idRegistrationCard");
-                int idHospital = resultSet.getInt("idHospital");
-                int idVisitor = resultSet.getInt("idVisitor");
-                int idVisitorAgeGroupCategory = resultSet.getInt("idVisitorAgeGroupCategory");
-                int idVisitorCategory = resultSet.getInt("idVisitorCategory");
-                RegistrationCard regCard = new RegistrationCard(idRegCard, idHospital, idVisitor, idVisitorAgeGroupCategory, idVisitorCategory);
-                registrationCards.add(regCard);
-                LOGGER.debug(regCard + "\n is selected and received.");
-            }
-            LOGGER.info("Found values by condition: " + registrationCards.size());
-
-        } catch (SQLException e) {
-            LOGGER.error("Connection failed!");
-            LOGGER.error(e);
-        } finally {
-            closeResource(resultSet);
-            releaseConnection(connection);
-        }
-        return registrationCards;
-    }
-
-    @Override
     public RegistrationCard getById(Integer id) {
         RegistrationCard regCard = new RegistrationCard();
         ResultSet resultSet = null;
@@ -165,6 +135,32 @@ public class RegistrationCardDAOImpl extends AbstractDAO implements EntityDAO<Re
             releaseConnection(connection);
         }
         return regCard;
+    }
+
+    @Override
+    public RegistrationCard getByVisitorId(int idVisitor) {
+        RegistrationCard regCard = new RegistrationCard();
+        ResultSet resultSet = null;
+
+        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_BY_VISITOR_ID_QUERY)) {
+            prepStatement.setInt(1, idVisitor);
+            resultSet = prepStatement.executeQuery();
+            if (resultSet.next()) {
+                regCard.setId(resultSet.getInt("idRegistrationCard"));
+                regCard.setIdHospital(resultSet.getInt("idHospital"));
+                regCard.setIdVisitor(resultSet.getInt("idVisitor"));
+                regCard.setIdVisitorAgeGroupCategory(resultSet.getInt("idVisitorAgeGroupCategory"));
+                regCard.setIdVisitorCategory(resultSet.getInt("idVisitorCategory"));
+                LOGGER.debug(regCard + "\n is selected and received.");
+            }
+        } catch (SQLException e) {
+            LOGGER.error("Connection failed!");
+            LOGGER.error(e);
+        } finally {
+            closeResource(resultSet);
+            releaseConnection(connection);
+        }
+        return null;
     }
 
     @Override

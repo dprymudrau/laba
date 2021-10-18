@@ -31,7 +31,7 @@
     <Visitor id = "13">
         <name>Sergey</name>
         <surname>Zavezin</surname>
-        <birthday>2001-01-08</birthday>
+        <birthday>2001-01-07</birthday>
         <address>Minsk</address>
         <diagnosis>Covid</diagnosis>
         <visitDate>2021-10-11</visitDate>
@@ -49,7 +49,7 @@
     <Visitor id = "15">
         <name>Vasiliy</name>
         <surname>Shved</surname>
-        <birthday>2002-09-25</birthday>
+        <birthday>2002-07-25</birthday>
         <address>Minsk</address>
         <diagnosis>Bronchitis</diagnosis>
         <visitDate>2021-10-11</visitDate>

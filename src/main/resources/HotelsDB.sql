@@ -121,11 +121,11 @@ doctorName varchar(20) not null,
 doctorSurname varchar(20) not null,
 doctorDateOfBirth date not null,
 idWorkPosition int(3) not null,
-idSpecialty int not null,
+idSpeciality int not null,
 idNumberOfContract int not null,
 idWorkExp int not null,
 FOREIGN KEY(idWorkPosition) REFERENCES WorkPositions(idWorkPosition) ON UPDATE CASCADE ON DELETE RESTRICT,
-FOREIGN KEY(idSpecialty) REFERENCES Specialities(idSpeciality) ON UPDATE CASCADE ON DELETE RESTRICT,
+FOREIGN KEY(idSpeciality) REFERENCES Specialities(idSpeciality) ON UPDATE CASCADE ON DELETE RESTRICT,
 FOREIGN KEY(idNumberOfContract) REFERENCES WorkerContracts(idNumberOfContract) ON UPDATE CASCADE ON DELETE RESTRICT,
 FOREIGN KEY(idWorkExp) REFERENCES WorkExperience(idWorkExp) ON UPDATE CASCADE ON DELETE RESTRICT
 );

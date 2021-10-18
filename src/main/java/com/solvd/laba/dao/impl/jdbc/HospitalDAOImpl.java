@@ -1,8 +1,7 @@
 package com.solvd.laba.dao.impl.jdbc;
 
-import com.solvd.laba.binary.Car;
+import com.solvd.laba.dao.interfaces.IHospitalDAO;
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
-import com.solvd.laba.dao.EntityDAO;
 import com.solvd.laba.binary.Hospital;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class HospitalDAOImpl extends AbstractDAO implements EntityDAO<Hospital, Integer> {
+public class HospitalDAOImpl extends AbstractDAO implements IHospitalDAO {
     private static final String SELECT_ALL_QUERY = "SELECT * FROM Hospitals";
     private static final String SELECT_ALL_WITH_CONDITION_QUERY = "SELECT * FROM Hospitals WHERE ";
     private static final String SELECT_ALL_BY_ID_QUERY = "SELECT * FROM Hospitals WHERE idHospital = ?";

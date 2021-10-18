@@ -1,8 +1,8 @@
 package com.solvd.laba.dao.impl.jdbc;
 
 import com.solvd.laba.binary.Car;
+import com.solvd.laba.dao.interfaces.ICarDAO;
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
-import com.solvd.laba.dao.EntityDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,9 +12,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CarDAOImpl extends AbstractDAO implements EntityDAO<Car, Integer> {
+public class CarDAOImpl extends AbstractDAO implements ICarDAO {
     private static final String SELECT_ALL_QUERY = "SELECT * FROM Cars";
-    private static final String SELECT_ALL_WITH_CONDITION_QUERY = "SELECT * FROM Cars WHERE ";
+    private static final String SELECT_ALL_BY_FILTER = "SELECT * FROM Cars WHERE ";
+    private static final String SELECT_ALL_BY_CAR_FLEET_ID_QUERY = "SELECT * FROM Cars WHERE idCarFleet = ?";
     private static final String SELECT_ALL_BY_ID_QUERY = "SELECT * FROM Cars WHERE idCar = ?";
     private static final String INSERT_NEW_CAR_QUERY = "INSERT INTO Cars(idCar, carBrandName, carModel, carRegNumber, idCarFleet) VALUES (?, ?, ?, ?, ?)";
     private static final String INSERT_AUTO_INCR_NEW_CAR_QUERY = "INSERT INTO Cars(carBrandName, carModel, carRegNumber, idCarFleet) VALUES (?, ?, ?, ?)";
@@ -58,7 +59,7 @@ public class CarDAOImpl extends AbstractDAO implements EntityDAO<Car, Integer> {
     public void printByFilter(String pastWhereOperatorCondition) {
         ResultSet resultSet = null;
 
-        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_WITH_CONDITION_QUERY + pastWhereOperatorCondition)) {
+        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_BY_FILTER + pastWhereOperatorCondition)) {
             resultSet = prepStatement.executeQuery();
             LOGGER.info("Cars:");
 
@@ -114,11 +115,12 @@ public class CarDAOImpl extends AbstractDAO implements EntityDAO<Car, Integer> {
     }
 
     @Override
-    public ArrayList<Car> getAllWithFilter(String pastWhereOperatorCondition) {
+    public ArrayList<Car> getAllByCarFleetId(Integer carFleetId) {
         ArrayList<Car> cars = new ArrayList<>();
         ResultSet resultSet = null;
 
-        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_WITH_CONDITION_QUERY + pastWhereOperatorCondition)) {
+        try(PreparedStatement prepStatement = connection.prepareStatement(SELECT_ALL_BY_CAR_FLEET_ID_QUERY)) {
+            prepStatement.setInt(1, carFleetId);
             resultSet = prepStatement.executeQuery();
 
             while (resultSet.next()) {

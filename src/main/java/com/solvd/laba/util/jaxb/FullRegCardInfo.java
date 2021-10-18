@@ -4,21 +4,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.sql.Date;
 
-@XmlType(name = "RegistrationCard")
-@XmlRootElement
+
+@XmlRootElement (name = "RegistrationCard")
+@XmlType(propOrder = {"RegistrationCardId"})
 public class FullRegCardInfo {
-    int regCardId;
-    String hospitalName;
-    String hospitalAddress;
-    String visitorName;
-    String visitorSurname;
-    Date visitorBirthday;
-    String diagnosis;
-    Date visitDate;
-    Date dischargeDate;
-    String ageGroupCategory;
-    String healthConditionCategory;
-    String visitCategory;
+    private int regCardId;
+    private String hospitalName;
+    private String hospitalAddress;
+    private String visitorName;
+    private String visitorSurname;
+    private Date visitorBirthday;
+    private String diagnosis;
+    private Date visitDate;
+    private Date dischargeDate;
+    private String ageGroupCategory;
+    private String healthConditionCategory;
+    private String visitCategory;
 
     public int getRegCardId() {
         return regCardId;

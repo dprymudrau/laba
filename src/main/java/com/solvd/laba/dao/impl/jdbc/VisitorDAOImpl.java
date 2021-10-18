@@ -1,15 +1,16 @@
 package com.solvd.laba.dao.impl.jdbc;
 
 import com.solvd.laba.binary.Visitor;
-import com.solvd.laba.dao.EntityDAO;
+import com.solvd.laba.dao.interfaces.IVisitorDAO;
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
+import com.solvd.laba.util.DateConverter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class VisitorDAOImpl extends AbstractDAO implements EntityDAO<Visitor, Integer> {
+public class VisitorDAOImpl extends AbstractDAO implements IVisitorDAO {
     private static final String SELECT_ALL_QUERY = "SELECT * FROM Visitors";
     private static final String SELECT_ALL_WITH_CONDITION_QUERY = "SELECT * FROM Visitors WHERE ";
     private static final String SELECT_ALL_BY_ID_QUERY = "SELECT * FROM Visitors WHERE idVisitor = ?";
@@ -193,11 +194,11 @@ public class VisitorDAOImpl extends AbstractDAO implements EntityDAO<Visitor, In
             prepStatement.setInt(1, entity.getId());
             prepStatement.setString(2, entity.getName());
             prepStatement.setString(3, entity.getSurname());
-            prepStatement.setDate(4, entity.getBirthday());
+            prepStatement.setDate(4, DateConverter.convertToSqlDate(entity.getBirthday()));
             prepStatement.setString(5, entity.getAddress());
             prepStatement.setString(6, entity.getDiagnosis());
-            prepStatement.setDate(7, entity.getVisitDate());
-            prepStatement.setDate(8, entity.getDischargeDate());
+            prepStatement.setDate(7, DateConverter.convertToSqlDate(entity.getVisitDate()));
+            prepStatement.setDate(8, DateConverter.convertToSqlDate(entity.getDischargeDate()));
             int row = prepStatement.executeUpdate();
             LOGGER.debug(row + " row is added into Visitors table.");
         } catch (SQLException e) {
@@ -232,11 +233,11 @@ public class VisitorDAOImpl extends AbstractDAO implements EntityDAO<Visitor, In
         try(PreparedStatement prepStatement = connection.prepareStatement(UPDATE_VISITOR_QUERY)) {
             prepStatement.setString(1, entity.getName());
             prepStatement.setString(2, entity.getSurname());
-            prepStatement.setDate(3, entity.getBirthday());
+            prepStatement.setDate(3, DateConverter.convertToSqlDate(entity.getBirthday()));
             prepStatement.setString(4, entity.getAddress());
             prepStatement.setString(5, entity.getDiagnosis());
-            prepStatement.setDate(6, entity.getVisitDate());
-            prepStatement.setDate(7, entity.getDischargeDate());
+            prepStatement.setDate(6, DateConverter.convertToSqlDate(entity.getVisitDate()));
+            prepStatement.setDate(7, DateConverter.convertToSqlDate(entity.getDischargeDate()));
             prepStatement.setInt(8, entity.getId());
             int row = prepStatement.executeUpdate();
             LOGGER.debug(row + " row is updated in Visitors table.");

@@ -1,8 +1,7 @@
 package com.solvd.laba.dao.impl.jdbc;
 
-import com.solvd.laba.binary.Car;
 import com.solvd.laba.binary.VisitorCategory;
-import com.solvd.laba.dao.EntityDAO;
+import com.solvd.laba.dao.interfaces.IVisitorCategoryDAO;
 import com.solvd.laba.dao.abstractClasses.AbstractDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class VisitorCategoryDAOImpl extends AbstractDAO implements EntityDAO<VisitorCategory, Integer> {
+public class VisitorCategoryDAOImpl extends AbstractDAO implements IVisitorCategoryDAO {
     private static final String SELECT_ALL_QUERY = "SELECT * FROM VisitorCategories";
     private static final String SELECT_ALL_WITH_CONDITION_QUERY = "SELECT * FROM VisitorCategories WHERE ";
     private static final String SELECT_ALL_BY_ID_QUERY = "SELECT * FROM VisitorCategories WHERE idVisitorCategory = ?";

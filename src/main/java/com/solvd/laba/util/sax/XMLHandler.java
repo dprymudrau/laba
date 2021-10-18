@@ -80,8 +80,6 @@ public class XMLHandler extends DefaultHandler {
                 case "dischargeDate":
                     if (!information.equals("null")) {
                         this.dischargeDate = Date.valueOf(information);
-                    } else {
-                        this.dischargeDate = null;
                     }
                     break;
             }
