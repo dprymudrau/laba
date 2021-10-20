@@ -1,12 +1,19 @@
 package com.solvd.laba.binary;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class RegistrationCard {
+    @JsonProperty("registrationCardID")
     private int id;
+    @JsonProperty
     private int idHospital;
+    @JsonProperty
     private int idVisitor;
+    @JsonProperty
     private int idVisitorAgeGroupCategory;
+    @JsonProperty
     private int idVisitorCategory;
 
     public RegistrationCard(int id, int idHospital, int idVisitor, int idVisitorAgeGroupCategory, int idVisitorCategory) {

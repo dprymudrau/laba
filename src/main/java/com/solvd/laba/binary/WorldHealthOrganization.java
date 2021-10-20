@@ -1,17 +1,24 @@
 package com.solvd.laba.binary;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
-@XmlRootElement
 public class WorldHealthOrganization {
+    @JsonProperty("allSickPeopleInHospitals")
     private int amountOfAllSickPeopleInHospitals;
+    @JsonProperty("allInfectedByCovid")
     private int amountOfAllInfectedByCovid;
+    @JsonProperty("infectedList")
     private ArrayList<Visitor> peopleWithCovid;
+    @JsonProperty("regCardsForInfectedList")
     private ArrayList<RegistrationCard> documentsOfPeopleWithCovid;
+    @JsonProperty("deadFromCovid")
     private int amountOfDeadFromCovid;
+    @JsonProperty("percentOfInfectedYoungGen")
     private double percentOfInfectedYoungGeneration;
+    @JsonProperty("percentOfInfectedOldGen")
     private double percentOfInfectedOldGeneration;
 
     public int getAmountOfAllSickPeopleInHospitals() {
@@ -28,6 +35,22 @@ public class WorldHealthOrganization {
 
     public void setAmountOfAllInfectedByCovid(int amountOfAllInfectedByCovid) {
         this.amountOfAllInfectedByCovid = amountOfAllInfectedByCovid;
+    }
+
+    public ArrayList<Visitor> getPeopleWithCovid() {
+        return peopleWithCovid;
+    }
+
+    public void setPeopleWithCovid(ArrayList<Visitor> peopleWithCovid) {
+        this.peopleWithCovid = peopleWithCovid;
+    }
+
+    public ArrayList<RegistrationCard> getDocumentsOfPeopleWithCovid() {
+        return documentsOfPeopleWithCovid;
+    }
+
+    public void setDocumentsOfPeopleWithCovid(ArrayList<RegistrationCard> documentsOfPeopleWithCovid) {
+        this.documentsOfPeopleWithCovid = documentsOfPeopleWithCovid;
     }
 
     public int getAmountOfDeadFromCovid() {
@@ -77,6 +100,8 @@ public class WorldHealthOrganization {
         return "WorldHealthOrganization{" +
                 "amountOfAllSickPeopleInHospitals=" + amountOfAllSickPeopleInHospitals +
                 ", amountOfAllInfectedByCovid=" + amountOfAllInfectedByCovid +
+                ", peopleWithCovid=" + peopleWithCovid +
+                ", documentsOfPeopleWithCovid=" + documentsOfPeopleWithCovid +
                 ", amountOfDeadFromCovid=" + amountOfDeadFromCovid +
                 ", percentOfInfectedYoungGeneration=" + percentOfInfectedYoungGeneration +
                 ", percentOfInfectedOldGeneration=" + percentOfInfectedOldGeneration +

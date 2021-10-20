@@ -1,5 +1,8 @@
 package com.solvd.laba.binary;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -10,13 +13,22 @@ import java.util.Objects;
 @XmlRootElement(name = "visitor")
 @XmlType(propOrder = {"id", "name", "surname", "birthday", "address", "diagnosis", "visitDate", "dischargeDate"})
 public class Visitor {
+    @JsonProperty("patientID")
     private int id;
+    @JsonProperty("patientName")
     private String name;
+    @JsonProperty("patientSurname")
     private String surname;
+    @JsonProperty("patientBirthday")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date birthday;
+    @JsonProperty("patientAddress")
     private String address;
+    @JsonProperty
     private String diagnosis;
+    @JsonProperty
     private Date visitDate;
+    @JsonProperty
     private Date dischargeDate;
 
     public Visitor(int id, String name, String surname, Date birthday,

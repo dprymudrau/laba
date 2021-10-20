@@ -1,0 +1,79 @@
+{
+  "allSickPeopleInHospitals" : 12345,
+  "allInfectedByCovid" : 3789,
+  "infectedList" : [
+    {
+      "patientID" : 12,
+      "patientName" : "Dmitriy",
+      "patientSurname" : "Topol",
+      "patientBirthday" : "1990-07-10",
+      "patientAddress" : "Minsk",
+      "diagnosis" : "Covid",
+      "visitDate" : "2021-10-11",
+      "dischargeDate" : null
+    },
+    {
+      "patientID" : 13,
+      "patientName" : "Sergey",
+      "patientSurname" : "Zavezin",
+      "patientBirthday" : "2001-01-07",
+      "patientAddress" : "Minsk",
+      "diagnosis" : "Covid",
+      "visitDate" : "2021-10-11",
+      "dischargeDate" : null
+    },
+    {
+      "patientID" : 14,
+      "patientName" : "Kirill",
+      "patientSurname" : "Motylev",
+      "patientBirthday" : "1999-03-19",
+      "patientAddress" : "Minsk",
+      "diagnosis" : "Covid",
+      "visitDate" : "2021-10-11",
+      "dischargeDate" : null
+    },
+    {
+      "patientID" : 17,
+      "patientName" : "Andrey",
+      "patientSurname" : "Klichko",
+      "patientBirthday" : "1981-12-12",
+      "patientAddress" : "Minsk",
+      "diagnosis" : "Covid",
+      "visitDate" : "2021-10-11",
+      "dischargeDate" : null
+    }
+  ],
+  "regCardsForInfectedList" : [
+    {
+      "registrationCardID" : 1230,
+      "idHospital" : 8,
+      "idVisitor" : 12,
+      "idVisitorAgeGroupCategory" : 3,
+      "idVisitorCategory" : 5
+    },
+    {
+      "registrationCardID" : 1231,
+      "idHospital" : 8,
+      "idVisitor" : 13,
+      "idVisitorAgeGroupCategory" : 2,
+      "idVisitorCategory" : 3
+    },
+    {
+      "registrationCardID" : 1232,
+      "idHospital" : 8,
+      "idVisitor" : 14,
+      "idVisitorAgeGroupCategory" : 3,
+      "idVisitorCategory" : 3
+    },
+    {
+      "registrationCardID" : 5612,
+      "idHospital" : 7,
+      "idVisitor" : 17,
+      "idVisitorAgeGroupCategory" : 3,
+      "idVisitorCategory" : 4
+    }
+  ],
+  "deadFromCovid" : 10783,
+  "percentOfInfectedYoungGen" : 14.7,
+  "percentOfInfectedOldGen" : 85.3
+}
