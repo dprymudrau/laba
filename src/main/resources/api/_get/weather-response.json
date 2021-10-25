@@ -1,0 +1,44 @@
+{
+  "coord": {
+    "lon": 37.8,
+    "lat": 48
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 279.83,
+    "feels_like": 277.39,
+    "temp_min": 279.83,
+    "temp_max": 279.83,
+    "pressure": 1032,
+    "humidity": 32,
+    "sea_level": 1032,
+    "grnd_level": 1008
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 3.45,
+    "deg": 14,
+    "gust": 4.35
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1635171792,
+  "sys": {
+    "country": "UA",
+    "sunrise": 1635134566,
+    "sunset": 1635171763
+  },
+  "timezone": 10800,
+  "id": 709717,
+  "name": "Donetsk",
+  "cod": 200
+}
